@@ -1,0 +1,4 @@
+# AD525x - Arduino library for I<sup>2</sup>C communication with AD5253 and AD5254
+This is a library for communication with AD5253 and AD5254 quad 64-/256-position I<sup>2</sup>C Nonvolatile Memory Digital Potentiometers. The features implemented are based on [http://www.analog.com/static/imported-files/data_sheets/AD5253_5254.pdf](the datasheet provided by Analog Devices). 
+
+To use these, instantiate either an AD5253 or an AD5254 object (the main difference is in the error checking). The AD525x series potentiometers have a 5 bits of their 7-bit I2C address hard-coded as `0x2C` (`0d44`), and the two lowest bits can be programmed by pulling the `AD0` (pin 4) and `AD1` (pin 16) lines either high or low. Each AD525x object is instantiated with the 2-bit `AD1 AD0` address of the device - do not specify the hard-coded portion of the address, as that is already taken into account.
