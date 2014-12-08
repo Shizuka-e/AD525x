@@ -8,10 +8,11 @@ AD525x.h - Class file for AD5253/AD5254 digital potentiometer Arduino library.
 #include <Arduino.h>
 #include <Wire.h>
 
-#define base_I2C_addr 0x2C
+#define base_I2C_addr 0x2C              /* Base address of these devices. Full address is 
+                                           base_I2C_addr | (AD1 << 1) | AD0            */
 
-// AD5253 and AD5254 differ based on what the max will be.
-#define AD5253_max 63                   
+// AD5253 and AD5254 differ based on what the maximum wiper setting is.
+#define AD5253_max 63
 #define AD5254_max 255
 
 // Instruction registers - Top 3 bits.
@@ -83,7 +84,7 @@ public:
     uint8_t get_err_code(void);
     char *get_error_text(void);
 
-    uint8_t max_val;
+    uint8_t max_val;        /*!< Used only by child classes. */
 protected:
     uint8_t write_cmd(uint8_t cmd_register);
     uint8_t write_data(uint8_t register_addr, uint8_t data);
@@ -92,22 +93,23 @@ protected:
 private:
     char *get_error_string(uint8_t error_code);
     
-    uint8_t dev_addr;
+    uint8_t dev_addr;       /*!< The full 7-bit address of the specified device. */
 
-    uint8_t err_code;
+    uint8_t err_code;       /*!< Used for error detection. Access via get_err_code() and 
+                                 get_error_text() */
 };
 
 class AD5253 : public AD525x {
 public:
     AD5253(uint8_t AD_addr) : AD525x(AD_addr) {
-        max_val = AD5253_max;
+        max_val = AD5253_max;   /*!< Maximum wiper value. 63 for AD5253 */
     }
 };
 
 class AD5254 : public AD525x {
 public:
     AD5254(uint8_t AD_addr) : AD525x(AD_addr) {
-        max_val = AD5254_max;
+        max_val = AD5254_max; /*!< Maximum wiper value. 255 for AD5254 */
     }
 };
 
