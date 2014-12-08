@@ -8,25 +8,48 @@ AD525x.cpp - Class file for AD5253/AD5254 digital potentiometer Arduino library.
 AD525x::AD525x(uint8_t AD_addr) {
     /* 
     Constructor - pass (AD1<<1 | AD0) to AD_addr to select the chosen device address.
+
+    @param[in] AD_addr The two bit user-specified address of the device with which you are 
+                       communicating. Should be (AD1<<1 | AD0). 
     */
+
     if(AD_addr > 3) {
-        AD_addr = 0x00;         // Not sure how to throw an error here.
+        AD_addr = 0x00;
+        err_code = EC_BAD_DEVICE_ADDR;          // Set the error code.
     }
     dev_addr = base_I2C_addr | AD_addr;
     max_val = 0;
     err_code = 0;
 
-    Wire.begin();               // Start I2C communications.
+    Wire.begin();                              // Start I2C communications.
 }
 
 uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
     /*
     Write value to RDAC register specified by RDAC. RDAC registers are zero-based index.
 
-    Error handling:
-    0: No error
-    1-4: I2C errors.
-    5-6: Value errors.
+    Writes the specified value (`value`) to the RDAC register with RDAC address `RDAC`. Returns `0`
+    on no error. I2C errors can be raised indirectly via this function's call to `write_data`, and
+    this function directly raises the following error codes:
+
+    +----------------------------------------------------------------------------------------------+
+    | Error Codes                                                                                  |
+    +==============================================================================================+
+    | Error code          | Reason                                                                 |
+    +---------------------+------------------------------------------------------------------------+
+    |EC_BAD_REGISTER      | Raised if the supplied RDAC register exceeds the maximum value (3).    |
+    |                     | address (3).                                                           |
+    +---------------------+------------------------------------------------------------------------+
+    |EC_BAD_WIPER_SETTING | Raised if the wiper setting (`value`) exceeds the maximum value (63    |
+    |                     | for AD5253, 255 for AD5254).                                           | 
+    +---------------------+------------------------------------------------------------------------+
+
+    @param[in] RDAC     The address of one of the 4 RDAC registers (0-3), representing the 4 
+                        potentiometers in the IC.
+    @param[in] value    The wiper value to set the specified RDAC. This value must be in the span
+                        [0, `max_val`].
+
+    @return Returns the error code (which can also be queried via get_err_code()).
     */
     if(RDAC > 3) {
         err_code = EC_BAD_REGISTER;
@@ -278,6 +301,8 @@ char * AD525x::get_error_string(uint8_t error_code) {
             return EC_BAD_WIPER_SETTING_str;
         case EC_BAD_READ_SIZE:
             return EC_BAD_READ_SIZE_str;
+        case EC_BAD_DEVICE_ADDR:
+            return EC_BAD_DEVICE_ADDR_str;
         default:
             return EC_UNKNOWN_ERR_str;
     }

@@ -61,6 +61,9 @@ AD525x.h - Class file for AD5253/AD5254 digital potentiometer Arduino library.
 #define EC_BAD_READ_SIZE 7
 #define EC_BAD_READ_SIZE_str "Invalid number of bytes read from register."
 
+#define EC_BAD_DEVICE_ADDR 8
+#define EC_BAD_DEVICE_ADDR_str "Bad device address - device address must be in [0, 3]."
+
 #define EC_UNKNOWN_ERR_str "Unknown error."
 
 class AD525x {
