@@ -1,13 +1,19 @@
-/* 
-AD525x.cpp - Class file for AD5253/AD5254 digital potentiometer Arduino library.
+/** @file 
+Class file for AD5253/AD5254 digital potentiometer Arduino library.
 */
 
 #include <AD525x.h>
 #include <Arduino.h>
 
 AD525x::AD525x(uint8_t AD_addr) {
-    /* 
-    Constructor - pass (AD1<<1 | AD0) to AD_addr to select the chosen device address.
+    /** Constructor - pass `(AD1<<1 | AD0)` to AD_addr to select the chosen device address.
+
+    This is the constructor for the base AD525x class. It is called with the address of the 
+    specified device (specified via the `AD1` and `AD0` pins on the device itself -  high = 1, 
+    low = 0). This two-bit input parameter is used to construct the full 7-bit I2C address.
+
+    If an invalid address is specified, `err_code` is set to `EC_BAD_DEVICE_ADDR`. This can be
+    queried via `get_err_code()` and/or `get_error_text()`.
 
     @param[in] AD_addr The two bit user-specified address of the device with which you are 
                        communicating. Should be (AD1<<1 | AD0). 
@@ -25,31 +31,23 @@ AD525x::AD525x(uint8_t AD_addr) {
 }
 
 uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
-    /*
-    Write value to RDAC register specified by RDAC. RDAC registers are zero-based index.
+    /** Write value to RDAC register specified by RDAC. RDAC registers are zero-based index.
 
-    Writes the specified value (`value`) to the RDAC register with RDAC address `RDAC`. Returns `0`
-    on no error. I2C errors can be raised indirectly via this function's call to `write_data`, and
-    this function directly raises the following error codes:
-
-    +----------------------------------------------------------------------------------------------+
-    | Error Codes                                                                                  |
-    +==============================================================================================+
-    | Error code          | Reason                                                                 |
-    +---------------------+------------------------------------------------------------------------+
-    |EC_BAD_REGISTER      | Raised if the supplied RDAC register exceeds the maximum value (3).    |
-    |                     | address (3).                                                           |
-    +---------------------+------------------------------------------------------------------------+
-    |EC_BAD_WIPER_SETTING | Raised if the wiper setting (`value`) exceeds the maximum value (63    |
-    |                     | for AD5253, 255 for AD5254).                                           | 
-    +---------------------+------------------------------------------------------------------------+
+    Writes the specified value (`value`) to the RDAC register with RDAC address `RDAC`. There are 
+    four RDAC registers, addressed using 2-bits on a zero-based index.
 
     @param[in] RDAC     The address of one of the 4 RDAC registers (0-3), representing the 4 
                         potentiometers in the IC.
     @param[in] value    The wiper value to set the specified RDAC. This value must be in the span
                         [0, `max_val`].
 
-    @return Returns the error code (which can also be queried via get_err_code()).
+    @return Returns 0 on no error, otherwise returns an error code and sets the `err_code` parameter
+            (queried via `get_err_code()`). I2C errors are raised indirectly via a call to 
+            `write_data()`. This function also raises the following error codes:
+            - \c `EC_BAD_REGISTER`: Raised if the supplied RDAC register exceeds the maximum value 
+                                   (3).
+            - \c `EC_BAD_WIPER_SETTING`: Raised if the wiper setting (`value`) eceeds the maximum 
+                                        value (63 for AD5253(), 255 for AD5254())
     */
     if(RDAC > 3) {
         err_code = EC_BAD_REGISTER;
@@ -67,11 +65,18 @@ uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
 }
 
 uint8_t AD525x::read_RDAC(uint8_t RDAC) {
-    /*
-    Read RDAC value from register.
+    /** Read the wiper setting from the specified RDAC register.
 
-    On error, sets error code and returns 0. Check error code if 0 is returned (0 is also a valid 
-    return value from the register).
+    Reads the current wiper setting of the RDAC register specified by `RDAC`. On error, this sets 
+    error code and returns 0. Because 0 is a valid wiper setting, always check the error code via
+    `get_error_code()` before trusting a 0 return value for this function. In addition to I2C errors
+    raised by `read_data_byte()`, this function also raises `EC_BAD_REGISTER` if the supplied RDAC 
+    register exceeds the maximum value (3).
+
+    @param[in] RDAC     The address of one of the 4 RDAC registers (0-3), representing the 4 
+                        potentiometers in the IC.
+
+    @return Returns the wiper value or 0 on error (0 is also a valid wiper value).
     */
     if(RDAC > 3) {
         err_code = EC_BAD_REGISTER;
@@ -80,18 +85,31 @@ uint8_t AD525x::read_RDAC(uint8_t RDAC) {
 
     uint8_t instr_addr = RDAC_register | RDAC;
 
-    uint8_t *rv = read_data(instr_addr, 1);
-    if(rv == NULL) {
+    uint8_t rv = read_data_byte(instr_addr);
+    if(get_err_code() != 0) {
         return 0;       // Err code set in read_data already.
     }
 
-    return rv[0];
+    return rv;
 }
 
 uint8_t AD525x::write_EEMEM(uint8_t reg, uint8_t value) {
-    /*
+    /**   Write to the EEMEM non-volatile memory register. 
+
     Write to the EEMEM non-volatile memory register. The first 4 registers (0, 1, 2, 3) are the 
     RDAC storage registers. The remainder can store user data. There are 16 total registers.
+
+    @param reg The register to which to write the EEMEM data. The first 4 are reserved for RDAC in
+               that certain commands (such as `CMD_RESTORE_RDAC`) will automatically push/pull the
+               RDAC values to/from these registers, though setting the RDAC-reserved EEMEM registers
+               will not immediately set the RDAC registers.
+    @param value The value to store in the register.
+
+    @returns Returns 0 on no error. Raises I2C errors indirectly via a call to `write_data`. Also
+             raises:
+            - \c `EC_BAD_WIPER_SETTING`: Register selected is an RDAC register and value exceeds
+                                         maximum allowed RDAC value.
+            - \c `EC_BAD_REGISTER`: An invalid register address was provided.
     */
 
     if(reg < 4 && value < max_val) {
@@ -112,11 +130,19 @@ uint8_t AD525x::write_EEMEM(uint8_t reg, uint8_t value) {
 }
 
 uint8_t AD525x::read_EEMEM(uint8_t reg) {
-    /*
-    Read RDAC value from register.
+    /** Read EEMEM value from register.
 
-    On error, sets error code and returns 0. Check error code if 0 is returned (0 is also a valid 
-    return value from the register).
+    Reads the value stored in the EEMEM value with the specified register address (`reg`). There are
+    16 EEMEM registers, and the first 4 are reserved for storing RDAC values, in the sense that
+    certain commands (e.g. `CMD_RESTORE_RDAC`) push/pull the values to/from these registers.
+
+    On error, this sets the error code and returns 0. Since 0 is a valid wiper value, check
+    `get_err_code()` if this returns 0. This raises I2C errors indirectly from a call to 
+    `read_data_byte()`, and raises `EC_BAD_REGISTER` if an invalid register is passed to `reg`.
+    
+    @param[in] reg The EEMEM register whose value you want to query [0-15].
+
+    @return Returns the value stored in the specified register.
     */
     if(reg > 15) {
         err_code = EC_BAD_REGISTER;
@@ -125,20 +151,30 @@ uint8_t AD525x::read_EEMEM(uint8_t reg) {
 
     uint8_t instr_addr = EEMEM_register | reg;
 
-    uint8_t *rv = read_data(instr_addr, 1);
-    if(rv == NULL) {
+    uint8_t rv = read_data_byte(instr_addr, 1);
+    if(get_err_code() != 0) {
         return 0;       // Err code set in read_data already.
     }
 
-    return rv[0];
+    return rv;
 }
 
 float AD525x::read_tolerance(uint8_t RDAC) {
-    /*
-    Reads the RAB tolerance, written at the factory, in percentage (signed float).
+    /** Reads the RAB tolerance, written at the factory, in percentage (signed float).
 
-    Returns 0 on error. Because 0 is a valid output, check get_err_code() to determine if an
-    error has occurred.
+    Reads the RAB tolerance programmed into the device at the factory for the specified RDAC 
+    (`RDAC`), returning the percent tolerance as a signed float. These values will vary from device
+    to device and register to register.
+
+    This returns 0.0 on error, but since 0.0 is a valid output, in the event of a 0.0 return value,
+    check `get_err_code()` to determine if an error has occurred. This raises I2C errors indirectly
+    via calls to `read_data_byte()`, and raises `EC_BAD_REGISTER` if the provided `RDAC` value
+    exceeds the maximum (3).
+
+    @param[in] RDAC The RDAC register whose tolerance you would like to query.
+
+    @return Returns the RAB tolerance set at the factory and stored in read-only memory on the chip,
+            represented as a signed float as a percentage of the total device resistance.
     */
     if (RDAC > 3) {
         err_code = EC_BAD_REGISTER;
@@ -182,25 +218,65 @@ float AD525x::read_tolerance(uint8_t RDAC) {
 }
 
 uint8_t AD525x::get_err_code() {
-    /*
-    Retrieve the error code stored in a private variable.
+    /** Retrieve the error code stored in a private variable.
+
+    Retrieves the error code stored in the private `err_code` variable. If non-zero, use 
+    `get_error_text()` to retrieve the error string. See \ref ErrorCodes for details.
+
+    @return Returns the error code set in the current object. Non-zero value is an error.
     */
     return err_code;
 }
 
 char * AD525x::get_error_text() {
-    /*
-    Retrieve the error string associated with the stored error code.
+    /** Retrieve the error string associated with the stored error code (`err_code`).
+
+    Retrieves the stored error code `err_code` and returns the human-readable error string
+    associated with it. For a full list of error codes and error strings, see \ref ErrorCodes.
+
+    @return Returns the human-readable string describing the current error code.
     */
-    return get_error_string(err_code);
+    switch(get_err_code()) {
+        case EC_NO_ERR:
+            return EC_NO_ERR_str;
+        case EC_DATA_LONG:
+            return EC_DATA_LONG_str;
+        case EC_NACK_ADDR:
+            return EC_NACK_ADDR_str;
+        case EC_NACK_DATA:
+            return EC_NACK_DATA_str;
+        case EC_I2C_OTHER:
+            return EC_I2C_OTHER_str;
+        case EC_BAD_REGISTER:
+            return EC_BAD_REGISTER_str;
+        case EC_BAD_WIPER_SETTING:
+            return EC_BAD_WIPER_SETTING_str;
+        case EC_BAD_READ_SIZE:
+            return EC_BAD_READ_SIZE_str;
+        case EC_BAD_DEVICE_ADDR:
+            return EC_BAD_DEVICE_ADDR_str;
+        default:
+            return EC_UNKNOWN_ERR_str;
+    }
 }
 
 //
 // Private functions: General I2C communications.
 //
 uint8_t AD525x::write_cmd(uint8_t cmd_register) {
-    /*
-    Trigger a command in the command register (no data)
+    /** Trigger a command in the command register (no data)
+
+    This triggers a command in the command register (e.g. an address which takes no data). This is
+    a private function, called by exposed functions hard-coded with the command register addresses.
+
+    @param cmd_register The address of the command register (e.g. `CMD_NOP`, `CMD_Store_RDAC`)
+
+    @return Returns 0 on no error, otherwise returns I2C errors:
+            - \c `EC_NO_ERR`: No error.
+            - \c `EC_DATA_LONG`: Data too long to fit in transmit buffer
+            - \c `EC_NACK_ADDR`: Received NACK on transmit of address.
+            - \c `EC_NACK_DATA`: Received NACK on transmit of data.
+            - \c `EC_I2C_OTHER`: Other I2C error.
     */
     Wire.beginTransmission(dev_addr);
     Wire.write(cmd_register);
@@ -211,12 +287,21 @@ uint8_t AD525x::write_cmd(uint8_t cmd_register) {
 }
 
 uint8_t AD525x::write_data(uint8_t register_addr, uint8_t data) {
-    /*
-    Write data to the specified register address.
+    /** Writes data to the specified register address.
 
-    Error handling:
-    0: No error
-    1-4: I2C errors.
+    This is a private function, called by specific-use functions such as `write_RDAC()` and 
+    `write_EEMEM()` to write data (specified by `data`) into the register specified by 
+    `register_addr` using the Wire.h library.
+
+    @param register_addr The register address to query.
+    @param data The data to write to the specified address.
+
+    @return Returns 0 on no error, otherwise returns I2C errors:
+            - \c `EC_NO_ERR`: No error.
+            - \c `EC_DATA_LONG`: Data too long to fit in transmit buffer
+            - \c `EC_NACK_ADDR`: Received NACK on transmit of address.
+            - \c `EC_NACK_DATA`: Received NACK on transmit of data.
+            - \c `EC_I2C_OTHER`: Other I2C error.
     */
     Wire.beginTransmission(dev_addr);
     Wire.write(register_addr);
@@ -226,10 +311,24 @@ uint8_t AD525x::write_data(uint8_t register_addr, uint8_t data) {
 }
 
 uint8_t * AD525x::read_data(uint8_t register_addr, uint8_t length) {
-    /*
-    Read data of length `length` from register register_addr
+    /** Reads data of length `length` from register  `register_addr`
+    
+    This is a private function, called by specific-use functions such as `read_RDAC()` and 
+    `read_EEMEM()` to read a data array of length `length` (in bytes) from the register specified by
+    `register_addr`.
 
-    Returns NULL on error, err_code will be set.
+    @param register_addr The address of the register to read from.
+    @param length The length of the data stored in the register.
+
+    @return On success, returns a pointer to an array of `uint8_t` unsigned bytes retrieved from the
+            register. The returned array has length `length`, which in most cases will be 1. On 
+            error, this function returns a `NULL` pointer and sets `err_code` (query 
+            `get_err_code()` to get the value of this variable) to one of the I2C errors:
+            - \c `EC_NO_ERR`: No error.
+            - \c `EC_DATA_LONG`: Data too long to fit in transmit buffer
+            - \c `EC_NACK_ADDR`: Received NACK on transmit of address.
+            - \c `EC_NACK_DATA`: Received NACK on transmit of data.
+            - \c `EC_I2C_OTHER`: Other I2C error.
     */
     
     uint8_t error = 0;
@@ -265,10 +364,16 @@ uint8_t * AD525x::read_data(uint8_t register_addr, uint8_t length) {
 }
 
 uint8_t AD525x::read_data_byte(uint8_t register_addr) {
-    /*
-    Reads a single byte from the specified register. Convenience wrapper for read_data.
+    /** Reads a single byte from the specified register. Convenience wrapper for `read_data()`.
 
-    Returns 0 on error - because this is a valid error, check get_err_code() if value is 0.
+    This reads a single byte from the register specified at `register_addr` via a call to
+    `read_data()`. In most cases, only a single byte is stored at the specified register address.
+
+    @param[in] register_addr The register address from which to read a single byte.
+    
+    @return Returns the requested value. If there is an error, returns 0 and `err_code` (retrieved
+    via `get_err_code()`) is set to a non-zero value. This is a simple wrapper for `read_data()`, so
+    it raises only the errors raised by that function.
     */
 
     uint8_t *rv = read_data(register_addr, 1);
@@ -277,33 +382,4 @@ uint8_t AD525x::read_data_byte(uint8_t register_addr) {
     }
 
     return rv[0];
-}
-
-char * AD525x::get_error_string(uint8_t error_code) {
-    /*
-    Get the error string from an error code. (private function)
-    */
-
-    switch(error_code) {
-        case EC_NO_ERR:
-            return EC_NO_ERR_str;
-        case EC_DATA_LONG:
-            return EC_DATA_LONG_str;
-        case EC_NACK_ADDR:
-            return EC_NACK_ADDR_str;
-        case EC_NACK_DATA:
-            return EC_NACK_DATA_str;
-        case EC_I2C_OTHER:
-            return EC_I2C_OTHER_str;
-        case EC_BAD_REGISTER:
-            return EC_BAD_REGISTER_str;
-        case EC_BAD_WIPER_SETTING:
-            return EC_BAD_WIPER_SETTING_str;
-        case EC_BAD_READ_SIZE:
-            return EC_BAD_READ_SIZE_str;
-        case EC_BAD_DEVICE_ADDR:
-            return EC_BAD_DEVICE_ADDR_str;
-        default:
-            return EC_UNKNOWN_ERR_str;
-    }
 }

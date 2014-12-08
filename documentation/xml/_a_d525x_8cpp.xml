@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="_a_d525x_8cpp" kind="file">
+    <compoundname>AD525x.cpp</compoundname>
+    <includes refid="_a_d525x_8h" local="no">AD525x.h</includes>
+    <includes local="no">Arduino.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>AD525x.h</label>
+        <link refid="_a_d525x_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Wire.h</label>
+      </node>
+      <node id="0">
+        <label>AD525x.cpp</label>
+        <link refid="AD525x.cpp"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+<para>Class file for AD5253/AD5254 digital potentiometer Arduino library. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_a_d525x_8h" kindref="compound">AD525x.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" refkind="member"><highlight class="normal"><ref refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" kindref="member">AD525x::AD525x</ref>(uint8_t<sp/>AD_addr)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(AD_addr<sp/>&gt;<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>AD_addr<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" kindref="member">EC_BAD_DEVICE_ADDR</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>error<sp/>code.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>dev_addr<sp/>=<sp/><ref refid="_a_d525x_8h_1a5d9f47436bf0e0088110043af01877dd" kindref="member">base_I2C_addr</ref><sp/>|<sp/>AD_addr;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.begin();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Start<sp/>I2C<sp/>communications.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" kindref="member">AD525x::write_RDAC</ref>(uint8_t<sp/>RDAC,<sp/>uint8_t<sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(RDAC<sp/>&gt;<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" kindref="member">EC_BAD_REGISTER</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(value<sp/>&gt;<sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1gac88743669d903ef81eb0c3bcf1662182" kindref="member">EC_BAD_WIPER_SETTING</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>instr_addr<sp/>=<sp/><ref refid="_a_d525x_8h_1ad8513b4bf39dfe63829a8fc1729fd0a5" kindref="member">RDAC_register</ref><sp/>|<sp/>RDAC;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" kindref="member">write_data</ref>(instr_addr,<sp/>value);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" kindref="member">AD525x::read_RDAC</ref>(uint8_t<sp/>RDAC)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(RDAC<sp/>&gt;<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" kindref="member">EC_BAD_REGISTER</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>instr_addr<sp/>=<sp/><ref refid="_a_d525x_8h_1ad8513b4bf39dfe63829a8fc1729fd0a5" kindref="member">RDAC_register</ref><sp/>|<sp/>RDAC;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>rv<sp/>=<sp/><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte</ref>(instr_addr);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code</ref>()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Err<sp/>code<sp/>set<sp/>in<sp/>read_data<sp/>already.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rv;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" kindref="member">AD525x::write_EEMEM</ref>(uint8_t<sp/>reg,<sp/>uint8_t<sp/>value)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(reg<sp/>&lt;<sp/>4<sp/>&amp;&amp;<sp/>value<sp/>&lt;<sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fairly<sp/>sure<sp/>the<sp/>max<sp/>value<sp/>only<sp/>applies<sp/>to<sp/>the<sp/>RDAC<sp/>registers,<sp/>not<sp/>the<sp/>EEMEM.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1gac88743669d903ef81eb0c3bcf1662182" kindref="member">EC_BAD_WIPER_SETTING</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(reg<sp/>&gt;<sp/>15)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" kindref="member">EC_BAD_REGISTER</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>instr_addr<sp/>=<sp/><ref refid="_a_d525x_8h_1a0813ef12b3cf6adaf78227bf62c9d786" kindref="member">EEMEM_register</ref><sp/>|<sp/>reg;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" kindref="member">write_data</ref>(instr_addr,<sp/>value);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" kindref="member">AD525x::read_EEMEM</ref>(uint8_t<sp/>reg)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(reg<sp/>&gt;<sp/>15)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" kindref="member">EC_BAD_REGISTER</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>instr_addr<sp/>=<sp/><ref refid="_a_d525x_8h_1a0813ef12b3cf6adaf78227bf62c9d786" kindref="member">EEMEM_register</ref><sp/>|<sp/>reg;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>rv<sp/>=<sp/><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte</ref>(instr_addr,<sp/>1);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code</ref>()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Err<sp/>code<sp/>set<sp/>in<sp/>read_data<sp/>already.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rv;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" kindref="member">AD525x::read_tolerance</ref>(uint8_t<sp/>RDAC)<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(RDAC<sp/>&gt;<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" kindref="member">EC_BAD_REGISTER</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>sign_mask<sp/>=<sp/>0x80;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Shift<sp/>RDAC<sp/>by<sp/>1,<sp/>low<sp/>bit<sp/>is<sp/>integer<sp/>/<sp/>decimal.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>instr_addr<sp/>=<sp/><ref refid="_a_d525x_8h_1a562a67e9db0c8cc8e234b764ce919545" kindref="member">Tolerance_register</ref><sp/>|<sp/>(RDAC<sp/>&lt;&lt;<sp/>1);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>instr_addr_int<sp/>=<sp/>instr_addr<sp/>|<sp/><ref refid="_a_d525x_8h_1aa7c477d24908e069c98fc58a80e9221f" kindref="member">Tol_int</ref>;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>instr_addr_dec<sp/>=<sp/>instr_addr<sp/>|<sp/><ref refid="_a_d525x_8h_1a2b1b4f382f37b7cc07dc9e32b7026ca4" kindref="member">Tol_dec</ref>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>8-bit<sp/>signed<sp/>integer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>tol_int_data<sp/>=<sp/><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte</ref>(instr_addr_int);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(err_code)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fractional<sp/>portion<sp/>-<sp/>8<sp/>bits</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>tol_dec_data<sp/>=<sp/><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte</ref>(instr_addr_dec);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(err_code)<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Convert<sp/>to<sp/>signed<sp/>double</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>output;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>output<sp/>=<sp/>float((~sign_mask)<sp/>&amp;<sp/>tol_int_data);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(sign_mask<sp/>&amp;<sp/>tol_int_data)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/>*=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>almost<sp/>certainly<sp/>the<sp/>wrong<sp/>way<sp/>to<sp/>do<sp/>this.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>8;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((sign_mask<sp/>&gt;&gt;<sp/>i)<sp/>&amp;<sp/>tol_dec_data)<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/>+=<sp/>1.0/((float)(2&lt;&lt;i));</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>output;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220" refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">AD525x::get_err_code</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231" refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kindref="member">AD525x::get_error_text</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(<ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga3871489e6b99e263a53357f9831d84ee" kindref="member">EC_NO_ERR</ref>:</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga840adc443fd7a6dfb2131e4195aed011" kindref="member">EC_NO_ERR_str</ref>;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gad6d1474787e5ccdc24c914966731e419" kindref="member">EC_DATA_LONG</ref>:</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga2665ef6018c63ea42e0857f3b70ca7fe" kindref="member">EC_DATA_LONG_str</ref>;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga76b781411a72177d30211fca065a00f9" kindref="member">EC_NACK_ADDR</ref>:</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga77cff2d5d08b242de05b10db10cd14f9" kindref="member">EC_NACK_ADDR_str</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga59684a21e6ee5c91564ab526382be073" kindref="member">EC_NACK_DATA</ref>:</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gabdc8533a8b49d5de01031c92c827b4e2" kindref="member">EC_NACK_DATA_str</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gace7d28091813e9e36d53c8c735cd8d80" kindref="member">EC_I2C_OTHER</ref>:</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gaf86894408f873ce440ce9aced69b8c1d" kindref="member">EC_I2C_OTHER_str</ref>;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" kindref="member">EC_BAD_REGISTER</ref>:</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gae0eb13a35015b6fde96acc827463758c" kindref="member">EC_BAD_REGISTER_str</ref>;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gac88743669d903ef81eb0c3bcf1662182" kindref="member">EC_BAD_WIPER_SETTING</ref>:</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga90b9a7f53bbc4a0563b17a8bca4556ac" kindref="member">EC_BAD_WIPER_SETTING_str</ref>;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gaf4658a15cec75bbdf12be696bc6daf5b" kindref="member">EC_BAD_READ_SIZE</ref>:</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga1b465cec37e683ec1c9a2b7daee86308" kindref="member">EC_BAD_READ_SIZE_str</ref>;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" kindref="member">EC_BAD_DEVICE_ADDR</ref>:</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1gaa7d2c139bde0b5d4d2cd8c7f349cd8ce" kindref="member">EC_BAD_DEVICE_ADDR_str</ref>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" kindref="member">EC_UNKNOWN_ERR_str</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Private<sp/>functions:<sp/>General<sp/>I2C<sp/>communications.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266" refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" kindref="member">AD525x::write_cmd</ref>(uint8_t<sp/>cmd_register)<sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.beginTransmission(dev_addr);</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.write(cmd_register);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/>Wire.endTransmission();</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289" refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" kindref="member">AD525x::write_data</ref>(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.beginTransmission(dev_addr);</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.write(register_addr);</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.write(data);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/>Wire.endTransmission();</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err_code;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313" refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" refkind="member"><highlight class="normal">uint8_t<sp/>*<sp/><ref refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kindref="member">AD525x::read_data</ref>(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>error<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.beginTransmission(dev_addr);</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.write(register_addr);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/>Wire.endTransmission();</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(err_code<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/>Wire.beginTransmission(dev_addr);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>n_bytes<sp/>=<sp/>Wire.requestFrom(dev_addr,<sp/>length);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(n_bytes<sp/>!=<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/><ref refid="group___error_codes_1gaf4658a15cec75bbdf12be696bc6daf5b" kindref="member">EC_BAD_READ_SIZE</ref>;</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>buff[length];</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(Wire.available()<sp/>==<sp/>length)<sp/>{</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>length;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>buff[i]<sp/>=<sp/>Wire.read();</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/>err_code<sp/>=<sp/>Wire.endTransmission();</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(err_code<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>buff;</highlight></codeline>
+<codeline lineno="364"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366" refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" refkind="member"><highlight class="normal">uint8_t<sp/><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">AD525x::read_data_byte</ref>(uint8_t<sp/>register_addr)<sp/>{</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*rv<sp/>=<sp/><ref refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kindref="member">read_data</ref>(register_addr,<sp/>1);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rv<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Err<sp/>code<sp/>set<sp/>in<sp/>read_data<sp/>already.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rv[0];</highlight></codeline>
+<codeline lineno="385"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp"/>
+  </compounddef>
+</doxygen>

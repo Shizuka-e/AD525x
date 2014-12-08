@@ -1,0 +1,588 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="_a_d525x_8h" kind="file">
+    <compoundname>AD525x.h</compoundname>
+    <includes local="no">Arduino.h</includes>
+    <includes local="no">Wire.h</includes>
+    <includedby refid="_a_d525x_8cpp" local="no">AD525x.cpp</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>AD525x.h</label>
+        <link refid="AD525x.h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Wire.h</label>
+      </node>
+      <node id="6">
+        <label>Arduino.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="8">
+        <label>AD525x.h</label>
+        <link refid="AD525x.h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>AD525x.cpp</label>
+        <link refid="_a_d525x_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_a_d525x" prot="public">AD525x</innerclass>
+    <innerclass refid="class_a_d5253" prot="public">AD5253</innerclass>
+    <innerclass refid="class_a_d5254" prot="public">AD5254</innerclass>
+      <sectiondef kind="user-defined">
+      <memberdef kind="define" id="_a_d525x_8h_1a6931616734fe67bafa17a13c36f669dc" prot="public" static="no">
+        <name>AD5253_max</name>
+        <initializer>63</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum wiper value for <ref refid="class_a_d5253" kindref="compound">AD5253</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="16" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a8a649fdf406bebe64ee4266a3e24af8e" prot="public" static="no">
+        <name>AD5254_max</name>
+        <initializer>255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum wiper value for <ref refid="class_a_d5254" kindref="compound">AD5254</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="17" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <memberdef kind="define" id="_a_d525x_8h_1ad8513b4bf39dfe63829a8fc1729fd0a5" prot="public" static="no">
+        <name>RDAC_register</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read/write RDAC, bottom 2 bits are the 4 wipers </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="22" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a0813ef12b3cf6adaf78227bf62c9d786" prot="public" static="no">
+        <name>EEMEM_register</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read/write EEMEM, bottom 4 bits are the 16 regs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="23" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a562a67e9db0c8cc8e234b764ce919545" prot="public" static="no">
+        <name>Tolerance_register</name>
+        <initializer>0x38</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read factory tolerances (Read-only) [RDAC is A2, A1] </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="25" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1aa7c477d24908e069c98fc58a80e9221f" prot="public" static="no">
+        <name>Tol_int</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Low bit of the tolerance register sets int or decimal </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="26" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a2b1b4f382f37b7cc07dc9e32b7026ca4" prot="public" static="no">
+        <name>Tol_dec</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="27" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="user-defined">
+      <memberdef kind="define" id="_a_d525x_8h_1a6d864e31a00add16032f27b5e593b4bb" prot="public" static="no">
+        <name>CMD_NOP</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return device to idle state </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="32" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a20ef778553622deb5c0128abf6e46fee" prot="public" static="no">
+        <name>CMD_Restore_RDAC</name>
+        <initializer>0x88</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Restore EEMEM (A1, A0) to RDAC register (A1, A0) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="33" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a2fcff1d7250c2e10a8cd6619c02dfbcb" prot="public" static="no">
+        <name>CMD_Store_RDAC</name>
+        <initializer>0x90</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Store RDAC (A1, A0) to EEMEM register (A1, A0) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="34" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1ab126233f35504faf03e19de6c5fcb79f" prot="public" static="no">
+        <name>CMD_Dec_RDAC_6dB</name>
+        <initializer>0x98</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrement RDAC (A1, A0) by 6dB </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="35" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a88f0293bc101ed9d6d9d4cf4777abc7d" prot="public" static="no">
+        <name>CMD_Dec_All_RDAC_6dB</name>
+        <initializer>0xa0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrement all RDAC by 6dB </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="36" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1abde63bbaa89ab07c2779d763933cf2fa" prot="public" static="no">
+        <name>CMD_Dec_RDAC_step</name>
+        <initializer>0xa8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrement RDAC (A1, A0) by 1 step </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="37" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a59d24b44abbdc495f1437852b1212cf4" prot="public" static="no">
+        <name>CMD_Dec_All_RDAC_step</name>
+        <initializer>0xb0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Decrement all RDAC by 1 step </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="38" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a815782cded17808bffce732ce732ff7c" prot="public" static="no">
+        <name>CMD_Restore_All_RDAC</name>
+        <initializer>0xb8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reset: Restore all RDACs from EEMEM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="39" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a6abdf6fb5991e7c3da6d03c27f0a8239" prot="public" static="no">
+        <name>CMD_Inc_RDAC_6dB</name>
+        <initializer>0xc0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increment RDAC (A1, A0) by 6dB </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="40" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a5d4a9df8ebdbea126162ca92bca0a87c" prot="public" static="no">
+        <name>CMD_Inc_All_RDAC_6dB</name>
+        <initializer>0xc8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increment all RDAC by 6dB </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="41" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1a848541c737adef891faf5eb6cd85e4a5" prot="public" static="no">
+        <name>CMD_Inc_RDAC_step</name>
+        <initializer>0xd0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increment RDAC (A1, A0) by one step </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="42" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_a_d525x_8h_1abd3c8b5aaa1da1b48cc490d3d2de2a58" prot="public" static="no">
+        <name>CMD_Inc_All_RDAC_step</name>
+        <initializer>0xd8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Increment all RDACs by one step </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="43" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_a_d525x_8h_1a5d9f47436bf0e0088110043af01877dd" prot="public" static="no">
+        <name>base_I2C_addr</name>
+        <initializer>0x2C</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Base address of these devices. Full address is base_I2C_addr | (AD1 &lt;&lt; 1) | AD0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="12" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga3871489e6b99e263a53357f9831d84ee" prot="public" static="no">
+        <name>EC_NO_ERR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="50" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga840adc443fd7a6dfb2131e4195aed011" prot="public" static="no">
+        <name>EC_NO_ERR_str</name>
+        <initializer>&quot;No error.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="51" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gad6d1474787e5ccdc24c914966731e419" prot="public" static="no">
+        <name>EC_DATA_LONG</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="53" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga2665ef6018c63ea42e0857f3b70ca7fe" prot="public" static="no">
+        <name>EC_DATA_LONG_str</name>
+        <initializer>&quot;Data too long to fit in transmit buffer.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="54" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga76b781411a72177d30211fca065a00f9" prot="public" static="no">
+        <name>EC_NACK_ADDR</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="56" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga77cff2d5d08b242de05b10db10cd14f9" prot="public" static="no">
+        <name>EC_NACK_ADDR_str</name>
+        <initializer>&quot;Received NACK on transmit of address.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="57" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga59684a21e6ee5c91564ab526382be073" prot="public" static="no">
+        <name>EC_NACK_DATA</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="59" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gabdc8533a8b49d5de01031c92c827b4e2" prot="public" static="no">
+        <name>EC_NACK_DATA_str</name>
+        <initializer>&quot;Received NACK on transmit of data.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="60" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gace7d28091813e9e36d53c8c735cd8d80" prot="public" static="no">
+        <name>EC_I2C_OTHER</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="62" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gaf86894408f873ce440ce9aced69b8c1d" prot="public" static="no">
+        <name>EC_I2C_OTHER_str</name>
+        <initializer>&quot;Other I2C error.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="63" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" prot="public" static="no">
+        <name>EC_BAD_REGISTER</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="65" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gae0eb13a35015b6fde96acc827463758c" prot="public" static="no">
+        <name>EC_BAD_REGISTER_str</name>
+        <initializer>&quot;Invalid register.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="66" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gac88743669d903ef81eb0c3bcf1662182" prot="public" static="no">
+        <name>EC_BAD_WIPER_SETTING</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="68" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga90b9a7f53bbc4a0563b17a8bca4556ac" prot="public" static="no">
+        <name>EC_BAD_WIPER_SETTING_str</name>
+        <initializer>&quot;Invalid wiper setting.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="69" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gaf4658a15cec75bbdf12be696bc6daf5b" prot="public" static="no">
+        <name>EC_BAD_READ_SIZE</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="71" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga1b465cec37e683ec1c9a2b7daee86308" prot="public" static="no">
+        <name>EC_BAD_READ_SIZE_str</name>
+        <initializer>&quot;Invalid number of bytes read from register.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="72" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" prot="public" static="no">
+        <name>EC_BAD_DEVICE_ADDR</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="74" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1gaa7d2c139bde0b5d4d2cd8c7f349cd8ce" prot="public" static="no">
+        <name>EC_BAD_DEVICE_ADDR_str</name>
+        <initializer>&quot;Bad device address - device address must be in [0, 3].&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="75" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" prot="public" static="no">
+        <name>EC_UNKNOWN_ERR_str</name>
+        <initializer>&quot;Unknown error.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="77" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Header file for AD5253/AD5254 digital potentiometer Arduino library. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#ifndef<sp/>AD525X_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD525X_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Arduino.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Wire.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="_a_d525x_8h_1a5d9f47436bf0e0088110043af01877dd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>base_I2C_addr<sp/>0x2C<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor">//<sp/>AD5253<sp/>and<sp/>AD5254<sp/>differ<sp/>based<sp/>on<sp/>what<sp/>the<sp/>maximum<sp/>wiper<sp/>setting<sp/>is.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD5253_max<sp/>63<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17" refid="_a_d525x_8h_1a6931616734fe67bafa17a13c36f669dc" refkind="member"><highlight class="preprocessor">#define<sp/>AD5254_max<sp/>255<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor">//<sp/>Instruction<sp/>registers:<sp/>These<sp/>are<sp/>the<sp/>top<sp/>3<sp/>bits<sp/>of<sp/>the<sp/>instruction<sp/>registers.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RDAC_register<sp/>0x00<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="23" refid="_a_d525x_8h_1ad8513b4bf39dfe63829a8fc1729fd0a5" refkind="member"><highlight class="preprocessor">#define<sp/>EEMEM_register<sp/>0x20<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor">#define<sp/>Tolerance_register<sp/>0x38<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="26" refid="_a_d525x_8h_1a562a67e9db0c8cc8e234b764ce919545" refkind="member"><highlight class="preprocessor">#define<sp/>Tol_int<sp/>0x00<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="_a_d525x_8h_1aa7c477d24908e069c98fc58a80e9221f" refkind="member"><highlight class="preprocessor">#define<sp/>Tol_dec<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="_a_d525x_8h_1a2b1b4f382f37b7cc07dc9e32b7026ca4" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment">//<sp/>Command<sp/>registers<sp/>-<sp/>C0-C4,<sp/>plus<sp/>CMD<sp/>high.<sp/>Three<sp/>low<sp/>bits<sp/>are<sp/>A0,<sp/>A1,<sp/>A2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CMD_NOP<sp/>0x80<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33" refid="_a_d525x_8h_1a6d864e31a00add16032f27b5e593b4bb" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Restore_RDAC<sp/>0x88<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34" refid="_a_d525x_8h_1a20ef778553622deb5c0128abf6e46fee" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Store_RDAC<sp/>0x90<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="_a_d525x_8h_1a2fcff1d7250c2e10a8cd6619c02dfbcb" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Dec_RDAC_6dB<sp/>0x98<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="_a_d525x_8h_1ab126233f35504faf03e19de6c5fcb79f" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Dec_All_RDAC_6dB<sp/>0xa0<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37" refid="_a_d525x_8h_1a88f0293bc101ed9d6d9d4cf4777abc7d" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Dec_RDAC_step<sp/>0xa8<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="_a_d525x_8h_1abde63bbaa89ab07c2779d763933cf2fa" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Dec_All_RDAC_step<sp/>0xb0<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="_a_d525x_8h_1a59d24b44abbdc495f1437852b1212cf4" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Restore_All_RDAC<sp/>0xb8<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40" refid="_a_d525x_8h_1a815782cded17808bffce732ce732ff7c" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Inc_RDAC_6dB<sp/>0xc0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41" refid="_a_d525x_8h_1a6abdf6fb5991e7c3da6d03c27f0a8239" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Inc_All_RDAC_6dB<sp/>0xc8<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="_a_d525x_8h_1a5d4a9df8ebdbea126162ca92bca0a87c" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Inc_RDAC_step<sp/>0xd0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="43" refid="_a_d525x_8h_1a848541c737adef891faf5eb6cd85e4a5" refkind="member"><highlight class="preprocessor">#define<sp/>CMD_Inc_All_RDAC_step<sp/>0xd8<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="preprocessor">#define<sp/>EC_NO_ERR<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="group___error_codes_1ga3871489e6b99e263a53357f9831d84ee" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_NO_ERR_str<sp/>&quot;No<sp/>error.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="group___error_codes_1ga840adc443fd7a6dfb2131e4195aed011" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_DATA_LONG<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="group___error_codes_1gad6d1474787e5ccdc24c914966731e419" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_DATA_LONG_str<sp/>&quot;Data<sp/>too<sp/>long<sp/>to<sp/>fit<sp/>in<sp/>transmit<sp/>buffer.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="group___error_codes_1ga2665ef6018c63ea42e0857f3b70ca7fe" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_NACK_ADDR<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="group___error_codes_1ga76b781411a72177d30211fca065a00f9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_NACK_ADDR_str<sp/>&quot;Received<sp/>NACK<sp/>on<sp/>transmit<sp/>of<sp/>address.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="group___error_codes_1ga77cff2d5d08b242de05b10db10cd14f9" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_NACK_DATA<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="group___error_codes_1ga59684a21e6ee5c91564ab526382be073" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_NACK_DATA_str<sp/>&quot;Received<sp/>NACK<sp/>on<sp/>transmit<sp/>of<sp/>data.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="group___error_codes_1gabdc8533a8b49d5de01031c92c827b4e2" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_I2C_OTHER<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="group___error_codes_1gace7d28091813e9e36d53c8c735cd8d80" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_I2C_OTHER_str<sp/>&quot;Other<sp/>I2C<sp/>error.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="group___error_codes_1gaf86894408f873ce440ce9aced69b8c1d" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_REGISTER<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_REGISTER_str<sp/>&quot;Invalid<sp/>register.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="group___error_codes_1gae0eb13a35015b6fde96acc827463758c" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_WIPER_SETTING<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="group___error_codes_1gac88743669d903ef81eb0c3bcf1662182" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_WIPER_SETTING_str<sp/>&quot;Invalid<sp/>wiper<sp/>setting.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="group___error_codes_1ga90b9a7f53bbc4a0563b17a8bca4556ac" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_READ_SIZE<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="group___error_codes_1gaf4658a15cec75bbdf12be696bc6daf5b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_READ_SIZE_str<sp/>&quot;Invalid<sp/>number<sp/>of<sp/>bytes<sp/>read<sp/>from<sp/>register.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="group___error_codes_1ga1b465cec37e683ec1c9a2b7daee86308" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_DEVICE_ADDR<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_DEVICE_ADDR_str<sp/>&quot;Bad<sp/>device<sp/>address<sp/>-<sp/>device<sp/>address<sp/>must<sp/>be<sp/>in<sp/>[0,<sp/>3].&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="group___error_codes_1gaa7d2c139bde0b5d4d2cd8c7f349cd8ce" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_UNKNOWN_ERR_str<sp/>&quot;Unknown<sp/>error.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
+<codeline lineno="81" refid="class_a_d525x" refkind="compound"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>parent<sp/>class<sp/>-<sp/>use<sp/>AD5253<sp/>or<sp/>AD5254<sp/>as<sp/>necessary.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" kindref="member">AD525x</ref>(uint8_t<sp/>AD_addr);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" kindref="member">write_RDAC</ref>(uint8_t<sp/>RDAC,<sp/>uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" kindref="member">read_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" kindref="member">write_EEMEM</ref>(uint8_t<sp/>reg,<sp/>uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" kindref="member">read_EEMEM</ref>(uint8_t<sp/>reg);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" kindref="member">read_tolerance</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte</ref>(uint8_t<sp/>register_addr);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kindref="member">get_error_text</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="98" refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" refkind="member"><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" kindref="member">write_cmd</ref>(uint8_t<sp/>cmd_register);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" kindref="member">write_data</ref>(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kindref="member">read_data</ref>(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>length);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>dev_addr;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>err_code;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d5253" kindref="compound">AD5253</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
+<codeline lineno="111" refid="class_a_d5253" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" kindref="member">AD5253</ref>(uint8_t<sp/>AD_addr)<sp/>:<sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref>(AD_addr)<sp/>{</highlight></codeline>
+<codeline lineno="113" refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref><sp/>=<sp/><ref refid="_a_d525x_8h_1a6931616734fe67bafa17a13c36f669dc" kindref="member">AD5253_max</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d5254" kindref="compound">AD5254</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
+<codeline lineno="118" refid="class_a_d5254" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" kindref="member">AD5254</ref>(uint8_t<sp/>AD_addr)<sp/>:<sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref>(AD_addr)<sp/>{</highlight></codeline>
+<codeline lineno="120" refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref><sp/>=<sp/><ref refid="_a_d525x_8h_1a8a649fdf406bebe64ee4266a3e24af8e" kindref="member">AD5254_max</ref>;<sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h"/>
+  </compounddef>
+</doxygen>

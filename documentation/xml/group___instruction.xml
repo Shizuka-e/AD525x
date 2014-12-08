@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="group___instruction" kind="group">
+    <compoundname>Instruction</compoundname>
+    <title>registers: These are the top 3 bits of the instruction registers.</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___instruction_1gad8513b4bf39dfe63829a8fc1729fd0a5" prot="public" static="no">
+        <name>RDAC_register</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read/write RDAC, bottom 2 bits are the 4 wipers </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="23" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___instruction_1ga0813ef12b3cf6adaf78227bf62c9d786" prot="public" static="no">
+        <name>EEMEM_register</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read/write EEMEM, bottom 4 bits are the 16 regs. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="24" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___instruction_1ga562a67e9db0c8cc8e234b764ce919545" prot="public" static="no">
+        <name>Tolerance_register</name>
+        <initializer>0x38</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read factory tolerances (Read-only) [RDAC is A2, A1] </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="26" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___instruction_1gaa7c477d24908e069c98fc58a80e9221f" prot="public" static="no">
+        <name>Tol_int</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Low bit of the tolerance register sets int or decimal </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="27" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___instruction_1ga2b1b4f382f37b7cc07dc9e32b7026ca4" prot="public" static="no">
+        <name>Tol_dec</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="28" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

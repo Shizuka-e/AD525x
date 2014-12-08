@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="readme_8md" kind="file">
+    <compoundname>readme.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">##<sp/>AD525x<sp/>-<sp/>Arduino<sp/>library<sp/>for<sp/>I&lt;sup&gt;2&lt;/sup&gt;C<sp/>communication<sp/>with<sp/>AD5253<sp/>and<sp/>AD5254</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>a<sp/>library<sp/>for<sp/>communication<sp/>with<sp/>AD5253<sp/>and<sp/>AD5254<sp/>quad<sp/>64-/256-position<sp/>I&lt;sup&gt;2&lt;/sup&gt;C<sp/>Nonvolatile<sp/>Memory<sp/>Digital<sp/>Potentiometers.<sp/>The<sp/>features<sp/>implemented<sp/>are<sp/>based<sp/>on<sp/>[the<sp/>datasheet<sp/>provided<sp/>by<sp/>Analog<sp/>Devices](http://www.analog.com/static/imported-files/data_sheets/AD5253_5254.pdf).<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>use<sp/>these,<sp/>instantiate<sp/>either<sp/>an<sp/>AD5253<sp/>or<sp/>an<sp/>AD5254<sp/>object<sp/>(the<sp/>main<sp/>difference<sp/>is<sp/>in<sp/>the<sp/>error<sp/>checking).<sp/>The<sp/>AD525x<sp/>series<sp/>potentiometers<sp/>have<sp/>a<sp/>5<sp/>bits<sp/>of<sp/>their<sp/>7-bit<sp/>I2C<sp/>address<sp/>hard-coded<sp/>as<sp/>`0x2C`<sp/>(`0d44`),<sp/>and<sp/>the<sp/>two<sp/>lowest<sp/>bits<sp/>can<sp/>be<sp/>programmed<sp/>by<sp/>pulling<sp/>the<sp/>`AD0`<sp/>(pin<sp/>4)<sp/>and<sp/>`AD1`<sp/>(pin<sp/>16)<sp/>lines<sp/>either<sp/>high<sp/>or<sp/>low.<sp/>Each<sp/>AD525x<sp/>object<sp/>is<sp/>instantiated<sp/>with<sp/>the<sp/>2-bit<sp/>`AD1<sp/>AD0`<sp/>address<sp/>of<sp/>the<sp/>device<sp/>-<sp/>do<sp/>not<sp/>specify<sp/>the<sp/>hard-coded<sp/>portion<sp/>of<sp/>the<sp/>address,<sp/>as<sp/>that<sp/>is<sp/>already<sp/>taken<sp/>into<sp/>account.</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/readme.md"/>
+  </compounddef>
+</doxygen>

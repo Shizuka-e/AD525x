@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="md_readme" kind="page">
+    <compoundname>md_readme</compoundname>
+    <title>AD525x - Arduino library for I&lt;sup&gt;2&lt;/sup&gt;C communication with AD5253 and AD5254</title>
+    <detaileddescription>
+<para>This is a library for communication with <ref refid="class_a_d5253" kindref="compound">AD5253</ref> and <ref refid="class_a_d5254" kindref="compound">AD5254</ref> quad 64-/256-position I<superscript>2</superscript>C Nonvolatile Memory Digital Potentiometers. The features implemented are based on <ulink url="http://www.analog.com/static/imported-files/data_sheets/AD5253_5254.pdf">the datasheet provided by Analog Devices</ulink>.</para><para>To use these, instantiate either an <ref refid="class_a_d5253" kindref="compound">AD5253</ref> or an <ref refid="class_a_d5254" kindref="compound">AD5254</ref> object (the main difference is in the error checking). The <ref refid="class_a_d525x" kindref="compound">AD525x</ref> series potentiometers have a 5 bits of their 7-bit I2C address hard-coded as <computeroutput>0x2C</computeroutput> (<computeroutput>0d44</computeroutput>), and the two lowest bits can be programmed by pulling the <computeroutput>AD0</computeroutput> (pin 4) and <computeroutput>AD1</computeroutput> (pin 16) lines either high or low. Each <ref refid="class_a_d525x" kindref="compound">AD525x</ref> object is instantiated with the 2-bit <computeroutput>AD1 AD0</computeroutput> address of the device - do not specify the hard-coded portion of the address, as that is already taken into account. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

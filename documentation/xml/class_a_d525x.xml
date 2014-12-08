@@ -1,0 +1,443 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="class_a_d525x" kind="class" prot="public">
+    <compoundname>AD525x</compoundname>
+    <derivedcompoundref refid="class_a_d5253" prot="public" virt="non-virtual">AD5253</derivedcompoundref>
+    <derivedcompoundref refid="class_a_d5254" prot="public" virt="non-virtual">AD5254</derivedcompoundref>
+    <includes refid="_a_d525x_8h" local="no">AD525x.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::max_val</definition>
+        <argsstring></argsstring>
+        <name>max_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Used only by child classes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="98" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_a_d525x_1aee57dd358b84e7f7e38f0a80edfe312b" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::dev_addr</definition>
+        <argsstring></argsstring>
+        <name>dev_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The full 7-bit address of the specified device. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="105" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_a_d525x_1a87cfe7d9265a91849c7c56a1197c750b" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::err_code</definition>
+        <argsstring></argsstring>
+        <name>err_code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Used for error detection. Access via <ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code()</ref> and <ref refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kindref="member">get_error_text()</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="107" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AD525x::AD525x</definition>
+        <argsstring>(uint8_t AD_addr)</argsstring>
+        <name>AD525x</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>AD_addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Constructor - pass <computeroutput>(AD1&lt;&lt;1 | AD0)</computeroutput> to AD_addr to select the chosen device address.</para><para>This is the constructor for the base <ref refid="class_a_d525x" kindref="compound">AD525x</ref> class. It is called with the address of the specified device (specified via the <computeroutput>AD1</computeroutput> and <computeroutput>AD0</computeroutput> pins on the device itself - high = 1, low = 0). This two-bit input parameter is used to construct the full 7-bit I2C address.</para><para>If an invalid address is specified, <computeroutput>err_code</computeroutput> is set to <computeroutput>EC_BAD_DEVICE_ADDR</computeroutput>. This can be queried via <computeroutput><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code()</ref></computeroutput> and/or <computeroutput><ref refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kindref="member">get_error_text()</ref></computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">AD_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The two bit user-specified address of the device with which you are communicating. Should be (AD1&lt;&lt;1 | AD0).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="84" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="8" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::write_RDAC</definition>
+        <argsstring>(uint8_t RDAC, uint8_t value)</argsstring>
+        <name>write_RDAC</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>RDAC</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Write value to RDAC register specified by RDAC. RDAC registers are zero-based index.</para><para>Writes the specified value (<computeroutput>value</computeroutput>) to the RDAC register with RDAC address <computeroutput>RDAC</computeroutput>. There are four RDAC registers, addressed using 2-bits on a zero-based index.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RDAC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address of one of the 4 RDAC registers (0-3), representing the 4 potentiometers in the IC. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The wiper value to set the specified RDAC. This value must be in the span [0, <computeroutput>max_val</computeroutput>].</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns 0 on no error, otherwise returns an error code and sets the <computeroutput>err_code</computeroutput> parameter (queried via <computeroutput><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code()</ref></computeroutput>). I2C errors are raised indirectly via a call to <computeroutput><ref refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" kindref="member">write_data()</ref></computeroutput>. This function also raises the following error codes:<itemizedlist>
+<listitem><para><computeroutput><computeroutput>EC_BAD_REGISTER</computeroutput></computeroutput>: Raised if the supplied RDAC register exceeds the maximum value (3).</para></listitem><listitem><para><computeroutput><computeroutput>EC_BAD_WIPER_SETTING</computeroutput></computeroutput>: Raised if the wiper setting (<computeroutput>value</computeroutput>) eceeds the maximum value (63 for <ref refid="class_a_d5253" kindref="compound">AD5253()</ref>, 255 for <ref refid="class_a_d5254" kindref="compound">AD5254()</ref>)</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="86" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="33" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::read_RDAC</definition>
+        <argsstring>(uint8_t RDAC)</argsstring>
+        <name>read_RDAC</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>RDAC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Read the wiper setting from the specified RDAC register.</para><para>Reads the current wiper setting of the RDAC register specified by <computeroutput>RDAC</computeroutput>. On error, this sets error code and returns 0. Because 0 is a valid wiper setting, always check the error code via <computeroutput>get_error_code()</computeroutput> before trusting a 0 return value for this function. In addition to I2C errors raised by <computeroutput><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte()</ref></computeroutput>, this function also raises <computeroutput>EC_BAD_REGISTER</computeroutput> if the supplied RDAC register exceeds the maximum value (3).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RDAC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address of one of the 4 RDAC registers (0-3), representing the 4 potentiometers in the IC.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the wiper value or 0 on error (0 is also a valid wiper value).</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="87" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="67" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::write_EEMEM</definition>
+        <argsstring>(uint8_t reg, uint8_t value)</argsstring>
+        <name>write_EEMEM</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>reg</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Write to the EEMEM non-volatile memory register.</para><para>Write to the EEMEM non-volatile memory register. The first 4 registers (0, 1, 2, 3) are the RDAC storage registers. The remainder can store user data. There are 16 total registers.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The register to which to write the EEMEM data. The first 4 are reserved for RDAC in that certain commands (such as <computeroutput>CMD_RESTORE_RDAC</computeroutput>) will automatically push/pull the RDAC values to/from these registers, though setting the RDAC-reserved EEMEM registers will not immediately set the RDAC registers. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to store in the register.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns 0 on no error. Raises I2C errors indirectly via a call to <computeroutput>write_data</computeroutput>. Also raises:<itemizedlist>
+<listitem><para><computeroutput><computeroutput>EC_BAD_WIPER_SETTING</computeroutput></computeroutput>: Register selected is an RDAC register and value exceeds maximum allowed RDAC value.</para></listitem><listitem><para><computeroutput><computeroutput>EC_BAD_REGISTER</computeroutput></computeroutput>: An invalid register address was provided.</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="89" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="96" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::read_EEMEM</definition>
+        <argsstring>(uint8_t reg)</argsstring>
+        <name>read_EEMEM</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>reg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Read EEMEM value from register.</para><para>Reads the value stored in the EEMEM value with the specified register address (<computeroutput>reg</computeroutput>). There are 16 EEMEM registers, and the first 4 are reserved for storing RDAC values, in the sense that certain commands (e.g. <computeroutput>CMD_RESTORE_RDAC</computeroutput>) push/pull the values to/from these registers.</para><para>On error, this sets the error code and returns 0. Since 0 is a valid wiper value, check <computeroutput><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code()</ref></computeroutput> if this returns 0. This raises I2C errors indirectly from a call to <computeroutput><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte()</ref></computeroutput>, and raises <computeroutput>EC_BAD_REGISTER</computeroutput> if an invalid register is passed to <computeroutput>reg</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">reg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The EEMEM register whose value you want to query [0-15].</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the value stored in the specified register.</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="90" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="132" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float AD525x::read_tolerance</definition>
+        <argsstring>(uint8_t RDAC)</argsstring>
+        <name>read_tolerance</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>RDAC</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Reads the RAB tolerance, written at the factory, in percentage (signed float).</para><para>Reads the RAB tolerance programmed into the device at the factory for the specified RDAC (<computeroutput>RDAC</computeroutput>), returning the percent tolerance as a signed float. These values will vary from device to device and register to register.</para><para>This returns 0.0 on error, but since 0.0 is a valid output, in the event of a 0.0 return value, check <computeroutput><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code()</ref></computeroutput> to determine if an error has occurred. This raises I2C errors indirectly via calls to <computeroutput><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte()</ref></computeroutput>, and raises <computeroutput>EC_BAD_REGISTER</computeroutput> if the provided <computeroutput>RDAC</computeroutput> value exceeds the maximum (3).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RDAC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The RDAC register whose tolerance you would like to query.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the RAB tolerance set at the factory and stored in read-only memory on the chip, represented as a signed float as a percentage of the total device resistance.</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="92" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="162" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::read_data_byte</definition>
+        <argsstring>(uint8_t register_addr)</argsstring>
+        <name>read_data_byte</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>register_addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Reads a single byte from the specified register. Convenience wrapper for <computeroutput><ref refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kindref="member">read_data()</ref></computeroutput>.</para><para>This reads a single byte from the register specified at <computeroutput>register_addr</computeroutput> via a call to <computeroutput><ref refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kindref="member">read_data()</ref></computeroutput>. In most cases, only a single byte is stored at the specified register address.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">register_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The register address from which to read a single byte.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the requested value. If there is an error, returns 0 and <computeroutput>err_code</computeroutput> (retrieved via <computeroutput><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code()</ref></computeroutput>) is set to a non-zero value. This is a simple wrapper for <computeroutput><ref refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kindref="member">read_data()</ref></computeroutput>, so it raises only the errors raised by that function.</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="93" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="366" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::get_err_code</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_err_code</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Retrieve the error code stored in a private variable.</para><para>Retrieves the error code stored in the private <computeroutput>err_code</computeroutput> variable. If non-zero, use <computeroutput><ref refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kindref="member">get_error_text()</ref></computeroutput> to retrieve the error string. See <ref refid="group___error_codes" kindref="compound">Error codes</ref> for details.</para><para><simplesect kind="return"><para>Returns the error code set in the current object. Non-zero value is an error.</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="95" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="220" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * AD525x::get_error_text</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_error_text</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Retrieve the error string associated with the stored error code (<computeroutput>err_code</computeroutput>).</para><para>Retrieves the stored error code <computeroutput>err_code</computeroutput> and returns the human-readable error string associated with it. For a full list of error codes and error strings, see <ref refid="group___error_codes" kindref="compound">Error codes</ref>.</para><para><simplesect kind="return"><para>Returns the human-readable string describing the current error code.</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="96" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="231" bodyend="261"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::write_cmd</definition>
+        <argsstring>(uint8_t cmd_register)</argsstring>
+        <name>write_cmd</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>cmd_register</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Trigger a command in the command register (no data)</para><para>This triggers a command in the command register (e.g. an address which takes no data). This is a private function, called by exposed functions hard-coded with the command register addresses.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd_register</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address of the command register (e.g. <computeroutput>CMD_NOP</computeroutput>, <computeroutput>CMD_Store_RDAC</computeroutput>)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns 0 on no error, otherwise returns I2C errors:<itemizedlist>
+<listitem><para><computeroutput><computeroutput>EC_NO_ERR</computeroutput></computeroutput>: No error.</para></listitem><listitem><para><computeroutput><computeroutput>EC_DATA_LONG</computeroutput></computeroutput>: Data too long to fit in transmit buffer</para></listitem><listitem><para><computeroutput><computeroutput>EC_NACK_ADDR</computeroutput></computeroutput>: Received NACK on transmit of address.</para></listitem><listitem><para><computeroutput><computeroutput>EC_NACK_DATA</computeroutput></computeroutput>: Received NACK on transmit of data.</para></listitem><listitem><para><computeroutput><computeroutput>EC_I2C_OTHER</computeroutput></computeroutput>: Other I2C error.</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="100" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="266" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t</type>
+        <definition>uint8_t AD525x::write_data</definition>
+        <argsstring>(uint8_t register_addr, uint8_t data)</argsstring>
+        <name>write_data</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>register_addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Writes data to the specified register address.</para><para>This is a private function, called by specific-use functions such as <computeroutput><ref refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" kindref="member">write_RDAC()</ref></computeroutput> and <computeroutput><ref refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" kindref="member">write_EEMEM()</ref></computeroutput> to write data (specified by <computeroutput>data</computeroutput>) into the register specified by <computeroutput>register_addr</computeroutput> using the Wire.h library.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>register_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The register address to query. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The data to write to the specified address.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns 0 on no error, otherwise returns I2C errors:<itemizedlist>
+<listitem><para><computeroutput><computeroutput>EC_NO_ERR</computeroutput></computeroutput>: No error.</para></listitem><listitem><para><computeroutput><computeroutput>EC_DATA_LONG</computeroutput></computeroutput>: Data too long to fit in transmit buffer</para></listitem><listitem><para><computeroutput><computeroutput>EC_NACK_ADDR</computeroutput></computeroutput>: Received NACK on transmit of address.</para></listitem><listitem><para><computeroutput><computeroutput>EC_NACK_DATA</computeroutput></computeroutput>: Received NACK on transmit of data.</para></listitem><listitem><para><computeroutput><computeroutput>EC_I2C_OTHER</computeroutput></computeroutput>: Other I2C error.</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="101" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="289" bodyend="311"/>
+      </memberdef>
+      <memberdef kind="function" id="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t * AD525x::read_data</definition>
+        <argsstring>(uint8_t register_addr, uint8_t length)</argsstring>
+        <name>read_data</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>register_addr</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Reads data of length <computeroutput>length</computeroutput> from register <computeroutput>register_addr</computeroutput></para><para>This is a private function, called by specific-use functions such as <computeroutput><ref refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" kindref="member">read_RDAC()</ref></computeroutput> and <computeroutput><ref refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" kindref="member">read_EEMEM()</ref></computeroutput> to read a data array of length <computeroutput>length</computeroutput> (in bytes) from the register specified by <computeroutput>register_addr</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>register_addr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The address of the register to read from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the data stored in the register.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>On success, returns a pointer to an array of <computeroutput>uint8_t</computeroutput> unsigned bytes retrieved from the register. The returned array has length <computeroutput>length</computeroutput>, which in most cases will be 1. On error, this function returns a <computeroutput>NULL</computeroutput> pointer and sets <computeroutput>err_code</computeroutput> (query <computeroutput><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code()</ref></computeroutput> to get the value of this variable) to one of the I2C errors:<itemizedlist>
+<listitem><para><computeroutput><computeroutput>EC_NO_ERR</computeroutput></computeroutput>: No error.</para></listitem><listitem><para><computeroutput><computeroutput>EC_DATA_LONG</computeroutput></computeroutput>: Data too long to fit in transmit buffer</para></listitem><listitem><para><computeroutput><computeroutput>EC_NACK_ADDR</computeroutput></computeroutput>: Received NACK on transmit of address.</para></listitem><listitem><para><computeroutput><computeroutput>EC_NACK_DATA</computeroutput></computeroutput>: Received NACK on transmit of data.</para></listitem><listitem><para><computeroutput><computeroutput>EC_I2C_OTHER</computeroutput></computeroutput>: Other I2C error.</para></listitem></itemizedlist>
+</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="102" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="313" bodyend="364"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>AD5253</label>
+        <link refid="class_a_d5253"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>AD5254</label>
+        <link refid="class_a_d5254"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>AD525x</label>
+        <link refid="class_a_d525x"/>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="81" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="81" bodyend="109"/>
+    <listofallmembers>
+      <member refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" prot="public" virt="non-virtual"><scope>AD525x</scope><name>AD525x</name></member>
+      <member refid="class_a_d525x_1aee57dd358b84e7f7e38f0a80edfe312b" prot="private" virt="non-virtual"><scope>AD525x</scope><name>dev_addr</name></member>
+      <member refid="class_a_d525x_1a87cfe7d9265a91849c7c56a1197c750b" prot="private" virt="non-virtual"><scope>AD525x</scope><name>err_code</name></member>
+      <member refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" prot="public" virt="non-virtual"><scope>AD525x</scope><name>get_err_code</name></member>
+      <member refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" prot="public" virt="non-virtual"><scope>AD525x</scope><name>get_error_text</name></member>
+      <member refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" prot="public" virt="non-virtual"><scope>AD525x</scope><name>max_val</name></member>
+      <member refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" prot="protected" virt="non-virtual"><scope>AD525x</scope><name>read_data</name></member>
+      <member refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" prot="public" virt="non-virtual"><scope>AD525x</scope><name>read_data_byte</name></member>
+      <member refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" prot="public" virt="non-virtual"><scope>AD525x</scope><name>read_EEMEM</name></member>
+      <member refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" prot="public" virt="non-virtual"><scope>AD525x</scope><name>read_RDAC</name></member>
+      <member refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" prot="public" virt="non-virtual"><scope>AD525x</scope><name>read_tolerance</name></member>
+      <member refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" prot="protected" virt="non-virtual"><scope>AD525x</scope><name>write_cmd</name></member>
+      <member refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" prot="protected" virt="non-virtual"><scope>AD525x</scope><name>write_data</name></member>
+      <member refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" prot="public" virt="non-virtual"><scope>AD525x</scope><name>write_EEMEM</name></member>
+      <member refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" prot="public" virt="non-virtual"><scope>AD525x</scope><name>write_RDAC</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

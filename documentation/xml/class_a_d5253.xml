@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="class_a_d5253" kind="class" prot="public">
+    <compoundname>AD5253</compoundname>
+    <basecompoundref refid="class_a_d525x" prot="public" virt="non-virtual">AD525x</basecompoundref>
+    <includes refid="_a_d525x_8h" local="no">AD525x.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>AD5253::AD5253</definition>
+        <argsstring>(uint8_t AD_addr)</argsstring>
+        <name>AD5253</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>AD_addr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>&lt; Maximum wiper value. 63 for <ref refid="class_a_d5253" kindref="compound">AD5253</ref> </para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="113" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="113" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="0">
+        <label>AD5253</label>
+        <link refid="class_a_d5253"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>AD525x</label>
+        <link refid="class_a_d525x"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AD5253</label>
+        <link refid="class_a_d5253"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>AD525x</label>
+        <link refid="class_a_d525x"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="111" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="111" bodyend="116"/>
+    <listofallmembers>
+      <member refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" prot="public" virt="non-virtual"><scope>AD5253</scope><name>AD5253</name></member>
+      <member refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" prot="public" virt="non-virtual"><scope>AD5253</scope><name>AD525x</name></member>
+      <member refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" prot="public" virt="non-virtual"><scope>AD5253</scope><name>get_err_code</name></member>
+      <member refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" prot="public" virt="non-virtual"><scope>AD5253</scope><name>get_error_text</name></member>
+      <member refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" prot="public" virt="non-virtual"><scope>AD5253</scope><name>max_val</name></member>
+      <member refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" prot="protected" virt="non-virtual"><scope>AD5253</scope><name>read_data</name></member>
+      <member refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" prot="public" virt="non-virtual"><scope>AD5253</scope><name>read_data_byte</name></member>
+      <member refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" prot="public" virt="non-virtual"><scope>AD5253</scope><name>read_EEMEM</name></member>
+      <member refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" prot="public" virt="non-virtual"><scope>AD5253</scope><name>read_RDAC</name></member>
+      <member refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" prot="public" virt="non-virtual"><scope>AD5253</scope><name>read_tolerance</name></member>
+      <member refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" prot="protected" virt="non-virtual"><scope>AD5253</scope><name>write_cmd</name></member>
+      <member refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" prot="protected" virt="non-virtual"><scope>AD5253</scope><name>write_data</name></member>
+      <member refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" prot="public" virt="non-virtual"><scope>AD5253</scope><name>write_EEMEM</name></member>
+      <member refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" prot="public" virt="non-virtual"><scope>AD5253</scope><name>write_RDAC</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
