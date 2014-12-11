@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">AD525x
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Library for I2C communication with AD5253 and AD5254 digital potentiometers using an Arduino.</div>
   </td>
@@ -172,104 +172,134 @@
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">return</span> output;</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
-<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">  220</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">AD525x::get_err_code</a>() {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">return</span> err_code;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;}</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
-<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">  231</a></span>&#160;<span class="keywordtype">char</span> * <a class="code" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">AD525x::get_error_text</a>() {</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordflow">switch</span>(<a class="code" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code</a>()) {</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga3871489e6b99e263a53357f9831d84ee">EC_NO_ERR</a>:</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga840adc443fd7a6dfb2131e4195aed011">EC_NO_ERR_str</a>;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gad6d1474787e5ccdc24c914966731e419">EC_DATA_LONG</a>:</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga2665ef6018c63ea42e0857f3b70ca7fe">EC_DATA_LONG_str</a>;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga76b781411a72177d30211fca065a00f9">EC_NACK_ADDR</a>:</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga77cff2d5d08b242de05b10db10cd14f9">EC_NACK_ADDR_str</a>;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga59684a21e6ee5c91564ab526382be073">EC_NACK_DATA</a>:</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gabdc8533a8b49d5de01031c92c827b4e2">EC_NACK_DATA_str</a>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gace7d28091813e9e36d53c8c735cd8d80">EC_I2C_OTHER</a>:</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gaf86894408f873ce440ce9aced69b8c1d">EC_I2C_OTHER_str</a>;</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga71d0a05d023eba9814afc77e7e5d0901">EC_BAD_REGISTER</a>:</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gae0eb13a35015b6fde96acc827463758c">EC_BAD_REGISTER_str</a>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gac88743669d903ef81eb0c3bcf1662182">EC_BAD_WIPER_SETTING</a>:</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga90b9a7f53bbc4a0563b17a8bca4556ac">EC_BAD_WIPER_SETTING_str</a>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gaf4658a15cec75bbdf12be696bc6daf5b">EC_BAD_READ_SIZE</a>:</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga1b465cec37e683ec1c9a2b7daee86308">EC_BAD_READ_SIZE_str</a>;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga8b442f295e2674379ddda6935ebd0731">EC_BAD_DEVICE_ADDR</a>:</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gaa7d2c139bde0b5d4d2cd8c7f349cd8ce">EC_BAD_DEVICE_ADDR_str</a>;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga72bf6d01355325120ab20e71c3af2719">EC_UNKNOWN_ERR_str</a>;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    }</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">// Private functions: General I2C communications.</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">  266</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">AD525x::write_cmd</a>(uint8_t cmd_register) {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    Wire.beginTransmission(dev_addr);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    Wire.write(cmd_register);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//  Device commands</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a04c169fb3ec72c0266d279f0d23dbbb8">  224</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#a04c169fb3ec72c0266d279f0d23dbbb8">AD525x::reset_device</a>() {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a>(<a class="code" href="_a_d525x_8h.html#a6d864e31a00add16032f27b5e593b4bb">CMD_NOP</a>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a85cdfa18db24258057d8ada5c453d14c">  233</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#a85cdfa18db24258057d8ada5c453d14c">AD525x::restore_RDAC</a>(uint8_t RDAC) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span>(RDAC &gt; 3) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        err_code = <a class="code" href="group___error_codes.html#ga71d0a05d023eba9814afc77e7e5d0901">EC_BAD_REGISTER</a>;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span> err_code;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a>(<a class="code" href="_a_d525x_8h.html#a20ef778553622deb5c0128abf6e46fee">CMD_Restore_RDAC</a> | RDAC);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a201bdd5c0b700ddda9456772c0dcd069">  251</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#a201bdd5c0b700ddda9456772c0dcd069">AD525x::store_RDAC</a>(uint8_t RDAC) {</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">if</span>(RDAC &gt; 3) {</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        err_code = <a class="code" href="group___error_codes.html#ga71d0a05d023eba9814afc77e7e5d0901">EC_BAD_REGISTER</a>;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">return</span> err_code;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a>(<a class="code" href="_a_d525x_8h.html#a2fcff1d7250c2e10a8cd6619c02dfbcb">CMD_Store_RDAC</a> | RDAC);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;}</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment">// Error handling</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
+<div class="line"><a name="l00273"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">  273</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">AD525x::get_err_code</a>() {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">return</span> err_code;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    err_code = Wire.endTransmission();</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> err_code;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">  289</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">AD525x::write_data</a>(uint8_t register_addr, uint8_t data) {</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    Wire.beginTransmission(dev_addr);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    Wire.write(register_addr);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    Wire.write(data);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    err_code = Wire.endTransmission();</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordflow">return</span> err_code;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
-<div class="line"><a name="l00313"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">  313</a></span>&#160;uint8_t * <a class="code" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">AD525x::read_data</a>(uint8_t register_addr, uint8_t length) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    uint8_t error = 0;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    Wire.beginTransmission(dev_addr);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    Wire.write(register_addr);</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    err_code = Wire.endTransmission();</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">if</span>(err_code &gt; 0) {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    Wire.beginTransmission(dev_addr);</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    uint8_t n_bytes = Wire.requestFrom(dev_addr, length);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">if</span>(n_bytes != length) {</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        err_code = <a class="code" href="group___error_codes.html#gaf4658a15cec75bbdf12be696bc6daf5b">EC_BAD_READ_SIZE</a>;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    }</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    uint8_t buff[length];</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span>(Wire.available() == length) {</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; length; i++) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            buff[i] = Wire.read();</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        }</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    err_code = Wire.endTransmission();</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">if</span>(err_code &gt; 0) {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    }</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">return</span> buff;</div>
+<div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">  284</a></span>&#160;<span class="keywordtype">char</span> * <a class="code" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">AD525x::get_error_text</a>() {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">switch</span>(<a class="code" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code</a>()) {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga3871489e6b99e263a53357f9831d84ee">EC_NO_ERR</a>:</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga840adc443fd7a6dfb2131e4195aed011">EC_NO_ERR_str</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gad6d1474787e5ccdc24c914966731e419">EC_DATA_LONG</a>:</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga2665ef6018c63ea42e0857f3b70ca7fe">EC_DATA_LONG_str</a>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga76b781411a72177d30211fca065a00f9">EC_NACK_ADDR</a>:</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga77cff2d5d08b242de05b10db10cd14f9">EC_NACK_ADDR_str</a>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga59684a21e6ee5c91564ab526382be073">EC_NACK_DATA</a>:</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gabdc8533a8b49d5de01031c92c827b4e2">EC_NACK_DATA_str</a>;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gace7d28091813e9e36d53c8c735cd8d80">EC_I2C_OTHER</a>:</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gaf86894408f873ce440ce9aced69b8c1d">EC_I2C_OTHER_str</a>;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga71d0a05d023eba9814afc77e7e5d0901">EC_BAD_REGISTER</a>:</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gae0eb13a35015b6fde96acc827463758c">EC_BAD_REGISTER_str</a>;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gac88743669d903ef81eb0c3bcf1662182">EC_BAD_WIPER_SETTING</a>:</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga90b9a7f53bbc4a0563b17a8bca4556ac">EC_BAD_WIPER_SETTING_str</a>;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#gaf4658a15cec75bbdf12be696bc6daf5b">EC_BAD_READ_SIZE</a>:</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga1b465cec37e683ec1c9a2b7daee86308">EC_BAD_READ_SIZE_str</a>;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="group___error_codes.html#ga8b442f295e2674379ddda6935ebd0731">EC_BAD_DEVICE_ADDR</a>:</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#gaa7d2c139bde0b5d4d2cd8c7f349cd8ce">EC_BAD_DEVICE_ADDR_str</a>;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="group___error_codes.html#ga72bf6d01355325120ab20e71c3af2719">EC_UNKNOWN_ERR_str</a>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;}</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="comment">// Private functions: General I2C communications.</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno"><a class="line" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">  319</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">AD525x::write_cmd</a>(uint8_t cmd_register) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    Wire.beginTransmission(dev_addr);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    Wire.write(cmd_register);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    err_code = Wire.endTransmission();</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">return</span> err_code;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">  342</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">AD525x::write_data</a>(uint8_t register_addr, uint8_t data) {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    Wire.beginTransmission(dev_addr);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    Wire.write(register_addr);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    Wire.write(data);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    err_code = Wire.endTransmission();</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">return</span> err_code;</div>
 <div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;}</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;</div>
-<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">  366</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">AD525x::read_data_byte</a>(uint8_t register_addr) {</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    uint8_t *rv = <a class="code" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data</a>(register_addr, 1);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">if</span>(rv == NULL) {</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">return</span> 0;       <span class="comment">// Err code set in read_data already.</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    }</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">return</span> rv[0];</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
-<div class="ttc" id="class_a_d525x_html_a0ea67f3d590a18bcbb5936827004606e"><div class="ttname"><a href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">AD525x::read_data</a></div><div class="ttdeci">uint8_t * read_data(uint8_t register_addr, uint8_t length)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00313">AD525x.cpp:313</a></div></div>
-<div class="ttc" id="class_a_d525x_html_a32e05e0af6227e2f4c8b72d4ddd9c2b6"><div class="ttname"><a href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">AD525x::write_data</a></div><div class="ttdeci">uint8_t write_data(uint8_t register_addr, uint8_t data)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00289">AD525x.cpp:289</a></div></div>
+<div class="line"><a name="l00366"></a><span class="lineno"><a class="line" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">  366</a></span>&#160;uint8_t * <a class="code" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">AD525x::read_data</a>(uint8_t register_addr, uint8_t length) {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    uint8_t error = 0;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    Wire.beginTransmission(dev_addr);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    Wire.write(register_addr);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    err_code = Wire.endTransmission();</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordflow">if</span>(err_code &gt; 0) {</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    Wire.beginTransmission(dev_addr);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    uint8_t n_bytes = Wire.requestFrom(dev_addr, length);</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordflow">if</span>(n_bytes != length) {</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        err_code = <a class="code" href="group___error_codes.html#gaf4658a15cec75bbdf12be696bc6daf5b">EC_BAD_READ_SIZE</a>;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    uint8_t buff[length];</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">if</span>(Wire.available() == length) {</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; length; i++) {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;            buff[i] = Wire.read();</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        }</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    }</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    err_code = Wire.endTransmission();</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordflow">if</span>(err_code &gt; 0) {</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    }</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordflow">return</span> buff;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;}</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;</div>
+<div class="line"><a name="l00419"></a><span class="lineno"><a class="line" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">  419</a></span>&#160;uint8_t <a class="code" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">AD525x::read_data_byte</a>(uint8_t register_addr) {</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    uint8_t *rv = <a class="code" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data</a>(register_addr, 1);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">if</span>(rv == NULL) {</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">return</span> 0;       <span class="comment">// Err code set in read_data already.</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    }</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">return</span> rv[0];</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;}</div>
+<div class="ttc" id="class_a_d525x_html_a0ea67f3d590a18bcbb5936827004606e"><div class="ttname"><a href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">AD525x::read_data</a></div><div class="ttdeci">uint8_t * read_data(uint8_t register_addr, uint8_t length)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00366">AD525x.cpp:366</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a32e05e0af6227e2f4c8b72d4ddd9c2b6"><div class="ttname"><a href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">AD525x::write_data</a></div><div class="ttdeci">uint8_t write_data(uint8_t register_addr, uint8_t data)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00342">AD525x.cpp:342</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga72bf6d01355325120ab20e71c3af2719"><div class="ttname"><a href="group___error_codes.html#ga72bf6d01355325120ab20e71c3af2719">EC_UNKNOWN_ERR_str</a></div><div class="ttdeci">#define EC_UNKNOWN_ERR_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00078">AD525x.h:78</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html_aa7c477d24908e069c98fc58a80e9221f"><div class="ttname"><a href="_a_d525x_8h.html#aa7c477d24908e069c98fc58a80e9221f">Tol_int</a></div><div class="ttdeci">#define Tol_int</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00027">AD525x.h:27</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga3871489e6b99e263a53357f9831d84ee"><div class="ttname"><a href="group___error_codes.html#ga3871489e6b99e263a53357f9831d84ee">EC_NO_ERR</a></div><div class="ttdeci">#define EC_NO_ERR</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00051">AD525x.h:51</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga1b465cec37e683ec1c9a2b7daee86308"><div class="ttname"><a href="group___error_codes.html#ga1b465cec37e683ec1c9a2b7daee86308">EC_BAD_READ_SIZE_str</a></div><div class="ttdeci">#define EC_BAD_READ_SIZE_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00073">AD525x.h:73</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga71d0a05d023eba9814afc77e7e5d0901"><div class="ttname"><a href="group___error_codes.html#ga71d0a05d023eba9814afc77e7e5d0901">EC_BAD_REGISTER</a></div><div class="ttdeci">#define EC_BAD_REGISTER</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00066">AD525x.h:66</a></div></div>
-<div class="ttc" id="class_a_d525x_html_ad9037f843984a64d8bc8cfe6c37028df"><div class="ttname"><a href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">AD525x::write_cmd</a></div><div class="ttdeci">uint8_t write_cmd(uint8_t cmd_register)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00266">AD525x.cpp:266</a></div></div>
+<div class="ttc" id="class_a_d525x_html_ad9037f843984a64d8bc8cfe6c37028df"><div class="ttname"><a href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">AD525x::write_cmd</a></div><div class="ttdeci">uint8_t write_cmd(uint8_t cmd_register)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00319">AD525x.cpp:319</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html_a2b1b4f382f37b7cc07dc9e32b7026ca4"><div class="ttname"><a href="_a_d525x_8h.html#a2b1b4f382f37b7cc07dc9e32b7026ca4">Tol_dec</a></div><div class="ttdeci">#define Tol_dec</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00028">AD525x.h:28</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html_ad8513b4bf39dfe63829a8fc1729fd0a5"><div class="ttname"><a href="_a_d525x_8h.html#ad8513b4bf39dfe63829a8fc1729fd0a5">RDAC_register</a></div><div class="ttdeci">#define RDAC_register</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00023">AD525x.h:23</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga2665ef6018c63ea42e0857f3b70ca7fe"><div class="ttname"><a href="group___error_codes.html#ga2665ef6018c63ea42e0857f3b70ca7fe">EC_DATA_LONG_str</a></div><div class="ttdeci">#define EC_DATA_LONG_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00055">AD525x.h:55</a></div></div>
@@ -278,25 +308,31 @@
 <div class="ttc" id="group___error_codes_html_ga59684a21e6ee5c91564ab526382be073"><div class="ttname"><a href="group___error_codes.html#ga59684a21e6ee5c91564ab526382be073">EC_NACK_DATA</a></div><div class="ttdeci">#define EC_NACK_DATA</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00060">AD525x.h:60</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a98991d8077f70969db06fa32c13ba859"><div class="ttname"><a href="class_a_d525x.html#a98991d8077f70969db06fa32c13ba859">AD525x::AD525x</a></div><div class="ttdeci">AD525x(uint8_t AD_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00008">AD525x.cpp:8</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html"><div class="ttname"><a href="_a_d525x_8h.html">AD525x.h</a></div><div class="ttdoc">Header file for AD5253/AD5254 digital potentiometer Arduino library. </div></div>
+<div class="ttc" id="_a_d525x_8h_html_a2fcff1d7250c2e10a8cd6619c02dfbcb"><div class="ttname"><a href="_a_d525x_8h.html#a2fcff1d7250c2e10a8cd6619c02dfbcb">CMD_Store_RDAC</a></div><div class="ttdeci">#define CMD_Store_RDAC</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00035">AD525x.h:35</a></div></div>
 <div class="ttc" id="group___error_codes_html_gaf86894408f873ce440ce9aced69b8c1d"><div class="ttname"><a href="group___error_codes.html#gaf86894408f873ce440ce9aced69b8c1d">EC_I2C_OTHER_str</a></div><div class="ttdeci">#define EC_I2C_OTHER_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00064">AD525x.h:64</a></div></div>
-<div class="ttc" id="class_a_d525x_html_a1a5029af432b07e2b39aaf0e380a3973"><div class="ttname"><a href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">AD525x::get_err_code</a></div><div class="ttdeci">uint8_t get_err_code(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00220">AD525x.cpp:220</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a1a5029af432b07e2b39aaf0e380a3973"><div class="ttname"><a href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">AD525x::get_err_code</a></div><div class="ttdeci">uint8_t get_err_code(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00273">AD525x.cpp:273</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga77cff2d5d08b242de05b10db10cd14f9"><div class="ttname"><a href="group___error_codes.html#ga77cff2d5d08b242de05b10db10cd14f9">EC_NACK_ADDR_str</a></div><div class="ttdeci">#define EC_NACK_ADDR_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00058">AD525x.h:58</a></div></div>
+<div class="ttc" id="_a_d525x_8h_html_a20ef778553622deb5c0128abf6e46fee"><div class="ttname"><a href="_a_d525x_8h.html#a20ef778553622deb5c0128abf6e46fee">CMD_Restore_RDAC</a></div><div class="ttdeci">#define CMD_Restore_RDAC</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00034">AD525x.h:34</a></div></div>
+<div class="ttc" id="_a_d525x_8h_html_a6d864e31a00add16032f27b5e593b4bb"><div class="ttname"><a href="_a_d525x_8h.html#a6d864e31a00add16032f27b5e593b4bb">CMD_NOP</a></div><div class="ttdeci">#define CMD_NOP</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00033">AD525x.h:33</a></div></div>
 <div class="ttc" id="group___error_codes_html_gaf4658a15cec75bbdf12be696bc6daf5b"><div class="ttname"><a href="group___error_codes.html#gaf4658a15cec75bbdf12be696bc6daf5b">EC_BAD_READ_SIZE</a></div><div class="ttdeci">#define EC_BAD_READ_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00072">AD525x.h:72</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga90b9a7f53bbc4a0563b17a8bca4556ac"><div class="ttname"><a href="group___error_codes.html#ga90b9a7f53bbc4a0563b17a8bca4556ac">EC_BAD_WIPER_SETTING_str</a></div><div class="ttdeci">#define EC_BAD_WIPER_SETTING_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00070">AD525x.h:70</a></div></div>
-<div class="ttc" id="class_a_d525x_html_ab425c301f5d90a1fe958de21cdda831e"><div class="ttname"><a href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">AD525x::get_error_text</a></div><div class="ttdeci">char * get_error_text(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00231">AD525x.cpp:231</a></div></div>
+<div class="ttc" id="class_a_d525x_html_ab425c301f5d90a1fe958de21cdda831e"><div class="ttname"><a href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">AD525x::get_error_text</a></div><div class="ttdeci">char * get_error_text(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00284">AD525x.cpp:284</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a0e9267fc2a0396cff5dea88a992702d6"><div class="ttname"><a href="class_a_d525x.html#a0e9267fc2a0396cff5dea88a992702d6">AD525x::read_EEMEM</a></div><div class="ttdeci">uint8_t read_EEMEM(uint8_t reg)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00132">AD525x.cpp:132</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga76b781411a72177d30211fca065a00f9"><div class="ttname"><a href="group___error_codes.html#ga76b781411a72177d30211fca065a00f9">EC_NACK_ADDR</a></div><div class="ttdeci">#define EC_NACK_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00057">AD525x.h:57</a></div></div>
 <div class="ttc" id="group___error_codes_html_gae0eb13a35015b6fde96acc827463758c"><div class="ttname"><a href="group___error_codes.html#gae0eb13a35015b6fde96acc827463758c">EC_BAD_REGISTER_str</a></div><div class="ttdeci">#define EC_BAD_REGISTER_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00067">AD525x.h:67</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html_a562a67e9db0c8cc8e234b764ce919545"><div class="ttname"><a href="_a_d525x_8h.html#a562a67e9db0c8cc8e234b764ce919545">Tolerance_register</a></div><div class="ttdeci">#define Tolerance_register</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00026">AD525x.h:26</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a062ad205aa6718db0c5c85d1a2e7c2fb"><div class="ttname"><a href="class_a_d525x.html#a062ad205aa6718db0c5c85d1a2e7c2fb">AD525x::read_tolerance</a></div><div class="ttdeci">float read_tolerance(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00162">AD525x.cpp:162</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a04c169fb3ec72c0266d279f0d23dbbb8"><div class="ttname"><a href="class_a_d525x.html#a04c169fb3ec72c0266d279f0d23dbbb8">AD525x::reset_device</a></div><div class="ttdeci">uint8_t reset_device(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00224">AD525x.cpp:224</a></div></div>
 <div class="ttc" id="group___error_codes_html_gabdc8533a8b49d5de01031c92c827b4e2"><div class="ttname"><a href="group___error_codes.html#gabdc8533a8b49d5de01031c92c827b4e2">EC_NACK_DATA_str</a></div><div class="ttdeci">#define EC_NACK_DATA_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00061">AD525x.h:61</a></div></div>
 <div class="ttc" id="group___error_codes_html_ga8b442f295e2674379ddda6935ebd0731"><div class="ttname"><a href="group___error_codes.html#ga8b442f295e2674379ddda6935ebd0731">EC_BAD_DEVICE_ADDR</a></div><div class="ttdeci">#define EC_BAD_DEVICE_ADDR</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00075">AD525x.h:75</a></div></div>
 <div class="ttc" id="group___error_codes_html_gaa7d2c139bde0b5d4d2cd8c7f349cd8ce"><div class="ttname"><a href="group___error_codes.html#gaa7d2c139bde0b5d4d2cd8c7f349cd8ce">EC_BAD_DEVICE_ADDR_str</a></div><div class="ttdeci">#define EC_BAD_DEVICE_ADDR_str</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00076">AD525x.h:76</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a201bdd5c0b700ddda9456772c0dcd069"><div class="ttname"><a href="class_a_d525x.html#a201bdd5c0b700ddda9456772c0dcd069">AD525x::store_RDAC</a></div><div class="ttdeci">uint8_t store_RDAC(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00251">AD525x.cpp:251</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a85cdfa18db24258057d8ada5c453d14c"><div class="ttname"><a href="class_a_d525x.html#a85cdfa18db24258057d8ada5c453d14c">AD525x::restore_RDAC</a></div><div class="ttdeci">uint8_t restore_RDAC(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00233">AD525x.cpp:233</a></div></div>
 <div class="ttc" id="group___error_codes_html_gad6d1474787e5ccdc24c914966731e419"><div class="ttname"><a href="group___error_codes.html#gad6d1474787e5ccdc24c914966731e419">EC_DATA_LONG</a></div><div class="ttdeci">#define EC_DATA_LONG</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00054">AD525x.h:54</a></div></div>
-<div class="ttc" id="class_a_d525x_html_aebf63d75b7c1e16ccbb23e56eaa74293"><div class="ttname"><a href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">AD525x::read_data_byte</a></div><div class="ttdeci">uint8_t read_data_byte(uint8_t register_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00366">AD525x.cpp:366</a></div></div>
+<div class="ttc" id="class_a_d525x_html_aebf63d75b7c1e16ccbb23e56eaa74293"><div class="ttname"><a href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">AD525x::read_data_byte</a></div><div class="ttdeci">uint8_t read_data_byte(uint8_t register_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00419">AD525x.cpp:419</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html_a5d9f47436bf0e0088110043af01877dd"><div class="ttname"><a href="_a_d525x_8h.html#a5d9f47436bf0e0088110043af01877dd">base_I2C_addr</a></div><div class="ttdeci">#define base_I2C_addr</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00011">AD525x.h:11</a></div></div>
 <div class="ttc" id="class_a_d525x_html_ae0aab4ec8edd75b15b1db17034d5a31f"><div class="ttname"><a href="class_a_d525x.html#ae0aab4ec8edd75b15b1db17034d5a31f">AD525x::read_RDAC</a></div><div class="ttdeci">uint8_t read_RDAC(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00067">AD525x.cpp:67</a></div></div>
-<div class="ttc" id="class_a_d525x_html_ad0fc5917fcac0192d99fe4baa49600fc"><div class="ttname"><a href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">AD525x::max_val</a></div><div class="ttdeci">uint8_t max_val</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00098">AD525x.h:98</a></div></div>
+<div class="ttc" id="class_a_d525x_html_ad0fc5917fcac0192d99fe4baa49600fc"><div class="ttname"><a href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">AD525x::max_val</a></div><div class="ttdeci">uint8_t max_val</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00102">AD525x.h:102</a></div></div>
 <div class="ttc" id="group___error_codes_html_gace7d28091813e9e36d53c8c735cd8d80"><div class="ttname"><a href="group___error_codes.html#gace7d28091813e9e36d53c8c735cd8d80">EC_I2C_OTHER</a></div><div class="ttdeci">#define EC_I2C_OTHER</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00063">AD525x.h:63</a></div></div>
 <div class="ttc" id="class_a_d525x_html_aafb16999f293f9df2efc299637f7a554"><div class="ttname"><a href="class_a_d525x.html#aafb16999f293f9df2efc299637f7a554">AD525x::write_RDAC</a></div><div class="ttdeci">uint8_t write_RDAC(uint8_t RDAC, uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00033">AD525x.cpp:33</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a4ae38aeedc85aa5de5a07dee2ebd0cfc"><div class="ttname"><a href="class_a_d525x.html#a4ae38aeedc85aa5de5a07dee2ebd0cfc">AD525x::write_EEMEM</a></div><div class="ttdeci">uint8_t write_EEMEM(uint8_t reg, uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00096">AD525x.cpp:96</a></div></div>
@@ -304,7 +340,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2014 16:56:24 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 10 2014 20:46:33 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

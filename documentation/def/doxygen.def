@@ -26,7 +26,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'AD_addr';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '113';
+      sec-mem-desc-line = '118';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -36,7 +36,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
   cp-filename  = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-  cp-fileline  = '111';
+  cp-fileline  = '116';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -113,7 +113,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'AD_addr';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '120';
+      sec-mem-desc-line = '125';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -123,7 +123,7 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
   }; /* cp-section */
   cp-filename  = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-  cp-fileline  = '118';
+  cp-fileline  = '123';
   cp-briefdesc = <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -348,21 +348,68 @@ _EnD_oF_dEf_TeXt_;
     }; /* sec-member */
     sec-member = {
       sec-mem-kind = 'function';
-      sec-mem-id   = 'class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293';
+      sec-mem-id   = 'class_a_d525x_1a04c169fb3ec72c0266d279f0d23dbbb8';
       sec-mem-virt = normal;
       sec-mem-prot = public;
       sec-mem-type = <<_EnD_oF_dEf_TeXt_
 uint8_t
 _EnD_oF_dEf_TeXt_;
-      sec-mem-name = 'read_data_byte';
+      sec-mem-name = 'reset_device';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+void
+_EnD_oF_dEf_TeXt_;
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
+      sec-mem-desc-line = '94';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_a_d525x_1a85cdfa18db24258057d8ada5c453d14c';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'restore_RDAC';
       sec-mem-param = {
         sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
 uint8_t
 _EnD_oF_dEf_TeXt_;
-        sec-mem-param-declname = 'register_addr';
+        sec-mem-param-declname = 'RDAC';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '93';
+      sec-mem-desc-line = '96';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_a_d525x_1a201bdd5c0b700ddda9456772c0dcd069';
+      sec-mem-virt = normal;
+      sec-mem-prot = public;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'store_RDAC';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'RDAC';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
+      sec-mem-desc-line = '97';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -385,7 +432,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '95';
+      sec-mem-desc-line = '99';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -408,7 +455,7 @@ void
 _EnD_oF_dEf_TeXt_;
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '96';
+      sec-mem-desc-line = '100';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -429,7 +476,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'max_val';
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '98';
+      sec-mem-desc-line = '102';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -456,7 +503,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'cmd_register';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '100';
+      sec-mem-desc-line = '104';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -486,7 +533,7 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'data';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '101';
+      sec-mem-desc-line = '106';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -516,7 +563,31 @@ _EnD_oF_dEf_TeXt_;
         sec-mem-param-declname = 'length';
       }; /*        sec-mem-param--param */
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '102';
+      sec-mem-desc-line = '107';
+      sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+      sec-mem-documentation = <<_EnD_oF_dEf_TeXt_
+
+_EnD_oF_dEf_TeXt_;
+    }; /* sec-member */
+    sec-member = {
+      sec-mem-kind = 'function';
+      sec-mem-id   = 'class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293';
+      sec-mem-virt = normal;
+      sec-mem-prot = protected;
+      sec-mem-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+      sec-mem-name = 'read_data_byte';
+      sec-mem-param = {
+        sec-mem-param-type = <<_EnD_oF_dEf_TeXt_
+uint8_t
+_EnD_oF_dEf_TeXt_;
+        sec-mem-param-declname = 'register_addr';
+      }; /*        sec-mem-param--param */
+      sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
+      sec-mem-desc-line = '108';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -537,7 +608,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'dev_addr';
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '105';
+      sec-mem-desc-line = '110';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -555,7 +626,7 @@ uint8_t
 _EnD_oF_dEf_TeXt_;
       sec-mem-name = 'err_code';
       sec-mem-desc-file = 'C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h';
-      sec-mem-desc-line = '107';
+      sec-mem-desc-line = '112';
       sec-mem-briefdesc =    <<_EnD_oF_dEf_TeXt_
 
 _EnD_oF_dEf_TeXt_;
@@ -640,7 +711,7 @@ _EnD_oF_dEf_TeXt_;
 _EnD_oF_dEf_TeXt_;
       define-mem-documentation = <<_EnD_oF_dEf_TeXt_
 Base address of these devices. Full address is 
-                                      base_I2C_addr | (AD1 << 1) | AD0             
+                                      <tt>base_I2C_addr | (AD1 \<\< 1) | AD0</tt>             
 _EnD_oF_dEf_TeXt_;
     }; /* define-member */
     define-member = {

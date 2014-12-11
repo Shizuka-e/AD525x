@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">AD525x
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Library for I2C communication with AD5253 and AD5254 digital potentiometers using an Arduino.</div>
   </td>
@@ -120,62 +120,70 @@
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a0e9267fc2a0396cff5dea88a992702d6">read_EEMEM</a>(uint8_t reg);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_a_d525x.html#a062ad205aa6718db0c5c85d1a2e7c2fb">read_tolerance</a>(uint8_t RDAC);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte</a>(uint8_t register_addr);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a>;        </div>
-<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">   98</a></span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a>(uint8_t cmd_register);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">write_data</a>(uint8_t register_addr, uint8_t data);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    uint8_t *<a class="code" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data</a>(uint8_t register_addr, uint8_t length);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    uint8_t dev_addr;       </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    uint8_t err_code;       </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">class </span><a class="code" href="class_a_d5253.html">AD5253</a> : <span class="keyword">public</span> <a class="code" href="class_a_d525x.html">AD525x</a> {</div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_a_d5253.html">  111</a></span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="class_a_d5253.html#a4f22c1a42137b454681bbc29ef25f096">AD5253</a>(uint8_t AD_addr) : <a class="code" href="class_a_d525x.html">AD525x</a>(AD_addr) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_a_d5253.html#a4f22c1a42137b454681bbc29ef25f096">  113</a></span>&#160;        <a class="code" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a> = <a class="code" href="_a_d525x_8h.html#a6931616734fe67bafa17a13c36f669dc">AD5253_max</a>;   </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keyword">class </span><a class="code" href="class_a_d5254.html">AD5254</a> : <span class="keyword">public</span> <a class="code" href="class_a_d525x.html">AD525x</a> {</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_a_d5254.html">  118</a></span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="class_a_d5254.html#a608cb1612b3b0c7afbfc7cfc2bc9c167">AD5254</a>(uint8_t AD_addr) : <a class="code" href="class_a_d525x.html">AD525x</a>(AD_addr) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="class_a_d5254.html#a608cb1612b3b0c7afbfc7cfc2bc9c167">  120</a></span>&#160;        <a class="code" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a> = <a class="code" href="_a_d525x_8h.html#a8a649fdf406bebe64ee4266a3e24af8e">AD5254_max</a>; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;};</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_a_d525x_html_a0ea67f3d590a18bcbb5936827004606e"><div class="ttname"><a href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">AD525x::read_data</a></div><div class="ttdeci">uint8_t * read_data(uint8_t register_addr, uint8_t length)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00313">AD525x.cpp:313</a></div></div>
-<div class="ttc" id="class_a_d525x_html_a32e05e0af6227e2f4c8b72d4ddd9c2b6"><div class="ttname"><a href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">AD525x::write_data</a></div><div class="ttdeci">uint8_t write_data(uint8_t register_addr, uint8_t data)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00289">AD525x.cpp:289</a></div></div>
-<div class="ttc" id="class_a_d5253_html"><div class="ttname"><a href="class_a_d5253.html">AD5253</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00111">AD525x.h:111</a></div></div>
-<div class="ttc" id="class_a_d525x_html_ad9037f843984a64d8bc8cfe6c37028df"><div class="ttname"><a href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">AD525x::write_cmd</a></div><div class="ttdeci">uint8_t write_cmd(uint8_t cmd_register)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00266">AD525x.cpp:266</a></div></div>
-<div class="ttc" id="class_a_d5254_html"><div class="ttname"><a href="class_a_d5254.html">AD5254</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00118">AD525x.h:118</a></div></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a04c169fb3ec72c0266d279f0d23dbbb8">reset_device</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a85cdfa18db24258057d8ada5c453d14c">restore_RDAC</a>(uint8_t RDAC);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a201bdd5c0b700ddda9456772c0dcd069">store_RDAC</a>(uint8_t RDAC);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">char</span> *<a class="code" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a>;        </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">  102</a></span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a>(uint8_t cmd_register);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">write_data</a>(uint8_t register_addr, uint8_t data);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    uint8_t *<a class="code" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data</a>(uint8_t register_addr, uint8_t length);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    uint8_t <a class="code" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte</a>(uint8_t register_addr);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    uint8_t dev_addr;       </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    uint8_t err_code;       </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">class </span><a class="code" href="class_a_d5253.html">AD5253</a> : <span class="keyword">public</span> <a class="code" href="class_a_d525x.html">AD525x</a> {</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="class_a_d5253.html">  116</a></span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="class_a_d5253.html#a4f22c1a42137b454681bbc29ef25f096">AD5253</a>(uint8_t AD_addr) : <a class="code" href="class_a_d525x.html">AD525x</a>(AD_addr) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_a_d5253.html#a4f22c1a42137b454681bbc29ef25f096">  118</a></span>&#160;        <a class="code" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a> = <a class="code" href="_a_d525x_8h.html#a6931616734fe67bafa17a13c36f669dc">AD5253_max</a>;   </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">class </span><a class="code" href="class_a_d5254.html">AD5254</a> : <span class="keyword">public</span> <a class="code" href="class_a_d525x.html">AD525x</a> {</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_a_d5254.html">  123</a></span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="class_a_d5254.html#a608cb1612b3b0c7afbfc7cfc2bc9c167">AD5254</a>(uint8_t AD_addr) : <a class="code" href="class_a_d525x.html">AD525x</a>(AD_addr) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="class_a_d5254.html#a608cb1612b3b0c7afbfc7cfc2bc9c167">  125</a></span>&#160;        <a class="code" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a> = <a class="code" href="_a_d525x_8h.html#a8a649fdf406bebe64ee4266a3e24af8e">AD5254_max</a>; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;};</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_a_d525x_html_a0ea67f3d590a18bcbb5936827004606e"><div class="ttname"><a href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">AD525x::read_data</a></div><div class="ttdeci">uint8_t * read_data(uint8_t register_addr, uint8_t length)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00366">AD525x.cpp:366</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a32e05e0af6227e2f4c8b72d4ddd9c2b6"><div class="ttname"><a href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">AD525x::write_data</a></div><div class="ttdeci">uint8_t write_data(uint8_t register_addr, uint8_t data)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00342">AD525x.cpp:342</a></div></div>
+<div class="ttc" id="class_a_d5253_html"><div class="ttname"><a href="class_a_d5253.html">AD5253</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00116">AD525x.h:116</a></div></div>
+<div class="ttc" id="class_a_d525x_html_ad9037f843984a64d8bc8cfe6c37028df"><div class="ttname"><a href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">AD525x::write_cmd</a></div><div class="ttdeci">uint8_t write_cmd(uint8_t cmd_register)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00319">AD525x.cpp:319</a></div></div>
+<div class="ttc" id="class_a_d5254_html"><div class="ttname"><a href="class_a_d5254.html">AD5254</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00123">AD525x.h:123</a></div></div>
 <div class="ttc" id="class_a_d525x_html"><div class="ttname"><a href="class_a_d525x.html">AD525x</a></div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00081">AD525x.h:81</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a98991d8077f70969db06fa32c13ba859"><div class="ttname"><a href="class_a_d525x.html#a98991d8077f70969db06fa32c13ba859">AD525x::AD525x</a></div><div class="ttdeci">AD525x(uint8_t AD_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00008">AD525x.cpp:8</a></div></div>
-<div class="ttc" id="class_a_d5254_html_a608cb1612b3b0c7afbfc7cfc2bc9c167"><div class="ttname"><a href="class_a_d5254.html#a608cb1612b3b0c7afbfc7cfc2bc9c167">AD5254::AD5254</a></div><div class="ttdeci">AD5254(uint8_t AD_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00120">AD525x.h:120</a></div></div>
-<div class="ttc" id="class_a_d525x_html_a1a5029af432b07e2b39aaf0e380a3973"><div class="ttname"><a href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">AD525x::get_err_code</a></div><div class="ttdeci">uint8_t get_err_code(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00220">AD525x.cpp:220</a></div></div>
-<div class="ttc" id="class_a_d525x_html_ab425c301f5d90a1fe958de21cdda831e"><div class="ttname"><a href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">AD525x::get_error_text</a></div><div class="ttdeci">char * get_error_text(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00231">AD525x.cpp:231</a></div></div>
+<div class="ttc" id="class_a_d5254_html_a608cb1612b3b0c7afbfc7cfc2bc9c167"><div class="ttname"><a href="class_a_d5254.html#a608cb1612b3b0c7afbfc7cfc2bc9c167">AD5254::AD5254</a></div><div class="ttdeci">AD5254(uint8_t AD_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00125">AD525x.h:125</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a1a5029af432b07e2b39aaf0e380a3973"><div class="ttname"><a href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">AD525x::get_err_code</a></div><div class="ttdeci">uint8_t get_err_code(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00273">AD525x.cpp:273</a></div></div>
+<div class="ttc" id="class_a_d525x_html_ab425c301f5d90a1fe958de21cdda831e"><div class="ttname"><a href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">AD525x::get_error_text</a></div><div class="ttdeci">char * get_error_text(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00284">AD525x.cpp:284</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a0e9267fc2a0396cff5dea88a992702d6"><div class="ttname"><a href="class_a_d525x.html#a0e9267fc2a0396cff5dea88a992702d6">AD525x::read_EEMEM</a></div><div class="ttdeci">uint8_t read_EEMEM(uint8_t reg)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00132">AD525x.cpp:132</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a062ad205aa6718db0c5c85d1a2e7c2fb"><div class="ttname"><a href="class_a_d525x.html#a062ad205aa6718db0c5c85d1a2e7c2fb">AD525x::read_tolerance</a></div><div class="ttdeci">float read_tolerance(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00162">AD525x.cpp:162</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a04c169fb3ec72c0266d279f0d23dbbb8"><div class="ttname"><a href="class_a_d525x.html#a04c169fb3ec72c0266d279f0d23dbbb8">AD525x::reset_device</a></div><div class="ttdeci">uint8_t reset_device(void)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00224">AD525x.cpp:224</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html_a6931616734fe67bafa17a13c36f669dc"><div class="ttname"><a href="_a_d525x_8h.html#a6931616734fe67bafa17a13c36f669dc">AD5253_max</a></div><div class="ttdeci">#define AD5253_max</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00017">AD525x.h:17</a></div></div>
-<div class="ttc" id="class_a_d525x_html_aebf63d75b7c1e16ccbb23e56eaa74293"><div class="ttname"><a href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">AD525x::read_data_byte</a></div><div class="ttdeci">uint8_t read_data_byte(uint8_t register_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00366">AD525x.cpp:366</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a201bdd5c0b700ddda9456772c0dcd069"><div class="ttname"><a href="class_a_d525x.html#a201bdd5c0b700ddda9456772c0dcd069">AD525x::store_RDAC</a></div><div class="ttdeci">uint8_t store_RDAC(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00251">AD525x.cpp:251</a></div></div>
+<div class="ttc" id="class_a_d525x_html_a85cdfa18db24258057d8ada5c453d14c"><div class="ttname"><a href="class_a_d525x.html#a85cdfa18db24258057d8ada5c453d14c">AD525x::restore_RDAC</a></div><div class="ttdeci">uint8_t restore_RDAC(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00233">AD525x.cpp:233</a></div></div>
+<div class="ttc" id="class_a_d525x_html_aebf63d75b7c1e16ccbb23e56eaa74293"><div class="ttname"><a href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">AD525x::read_data_byte</a></div><div class="ttdeci">uint8_t read_data_byte(uint8_t register_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00419">AD525x.cpp:419</a></div></div>
 <div class="ttc" id="class_a_d525x_html_ae0aab4ec8edd75b15b1db17034d5a31f"><div class="ttname"><a href="class_a_d525x.html#ae0aab4ec8edd75b15b1db17034d5a31f">AD525x::read_RDAC</a></div><div class="ttdeci">uint8_t read_RDAC(uint8_t RDAC)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00067">AD525x.cpp:67</a></div></div>
-<div class="ttc" id="class_a_d5253_html_a4f22c1a42137b454681bbc29ef25f096"><div class="ttname"><a href="class_a_d5253.html#a4f22c1a42137b454681bbc29ef25f096">AD5253::AD5253</a></div><div class="ttdeci">AD5253(uint8_t AD_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00113">AD525x.h:113</a></div></div>
-<div class="ttc" id="class_a_d525x_html_ad0fc5917fcac0192d99fe4baa49600fc"><div class="ttname"><a href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">AD525x::max_val</a></div><div class="ttdeci">uint8_t max_val</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00098">AD525x.h:98</a></div></div>
+<div class="ttc" id="class_a_d5253_html_a4f22c1a42137b454681bbc29ef25f096"><div class="ttname"><a href="class_a_d5253.html#a4f22c1a42137b454681bbc29ef25f096">AD5253::AD5253</a></div><div class="ttdeci">AD5253(uint8_t AD_addr)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00118">AD525x.h:118</a></div></div>
+<div class="ttc" id="class_a_d525x_html_ad0fc5917fcac0192d99fe4baa49600fc"><div class="ttname"><a href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">AD525x::max_val</a></div><div class="ttdeci">uint8_t max_val</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00102">AD525x.h:102</a></div></div>
 <div class="ttc" id="class_a_d525x_html_aafb16999f293f9df2efc299637f7a554"><div class="ttname"><a href="class_a_d525x.html#aafb16999f293f9df2efc299637f7a554">AD525x::write_RDAC</a></div><div class="ttdeci">uint8_t write_RDAC(uint8_t RDAC, uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00033">AD525x.cpp:33</a></div></div>
 <div class="ttc" id="class_a_d525x_html_a4ae38aeedc85aa5de5a07dee2ebd0cfc"><div class="ttname"><a href="class_a_d525x.html#a4ae38aeedc85aa5de5a07dee2ebd0cfc">AD525x::write_EEMEM</a></div><div class="ttdeci">uint8_t write_EEMEM(uint8_t reg, uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8cpp_source.html#l00096">AD525x.cpp:96</a></div></div>
 <div class="ttc" id="_a_d525x_8h_html_a8a649fdf406bebe64ee4266a3e24af8e"><div class="ttname"><a href="_a_d525x_8h.html#a8a649fdf406bebe64ee4266a3e24af8e">AD5254_max</a></div><div class="ttdeci">#define AD5254_max</div><div class="ttdef"><b>Definition:</b> <a href="_a_d525x_8h_source.html#l00018">AD525x.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2014 16:56:24 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 10 2014 20:46:33 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

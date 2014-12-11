@@ -16,12 +16,15 @@
     <member refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" kind="function"><name>write_EEMEM</name></member>
     <member refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" kind="function"><name>read_EEMEM</name></member>
     <member refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" kind="function"><name>read_tolerance</name></member>
-    <member refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kind="function"><name>read_data_byte</name></member>
+    <member refid="class_a_d525x_1a04c169fb3ec72c0266d279f0d23dbbb8" kind="function"><name>reset_device</name></member>
+    <member refid="class_a_d525x_1a85cdfa18db24258057d8ada5c453d14c" kind="function"><name>restore_RDAC</name></member>
+    <member refid="class_a_d525x_1a201bdd5c0b700ddda9456772c0dcd069" kind="function"><name>store_RDAC</name></member>
     <member refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kind="function"><name>get_err_code</name></member>
     <member refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kind="function"><name>get_error_text</name></member>
     <member refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" kind="function"><name>write_cmd</name></member>
     <member refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" kind="function"><name>write_data</name></member>
     <member refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kind="function"><name>read_data</name></member>
+    <member refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kind="function"><name>read_data_byte</name></member>
   </compound>
   <compound refid="_a_d525x_8cpp" kind="file"><name>AD525x.cpp</name>
   </compound>

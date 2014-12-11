@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">AD525x
-   &#160;<span id="projectnumber">0.1</span>
+   &#160;<span id="projectnumber">0.2</span>
    </div>
    <div id="projectbrief">Library for I2C communication with AD5253 and AD5254 digital potentiometers using an Arduino.</div>
   </td>
@@ -58,18 +58,21 @@
   <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text</a>(void)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a></td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data</a>(uint8_t register_addr, uint8_t length)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte</a>(uint8_t register_addr)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte</a>(uint8_t register_addr)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#a0e9267fc2a0396cff5dea88a992702d6">read_EEMEM</a>(uint8_t reg)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_a_d525x.html#ae0aab4ec8edd75b15b1db17034d5a31f">read_RDAC</a>(uint8_t RDAC)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#a062ad205aa6718db0c5c85d1a2e7c2fb">read_tolerance</a>(uint8_t RDAC)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a>(uint8_t cmd_register)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">write_data</a>(uint8_t register_addr, uint8_t data)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_a_d525x.html#a4ae38aeedc85aa5de5a07dee2ebd0cfc">write_EEMEM</a>(uint8_t reg, uint8_t value)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#aafb16999f293f9df2efc299637f7a554">write_RDAC</a>(uint8_t RDAC, uint8_t value)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_a_d525x.html#a04c169fb3ec72c0266d279f0d23dbbb8">reset_device</a>(void)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#a85cdfa18db24258057d8ada5c453d14c">restore_RDAC</a>(uint8_t RDAC)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_a_d525x.html#a201bdd5c0b700ddda9456772c0dcd069">store_RDAC</a>(uint8_t RDAC)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a>(uint8_t cmd_register)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">write_data</a>(uint8_t register_addr, uint8_t data)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_a_d525x.html#a4ae38aeedc85aa5de5a07dee2ebd0cfc">write_EEMEM</a>(uint8_t reg, uint8_t value)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_a_d525x.html#aafb16999f293f9df2efc299637f7a554">write_RDAC</a>(uint8_t RDAC, uint8_t value)</td><td class="entry"><a class="el" href="class_a_d525x.html">AD525x</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 8 2014 16:56:24 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 10 2014 20:46:34 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
