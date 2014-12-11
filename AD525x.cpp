@@ -217,6 +217,59 @@ float AD525x::read_tolerance(uint8_t RDAC) {
     return output;
 }
 
+//
+//  Device commands
+//
+
+uint8_t AD525x::reset_device() {
+    /** Return the device to idle state.
+
+    @return Returns 0 on no error, otherwise returns the error code.
+    */
+
+    return write_cmd(CMD_NOP);
+}
+
+uint8_t AD525x::restore_RDAC(uint8_t RDAC) {
+    /** Restore the RDAC value for RDAC register `RDAC` from the EEMEM registers.
+    
+    Restores the wiper value for the specified `RDAC` register from the relevant EEMEM register.
+
+    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
+    */
+
+    if(RDAC > 3) {
+        err_code = EC_BAD_REGISTER;
+        return err_code;
+    }
+
+    return write_cmd(CMD_Restore_RDAC | RDAC);
+}
+
+uint8_t AD525x::store_RDAC(uint8_t RDAC) {
+    /** Store the current RDAC value for RDAC register `RDAC` in the EEMEM registers.
+    
+    Stores the wiper value for the specified `RDAC` register in the relevant EEMEM register.
+
+    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
+    */
+
+    if(RDAC > 3) {
+        err_code = EC_BAD_REGISTER;
+        return err_code;
+    }
+
+    return write_cmd(CMD_Store_RDAC | RDAC);
+}
+
+//
+// Error handling
+//
+
 uint8_t AD525x::get_err_code() {
     /** Retrieve the error code stored in a private variable.
 

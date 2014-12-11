@@ -9,7 +9,7 @@ Header file for AD5253/AD5254 digital potentiometer Arduino library.
 #include <Wire.h>
 
 #define base_I2C_addr 0x2C              /*!< Base address of these devices. Full address is 
-                                           base_I2C_addr | (AD1 << 1) | AD0            */
+                                           `base_I2C_addr | (AD1 << 1) | AD0`            */
 
 /** @{ */
 // AD5253 and AD5254 differ based on what the maximum wiper setting is.
@@ -89,7 +89,11 @@ public:
     uint8_t read_EEMEM(uint8_t reg);
 
     float read_tolerance(uint8_t RDAC);
-    uint8_t read_data_byte(uint8_t register_addr);
+
+    uint8_t reset_device(void);
+
+    uint8_t restore_RDAC(uint8_t RDAC);
+    uint8_t store_RDAC(uint8_t RDAC);
 
     uint8_t get_err_code(void);
     char *get_error_text(void);
@@ -97,9 +101,10 @@ public:
     uint8_t max_val;        /*!< Used only by child classes. */
 protected:
     uint8_t write_cmd(uint8_t cmd_register);
+
     uint8_t write_data(uint8_t register_addr, uint8_t data);
     uint8_t *read_data(uint8_t register_addr, uint8_t length);
-
+    uint8_t read_data_byte(uint8_t register_addr);
 private:
     uint8_t dev_addr;       /*!< The full 7-bit address of the specified device. */
 
