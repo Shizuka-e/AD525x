@@ -231,9 +231,12 @@ uint8_t AD525x::reset_device() {
 }
 
 uint8_t AD525x::restore_RDAC(uint8_t RDAC) {
-    /** Restore the RDAC value for RDAC register `RDAC` from the EEMEM registers.
+    /** Restore the wiper value for RDAC register `RDAC` from the EEMEM registers.
     
-    Restores the wiper value for the specified `RDAC` register from the relevant EEMEM register.
+    Restores the wiper value for the specified `RDAC` register from the corresponding EEMEM 
+    register.
+
+    @param[in] RDAC The 2-bit register address specifying the RDAC to restore. [0-3]
 
     @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
@@ -248,10 +251,22 @@ uint8_t AD525x::restore_RDAC(uint8_t RDAC) {
     return write_cmd(CMD_Restore_RDAC | RDAC);
 }
 
+uint8_t AD525x::restore_all_RDAC() {
+    /** Restores the wiper value for all RDAC registers from their corresponding EEMEM registers.
+
+    @return Returns 0 on no error, otherwise returns the error code, which is raised indirectly
+            through a call to `write_cmd()`.
+    */
+
+    return write_cmd(CMD_Restore_ALL_RDAC);
+}
+
 uint8_t AD525x::store_RDAC(uint8_t RDAC) {
     /** Store the current RDAC value for RDAC register `RDAC` in the EEMEM registers.
     
     Stores the wiper value for the specified `RDAC` register in the relevant EEMEM register.
+
+    @param[in] RDAC The 2-bit register address specifying the RDAC to store. [0-3]
 
     @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
@@ -264,6 +279,140 @@ uint8_t AD525x::store_RDAC(uint8_t RDAC) {
     }
 
     return write_cmd(CMD_Store_RDAC | RDAC);
+}
+
+uint8_t AD525x::decrement_RDAC(uint8_t RDAC) {
+    /** Decrements the current RDAC wiper value by 1.
+
+    Takes the current wiper value for the potentiometer specified by `RDAC` and decrements its
+    value by 1.
+
+    @param[in] RDAC The 2-bit register address of the RDAC to decrement [0-3]
+
+    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
+    */
+
+    if(RDAC > 3) {
+        err_code = EC_BAD_REGISTER;
+        return err_code;
+    }
+
+    return write_cmd(CMD_Dec_RDAC_step | RDAC);   
+}
+
+uint8_t AD525x::increment_RDAC(uint8_t RDAC) {
+    /** Increments the current RDAC wiper value by 1.
+
+    Takes the current wiper value for the potentiometer specified by `RDAC` and increments its
+    value by 1.
+
+    @param[in] RDAC The 2-bit register address of the RDAC to increment [0-3]
+
+    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
+    */
+
+    if(RDAC > 3) {
+        err_code = EC_BAD_REGISTER;
+        return err_code;
+    }
+
+    return write_cmd(CMD_Inc_RDAC_step | RDAC);   
+}
+
+uint8_t AD525x::decrement_RDAC_6dB(uint8_t RDAC) {
+    /** Decrements the current RDAC wiper value for the specified RDAC by 6dB
+
+    Takes the current RDAC wiper value for the potentiometer specified by `RDAC` and decrements it
+    by 6dB (i.e. cuts it in half).
+
+    @param[in] RDAC The 2-bit register address of the RDAC to decrement [0-3]
+
+    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
+    */
+
+    if(RDAC > 3) {
+        err_code = EC_BAD_REGISTER;
+        return err_code;
+    }
+
+    return write_cmd(CMD_Dec_RDAC_6dB | RDAC);   
+}
+
+uint8_t AD525x::increment_RDAC_6dB(uint8_t RDAC) {
+    /** Increments the current RDAC wiper value for the specified RDAC by 6dB
+
+    Takes the current RDAC wiper value for the potentiometer specified by `RDAC` and increments it
+    by 6dB (i.e. doubles it)
+
+    @param[in] RDAC The 2-bit register address of the RDAC to increment [0-3]
+
+    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
+    */
+
+    if(RDAC > 3) {
+        err_code = EC_BAD_REGISTER;
+        return err_code;
+    }
+
+    return write_cmd(CMD_Inc_RDAC_6dB | RDAC);   
+}
+
+uint8_t AD525x::decrement_all_RDAC() {
+    /** Decrements the current wiper value for all RDAC potentiometers by 1.
+
+    Takes the current wiper value for all RDAC potentiometers and decrements them by 1.
+
+    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
+            `write_cmd()`).
+    */
+
+    return write_cmd(CMD_Dec_All_RDAC_step);   
+}
+
+uint8_t AD525x::increment_all_RDAC() {
+    /** Increments the current wiper value for all RDAC potentiometers by 1.
+
+    Takes the current wiper value for all RDAC potentiometers and increments them by 1.
+
+    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
+            `write_cmd()`).
+    */
+
+    return write_cmd(CMD_Inc_All_RDAC_step);   
+}
+
+uint8_t AD525x::decrement_all_RDAC_6dB() {
+    /** Decrements the current wiper value for all RDAC potentiometers by 6dB
+
+    Takes the current wiper value for all RDAC potentiometers and decrements them by 6dB 
+    (i.e. cuts them in half).
+
+    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
+            `write_cmd()`).
+    */
+
+    return write_cmd(CMD_Dec_All_RDAC_6dB);   
+}
+
+uint8_t AD525x::increment_all_RDAC_6dB() {
+    /** Increments the current wiper value for all RDAC potentiometers by 6dB
+
+    Takes the current wiper value for all RDAC potentiometers and increments them by 6dB 
+    (i.e. doubles them).
+
+    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
+            `write_cmd()`).
+    */
+
+    return write_cmd(CMD_Inc_All_RDAC_6dB);   
 }
 
 //

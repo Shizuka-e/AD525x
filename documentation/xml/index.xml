@@ -18,7 +18,16 @@
     <member refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" kind="function"><name>read_tolerance</name></member>
     <member refid="class_a_d525x_1a04c169fb3ec72c0266d279f0d23dbbb8" kind="function"><name>reset_device</name></member>
     <member refid="class_a_d525x_1a85cdfa18db24258057d8ada5c453d14c" kind="function"><name>restore_RDAC</name></member>
+    <member refid="class_a_d525x_1ad189285ec3dbbc44116e1fe91ef67292" kind="function"><name>restore_all_RDAC</name></member>
     <member refid="class_a_d525x_1a201bdd5c0b700ddda9456772c0dcd069" kind="function"><name>store_RDAC</name></member>
+    <member refid="class_a_d525x_1a90ce8ade6c5fa2714b39be401cb002fd" kind="function"><name>decrement_RDAC</name></member>
+    <member refid="class_a_d525x_1afaaba92e35608ed68ddf5db52b3183b6" kind="function"><name>increment_RDAC</name></member>
+    <member refid="class_a_d525x_1a444ba5ee3ddf24cd2f88da36a27d6c8a" kind="function"><name>decrement_RDAC_6dB</name></member>
+    <member refid="class_a_d525x_1a91da29dd1f19ed0b40ce0e20e47fceec" kind="function"><name>increment_RDAC_6dB</name></member>
+    <member refid="class_a_d525x_1a53fa5b5ee51e009264f263a73f55a930" kind="function"><name>decrement_all_RDAC</name></member>
+    <member refid="class_a_d525x_1a67f3c289d56a85e337a0f9f8dec0f150" kind="function"><name>increment_all_RDAC</name></member>
+    <member refid="class_a_d525x_1aff4a3e30764e6b52808b1005910e117b" kind="function"><name>decrement_all_RDAC_6dB</name></member>
+    <member refid="class_a_d525x_1a4c33c7d0de1a56739f2766127cf38605" kind="function"><name>increment_all_RDAC_6dB</name></member>
     <member refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kind="function"><name>get_err_code</name></member>
     <member refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kind="function"><name>get_error_text</name></member>
     <member refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" kind="function"><name>write_cmd</name></member>

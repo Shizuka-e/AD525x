@@ -90,11 +90,24 @@ public:
 
     float read_tolerance(uint8_t RDAC);
 
+    // Device commands
     uint8_t reset_device(void);
 
     uint8_t restore_RDAC(uint8_t RDAC);
+    uint8_t restore_all_RDAC(void);
     uint8_t store_RDAC(uint8_t RDAC);
 
+    uint8_t decrement_RDAC(uint8_t RDAC);
+    uint8_t increment_RDAC(uint8_t RDAC);
+    uint8_t decrement_RDAC_6dB(uint8_t RDAC);
+    uint8_t increment_RDAC_6dB(uint8_t RDAC);
+
+    uint8_t decrement_all_RDAC(void);
+    uint8_t increment_all_RDAC(void);
+    uint8_t decrement_all_RDAC_6dB(void);
+    uint8_t increment_all_RDAC_6dB(void);
+
+    // Error handling
     uint8_t get_err_code(void);
     char *get_error_text(void);
 
