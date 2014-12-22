@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ad525x by pganssle</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ad525x</h1>
+        <p>Library for I2C communication with AD5253 and AD5254 digital potentiometers using an Arduino.</p>
+
+        <p class="view"><a href="https://github.com/pganssle/AD525x">View the Project on GitHub <small>pganssle/AD525x</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/pganssle/AD525x/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/pganssle/AD525x/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/pganssle/AD525x">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="ad525x---arduino-library-for-i2c-communication-with-ad5253-and-ad5254" class="anchor" href="#ad525x---arduino-library-for-i2c-communication-with-ad5253-and-ad5254" aria-hidden="true"><span class="octicon octicon-link"></span></a>AD525x - Arduino library for I<sup>2</sup>C communication with AD5253 and AD5254</h2>
+
+<p>This is a library for communication with AD5253 and AD5254 quad 64-/256-position I<sup>2</sup>C Nonvolatile Memory Digital Potentiometers. The features implemented are based on <a href="http://www.analog.com/static/imported-files/data_sheets/AD5253_5254.pdf">the datasheet provided by Analog Devices</a>. </p>
+
+<p>To use these, instantiate either an AD5253 or an AD5254 object (the main difference is in the error checking) and call <code>obj.initialize(AD_addr)</code> to initialize communication with the device. The AD525x series potentiometers have a 5 bits of their 7-bit I2C address hard-coded as <code>0x2C</code> (<code>0d44</code>), and the two lowest bits can be programmed by pulling the <code>AD0</code> (pin 4) and <code>AD1</code> (pin 16) lines either high or low. The <code>initialize</code> method of each AD525x object is instantiated with the 2-bit <code>AD1 AD0</code> address of the device - do not specify the hard-coded portion of the address, as that is already taken into account.</p>
+
+<p>Due exception handling with <code>try</code> and <code>catch</code> are too costly to be used on microcontrollers, in the event of an error in a member function, the private variable <code>err_code</code> (which can be queried using <code>AD525x::get_err_code()</code>) is set to one of the error codes defined in <code>AD525x_Errors.h</code>. A small companion library, <code>AD525x_ErrorStrings.h</code> is provided for interpreting the error codes into human readable strings. It is separated out from the main library to minimize unnecessary resource costs.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/pganssle">pganssle</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
