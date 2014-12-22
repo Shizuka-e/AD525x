@@ -3,30 +3,38 @@ Class file for AD5253/AD5254 digital potentiometer Arduino library.
 */
 
 #include <AD525x.h>
+#include <AD525x_Errors.h>
 #include <Arduino.h>
 
-AD525x::AD525x(uint8_t AD_addr) {
-    /** Constructor - pass `(AD1<<1 | AD0)` to AD_addr to select the chosen device address.
+uint8_t AD525x::initialize(uint8_t AD_addr) {
+    /** Initialize the potentiometer - pass `(AD1<<1 | AD0)` to AD_addr to set the device address.
 
-    This is the constructor for the base AD525x class. It is called with the address of the 
-    specified device (specified via the `AD1` and `AD0` pins on the device itself -  high = 1, 
-    low = 0). This two-bit input parameter is used to construct the full 7-bit I2C address.
+    Starts I2C communications with the specified device (specified via the `AD1` and `AD0` pins on
+    the device itself -  high = 1, low = 0). This two-bit input parameter is used to construct the
+    full 7-bit I2C address.
 
     If an invalid address is specified, `err_code` is set to `EC_BAD_DEVICE_ADDR`. This can be
-    queried via `get_err_code()` and/or `get_error_text()`.
+    queried via `get_err_code()`.
 
     @param[in] AD_addr The two bit user-specified address of the device with which you are 
                        communicating. Should be (AD1<<1 | AD0). 
+
+    @return Returns 0 on no error or the error code on error.
     */
 
-    if(AD_addr > 3) {
-        AD_addr = 0x00;
-        err_code = EC_BAD_DEVICE_ADDR;          // Set the error code.
+    // Error is raised in the event of an invalid address.
+    if(AD_addr > AD525x::max_AD_addr) {
+        initialized = false;
+        err_code = EC_BAD_DEVICE_ADDR;
+        return err_code;
     }
-    dev_addr = AD525x::base_I2C_addr | AD_addr;
-    err_code = 0;
 
-    Wire.begin();                              // Start I2C communications.
+    dev_addr = AD525x::base_I2C_addr | AD_addr;
+
+    Wire.begin();                               // Start I2C communications.
+
+    initialized = true;
+    return 0;
 }
 
 uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
@@ -43,15 +51,16 @@ uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
     @return Returns 0 on no error, otherwise returns an error code and sets the `err_code` parameter
             (queried via `get_err_code()`). I2C errors are raised indirectly via a call to 
             `write_data()`. This function also raises the following error codes:
+            - \c `EC_NOT_INITIALIZED`: Raised of the potentiometer object is not initialized.
             - \c `EC_BAD_REGISTER`: Raised if the supplied RDAC register exceeds the maximum value 
                                    (3).
             - \c `EC_BAD_WIPER_SETTING`: Raised if the wiper setting (`value`) eceeds the maximum 
                                         value (63 for AD5253(), 255 for AD5254())
     */
-    if(RDAC > 3) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+
+    // Errors: Object must be initialized and a valid RDAC must be passed.
+    if(!initialized) {  return (err_code = EC_NOT_INITIALIZED); }
+    if(RDAC > AD525x::max_RDAC_register) {  return (err_code = EC_BAD_REGISTER); }
 
     uint8_t max_value = this->get_max_val();
     if(!max_value) {
@@ -78,11 +87,21 @@ uint8_t AD525x::read_RDAC(uint8_t RDAC) {
     @param[in] RDAC     The address of one of the 4 RDAC registers (0-3), representing the 4 
                         potentiometers in the IC.
 
-    @return Returns the wiper value or 0 on error (0 is also a valid wiper value).
+    @return Returns the wiper value or 0 on error (0 is also a valid wiper value).  I2C errors are
+            raised indirectly via a call to `read_data_byte()`. This function also raises the 
+            following error codes:
+            - \c `EC_NOT_INITIALIZED`: Raised of the potentiometer object is not initialized.
+            - \c `EC_BAD_REGISTER`: Raised if the supplied RDAC register exceeds the maximum value 
+                                   (3).
     */
-    if(RDAC > 3) {
+    if(!initialized) {
+        err_code = EC_NOT_INITIALIZED;
+        return 0;
+    }
+
+    if(RDAC > AD525x::max_RDAC_register) {
         err_code = EC_BAD_REGISTER;
-        return err_code;
+        return 0;
     }
 
     uint8_t instr_addr = AD525x::RDAC_register | RDAC;
@@ -109,24 +128,23 @@ uint8_t AD525x::write_EEMEM(uint8_t reg, uint8_t value) {
 
     @returns Returns 0 on no error. Raises I2C errors indirectly via a call to `write_data`. Also
              raises:
+            - \c `EC_NOT_INITIALIZED`: Raised of the potentiometer object is not initialized.
             - \c `EC_BAD_WIPER_SETTING`: Register selected is an RDAC register and value exceeds
                                          maximum allowed RDAC value.
             - \c `EC_BAD_REGISTER`: An invalid register address was provided.
     */
 
+    if (!initialized) { return (err_code =  EC_NOT_INITIALIZED);  }     // Must be initialized
+
     uint8_t max_value = this->get_max_val();
     if (!max_value) {
         return err_code;        // In this case there's an error already
-    } else if (reg < 4 && value < this->get_max_val()) {
+    } else if (reg <= AD525x::max_RDAC_register && value < max_value) {
         // Fairly sure the max value only applies to the RDAC registers, not the EEMEM.
-        err_code = EC_BAD_WIPER_SETTING;
-        return err_code;
+       return (err_code = EC_BAD_WIPER_SETTING);
     }
 
-    if(reg > 15) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+    if(reg > AD525x::max_EEMEM_register) {  return (err_code = EC_BAD_REGISTER); }
 
     uint8_t instr_addr = AD525x::EEMEM_register | reg;
 
@@ -147,17 +165,28 @@ uint8_t AD525x::read_EEMEM(uint8_t reg) {
     
     @param[in] reg The EEMEM register whose value you want to query [0-15].
 
-    @return Returns the value stored in the specified register.
+    @return Returns the value stored in the specified register or 0 on error. Check `get_err_code()`
+            if return value is 0 to determine if an error has occurred. This raises I2C errors via
+            a call to `read_data_byte()`, and also raises the following errors directly:
+
+            - \c `EC_NOT_INITIALIZED`: Raised of the potentiometer object is not initialized.
+            - \c `EC_BAD_REGISTER`: An invalid register address was provided.
     */
-    if(reg > 15) {
+
+    if (!initialized) {
+        err_code = EC_NOT_INITIALIZED;
+        return 0;
+    }
+
+    if (reg > AD525x::max_EEMEM_register) {
         err_code = EC_BAD_REGISTER;
-        return err_code;
+        return 0;
     }
 
     uint8_t instr_addr = AD525x::EEMEM_register | reg;
 
     uint8_t rv = read_data_byte(instr_addr);
-    if(get_err_code() != 0) {
+    if (get_err_code() != 0) {
         return 0;       // Err code set in read_data already.
     }
 
@@ -179,9 +208,20 @@ float AD525x::read_tolerance(uint8_t RDAC) {
     @param[in] RDAC The RDAC register whose tolerance you would like to query.
 
     @return Returns the RAB tolerance set at the factory and stored in read-only memory on the chip,
-            represented as a signed float as a percentage of the total device resistance.
+            represented as a signed float as a percentage of the total device resistance. On error,
+            returns 0 and sets err_code to a non-zero value. Check err_code in the event of a
+            non-zero return value. Raises I2C errors indirectly through a call to `read_data_byte()`
+            and directly raises:
+            - \c `EC_NOT_INITIALIZED` Raised if the object has not been initialized.
+            - \c `EC_BAD_REGISTER` Raised if an invalid register is passed to the function.
     */
-    if (RDAC > 3) {
+
+    if (!initialized) {
+        err_code = EC_NOT_INITIALIZED;
+        return 0;
+    }
+
+    if (RDAC > AD525x::max_RDAC_register) {
         err_code = EC_BAD_REGISTER;
         return 0;
     }
@@ -229,8 +269,11 @@ float AD525x::read_tolerance(uint8_t RDAC) {
 uint8_t AD525x::reset_device() {
     /** Return the device to idle state.
 
-    @return Returns 0 on no error, otherwise returns the error code.
+    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
     */
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
 
     return write_cmd(AD525x::CMD_NOP);
 }
@@ -245,13 +288,12 @@ uint8_t AD525x::restore_RDAC(uint8_t RDAC) {
 
     @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
             - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
     */
 
-    if(RDAC > 3) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
+    if (RDAC > AD525x::max_RDAC_register) { return (err_code = EC_BAD_REGISTER); }
 
     return write_cmd(AD525x::CMD_Restore_RDAC | RDAC);
 }
@@ -259,9 +301,11 @@ uint8_t AD525x::restore_RDAC(uint8_t RDAC) {
 uint8_t AD525x::restore_all_RDAC() {
     /** Restores the wiper value for all RDAC registers from their corresponding EEMEM registers.
 
-    @return Returns 0 on no error, otherwise returns the error code, which is raised indirectly
-            through a call to `write_cmd()`.
+    @return Returns 0 on no error, otherwise returns the error code, I2C errors are raised 
+            indirectly through a call to `write_cmd()`, and `EC_NOT_INITIALIZED` is raised if the
+            object has not been initialized.
     */
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
 
     return write_cmd(AD525x::CMD_Restore_All_RDAC);
 }
@@ -273,15 +317,14 @@ uint8_t AD525x::store_RDAC(uint8_t RDAC) {
 
     @param[in] RDAC The 2-bit register address specifying the RDAC to store. [0-3]
 
-    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
             - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
-    */
+     */
 
-    if(RDAC > 3) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
+    if (RDAC > AD525x::max_RDAC_register) { return (err_code = EC_BAD_REGISTER); }
 
     return write_cmd(AD525x::CMD_Store_RDAC | RDAC);
 }
@@ -294,15 +337,14 @@ uint8_t AD525x::decrement_RDAC(uint8_t RDAC) {
 
     @param[in] RDAC The 2-bit register address of the RDAC to decrement [0-3]
 
-    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
             - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
     */
 
-    if(RDAC > 3) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
+    if (RDAC > AD525x::max_RDAC_register) { return (err_code = EC_BAD_REGISTER); }
 
     return write_cmd(AD525x::CMD_Dec_RDAC_step | RDAC);   
 }
@@ -315,15 +357,14 @@ uint8_t AD525x::increment_RDAC(uint8_t RDAC) {
 
     @param[in] RDAC The 2-bit register address of the RDAC to increment [0-3]
 
-    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
             - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
     */
 
-    if(RDAC > 3) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
+    if (RDAC > AD525x::max_RDAC_register) { return (err_code = EC_BAD_REGISTER); }
 
     return write_cmd(AD525x::CMD_Inc_RDAC_step | RDAC);   
 }
@@ -336,15 +377,14 @@ uint8_t AD525x::decrement_RDAC_6dB(uint8_t RDAC) {
 
     @param[in] RDAC The 2-bit register address of the RDAC to decrement [0-3]
 
-    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
             - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
     */
 
-    if(RDAC > 3) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
+    if (RDAC > AD525x::max_RDAC_register) { return (err_code = EC_BAD_REGISTER); }
 
     return write_cmd(AD525x::CMD_Dec_RDAC_6dB | RDAC);   
 }
@@ -357,15 +397,14 @@ uint8_t AD525x::increment_RDAC_6dB(uint8_t RDAC) {
 
     @param[in] RDAC The 2-bit register address of the RDAC to increment [0-3]
 
-    @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
             indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
             - \c `EC_BAD_REGISTER`: Raised if `RDAC` exceeds 3.
     */
 
-    if(RDAC > 3) {
-        err_code = EC_BAD_REGISTER;
-        return err_code;
-    }
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
+    if (RDAC > AD525x::max_RDAC_register) { return (err_code = EC_BAD_REGISTER); }
 
     return write_cmd(AD525x::CMD_Inc_RDAC_6dB | RDAC);   
 }
@@ -375,9 +414,11 @@ uint8_t AD525x::decrement_all_RDAC() {
 
     Takes the current wiper value for all RDAC potentiometers and decrements them by 1.
 
-    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
-            `write_cmd()`).
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
     */
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
 
     return write_cmd(AD525x::CMD_Dec_All_RDAC_step);   
 }
@@ -387,9 +428,11 @@ uint8_t AD525x::increment_all_RDAC() {
 
     Takes the current wiper value for all RDAC potentiometers and increments them by 1.
 
-    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
-            `write_cmd()`).
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
     */
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
 
     return write_cmd(AD525x::CMD_Inc_All_RDAC_step);   
 }
@@ -400,9 +443,11 @@ uint8_t AD525x::decrement_all_RDAC_6dB() {
     Takes the current wiper value for all RDAC potentiometers and decrements them by 6dB 
     (i.e. cuts them in half).
 
-    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
-            `write_cmd()`).
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
     */
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
 
     return write_cmd(AD525x::CMD_Dec_All_RDAC_6dB);   
 }
@@ -413,9 +458,11 @@ uint8_t AD525x::increment_all_RDAC_6dB() {
     Takes the current wiper value for all RDAC potentiometers and increments them by 6dB 
     (i.e. doubles them).
 
-    @return Returns 0 on no error, otherwise returns the error code (raised indirectly through 
-            `write_cmd()`).
+   @return Returns 0 on no error, otherwise returns the error code. In addition to errors raised
+            indirectly through a call to `write_cmd()`, this also raises:
+            - \c `EC_NOT_INITIALIZED`: Raised if communication has not been initialized.
     */
+    if (!initialized) { return (err_code = EC_NOT_INITIALIZED); }
 
     return write_cmd(AD525x::CMD_Inc_All_RDAC_6dB);   
 }
@@ -472,45 +519,12 @@ uint8_t AD525x::get_err_code() {
     /** Retrieve the error code stored in a private variable.
 
     Retrieves the error code stored in the private `err_code` variable. If non-zero, use 
-    `get_error_text()` to retrieve the error string. See \ref ErrorCodes for details.
+    `AD525xGetErrorString()` from `AD525x_ErrorStrings.h` to retrieve the human-readable error
+    string, or see \ref ErrorCodes for details.
 
     @return Returns the error code set in the current object. Non-zero value is an error.
     */
     return err_code;
-}
-
-char * AD525x::get_error_text() {
-    /** Retrieve the error string associated with the stored error code (`err_code`).
-
-    Retrieves the stored error code `err_code` and returns the human-readable error string
-    associated with it. For a full list of error codes and error strings, see \ref ErrorCodes.
-
-    @return Returns the human-readable string describing the current error code.
-    */
-    switch(get_err_code()) {
-        case EC_NO_ERR:
-            return EC_NO_ERR_str;
-        case EC_DATA_LONG:
-            return EC_DATA_LONG_str;
-        case EC_NACK_ADDR:
-            return EC_NACK_ADDR_str;
-        case EC_NACK_DATA:
-            return EC_NACK_DATA_str;
-        case EC_I2C_OTHER:
-            return EC_I2C_OTHER_str;
-        case EC_BAD_REGISTER:
-            return EC_BAD_REGISTER_str;
-        case EC_BAD_WIPER_SETTING:
-            return EC_BAD_WIPER_SETTING_str;
-        case EC_BAD_READ_SIZE:
-            return EC_BAD_READ_SIZE_str;
-        case EC_BAD_DEVICE_ADDR:
-            return EC_BAD_DEVICE_ADDR_str;
-        case EC_NOT_IMPLEMENTED:
-            return EC_NOT_IMPLEMENTED_str;
-        default:
-            return EC_UNKNOWN_ERR_str;
-    }
 }
 
 //

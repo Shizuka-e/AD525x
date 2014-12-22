@@ -7,48 +7,16 @@ Header file for AD5253/AD5254 digital potentiometer Arduino library.
 
 #include <Arduino.h>
 #include <Wire.h>
+#include <cstdint>
 
-/** 
- \defgroup ErrorCodes Error codes
- @{ 
- */
-#define EC_NO_ERR 0
-#define EC_NO_ERR_str "No error."
 
-#define EC_DATA_LONG 1
-#define EC_DATA_LONG_str "Data too long to fit in transmit buffer."
-
-#define EC_NACK_ADDR 2
-#define EC_NACK_ADDR_str "Received NACK on transmit of address."
-
-#define EC_NACK_DATA 3
-#define EC_NACK_DATA_str "Received NACK on transmit of data."
-
-#define EC_I2C_OTHER 4
-#define EC_I2C_OTHER_str "Other I2C error."
-
-#define EC_BAD_REGISTER 5
-#define EC_BAD_REGISTER_str "Invalid register."
-
-#define EC_BAD_WIPER_SETTING 6
-#define EC_BAD_WIPER_SETTING_str "Invalid wiper setting."
-
-#define EC_BAD_READ_SIZE 7
-#define EC_BAD_READ_SIZE_str "Invalid number of bytes read from register."
-
-#define EC_BAD_DEVICE_ADDR 8
-#define EC_BAD_DEVICE_ADDR_str "Bad device address - device address must be in [0, 3]."
-
-#define EC_NOT_IMPLEMENTED 9
-#define EC_NOT_IMPLEMENTED_str "Function not implemented on interface."
-
-#define EC_UNKNOWN_ERR_str "Unknown error."
-/**@}*/
 
 class AD525x {
 // This is a parent class - use AD5253 or AD5254 as necessary.
 public:
-    AD525x(uint8_t AD_addr);
+    AD525x() : initialized(false), dev_addr(0), err_code(0) {};
+ 
+    uint8_t initialize(uint8_t AD_addr);
 
     uint8_t write_RDAC(uint8_t RDAC, uint8_t value);
     uint8_t read_RDAC(uint8_t RDAC);
@@ -95,7 +63,14 @@ private:
     uint8_t dev_addr;       /*!< The full 7-bit address of the specified device. */
     uint8_t err_code;       /*!< Used for error detection. Access via get_err_code() and 
                                  get_error_text() */
+    
+    bool initialized;
 
+    static const uint8_t max_RDAC_register = 3;     /*M< The maximum valid RDAC address. */
+    static const uint8_t max_EEMEM_register = 15;   /*!< The maximum valid EEMEM address.*/
+
+    static const uint8_t max_AD_addr = 3;           /*!< The maximum valid AD_addr address. */
+    
     // Addresses relevant to these devices.
     static const uint8_t base_I2C_addr = 0x2C;    /*!< Base address of these devices. Full address is 
                                                 `base_I2C_addr | (AD1 << 1) | AD0`            */
@@ -134,8 +109,6 @@ private:
 
 class AD5253 : public AD525x {
 public:
-    AD5253(uint8_t AD_addr) : AD525x(AD_addr) {};
-
     uint8_t get_max_val(void);
 private:
     static const uint8_t max_val = 63;          /*!< Maximum wiper value. 63 for AD5253 */
@@ -143,12 +116,9 @@ private:
 
 class AD5254 : public AD525x {
 public:
-    AD5254(uint8_t AD_addr) : AD525x(AD_addr) {};
-
     uint8_t get_max_val(void);
 private:
     static const uint8_t max_val = 255;         /*!< Maximum wiper value. 255 for AD5254 */
 };
-
 
 #endif
