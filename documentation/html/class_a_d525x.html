@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">AD525x
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
    <div id="projectbrief">Library for I2C communication with AD5253 and AD5254 digital potentiometers using an Arduino.</div>
   </td>
@@ -31,6 +31,7 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -316,7 +317,6 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Not implemented for top-level <a class="el" href="class_a_d525x.html">AD525x</a>. </p>
 <p>Interface function to be implemented by child classes - retrieve the maximum wiper value.</p>
 <p>The <a class="el" href="class_a_d5253.html">AD5253</a> and <a class="el" href="class_a_d5254.html">AD5254</a> differ only in their maximum wiper value, [0, 64) for <a class="el" href="class_a_d5253.html">AD5253</a> and [0, 256) for <a class="el" href="class_a_d5254.html">AD5254</a>. This function is an interface that should return the maximum wiper value when called from the child class objects. See <code><a class="el" href="class_a_d5253.html#a595cd05ec77d2f84be69a07479a718ad">AD5253::get_max_val()</a></code> and <code><a class="el" href="class_a_d5254.html#a7632febb85463a46e97c38b80cebe76c">AD5254::get_max_val()</a></code>;</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on error. (Always returns an error on <a class="el" href="class_a_d525x.html">AD525x</a>). As this is not implemented, it sets the error code to <code>EC_NOT_IMPLEMENTED</code>.</dd></dl>
@@ -781,7 +781,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 21 2014 21:25:06 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 21 2014 22:57:39 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
