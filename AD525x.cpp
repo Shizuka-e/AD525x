@@ -23,7 +23,7 @@ AD525x::AD525x(uint8_t AD_addr) {
         AD_addr = 0x00;
         err_code = EC_BAD_DEVICE_ADDR;          // Set the error code.
     }
-    dev_addr = base_I2C_addr | AD_addr;
+    dev_addr = AD525x::base_I2C_addr | AD_addr;
     err_code = 0;
 
     Wire.begin();                              // Start I2C communications.
@@ -61,7 +61,7 @@ uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
         return err_code;
     }
 
-    uint8_t instr_addr = RDAC_register | RDAC;
+    uint8_t instr_addr = AD525x::RDAC_register | RDAC;
     err_code = write_data(instr_addr, value);
     return err_code;
 }
@@ -85,7 +85,7 @@ uint8_t AD525x::read_RDAC(uint8_t RDAC) {
         return err_code;
     }
 
-    uint8_t instr_addr = RDAC_register | RDAC;
+    uint8_t instr_addr = AD525x::RDAC_register | RDAC;
 
     uint8_t rv = read_data_byte(instr_addr);
     if(get_err_code() != 0) {
@@ -128,7 +128,7 @@ uint8_t AD525x::write_EEMEM(uint8_t reg, uint8_t value) {
         return err_code;
     }
 
-    uint8_t instr_addr = EEMEM_register | reg;
+    uint8_t instr_addr = AD525x::EEMEM_register | reg;
 
     err_code = write_data(instr_addr, value);
     return err_code;
@@ -154,7 +154,7 @@ uint8_t AD525x::read_EEMEM(uint8_t reg) {
         return err_code;
     }
 
-    uint8_t instr_addr = EEMEM_register | reg;
+    uint8_t instr_addr = AD525x::EEMEM_register | reg;
 
     uint8_t rv = read_data_byte(instr_addr);
     if(get_err_code() != 0) {
@@ -189,9 +189,9 @@ float AD525x::read_tolerance(uint8_t RDAC) {
     uint8_t sign_mask = 0x80;
 
     // Shift RDAC by 1, low bit is integer / decimal.
-    uint8_t instr_addr = Tolerance_register | (RDAC << 1);
-    uint8_t instr_addr_int = instr_addr | Tol_int;
-    uint8_t instr_addr_dec = instr_addr | Tol_dec;
+    uint8_t instr_addr = AD525x::Tolerance_register | (RDAC << 1);
+    uint8_t instr_addr_int = instr_addr | AD525x::Tol_int;
+    uint8_t instr_addr_dec = instr_addr | AD525x::Tol_dec;
 
     // 8-bit signed integer
     uint8_t tol_int_data = read_data_byte(instr_addr_int);

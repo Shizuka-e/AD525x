@@ -8,26 +8,6 @@ Header file for AD5253/AD5254 digital potentiometer Arduino library.
 #include <Arduino.h>
 #include <Wire.h>
 
-#define base_I2C_addr 0x2C              /*!< Base address of these devices. Full address is 
-                                           `base_I2C_addr | (AD1 << 1) | AD0`            */
-
-/** @{ */
-// AD5253 and AD5254 differ based on what the maximum wiper setting is.
-#define AD5253_max 63                  /*!< Maximum wiper value for AD5253 */
-#define AD5254_max 255                 /*!< Maximum wiper value for AD5254 */
-/** @} */
-
-/** @{ */
-// Instruction registers: These are the top 3 bits of the instruction registers.
-#define RDAC_register 0x00             /*!< Read/write RDAC, bottom 2 bits are the 4 wipers */
-#define EEMEM_register 0x20            /*!< Read/write EEMEM, bottom 4 bits are the 16 regs. */
-
-#define Tolerance_register 0x38        /*!< Read factory tolerances (Read-only) [RDAC is A2, A1] */
-#define Tol_int 0x00                   /*!< Low bit of the tolerance register sets int or decimal */
-#define Tol_dec 0x01
-/**@}*/
-
-
 /** 
  \defgroup ErrorCodes Error codes
  @{ 
@@ -116,18 +96,40 @@ private:
     uint8_t err_code;       /*!< Used for error detection. Access via get_err_code() and 
                                  get_error_text() */
 
-    static const uint8_t CMD_NOP = 0x80;            /*!< Return device to idle state */
-    static const uint8_t CMD_Restore_RDAC = 0x88;
-    static const uint8_t CMD_Store_RDAC = 0x90;
-    static const uint8_t CMD_Dec_RDAC_6dB = 0x98;
-    static const uint8_t CMD_Dec_All_RDAC_6dB = 0xa0;            /*!< Return device to idle state */
-    static const uint8_t CMD_Dec_RDAC_step = 0xa8;
-    static const uint8_t CMD_Dec_All_RDAC_step = 0xb0;
-    static const uint8_t CMD_Restore_All_RDAC = 0xb8;
-    static const uint8_t CMD_Inc_RDAC_6dB = 0xc0;
-    static const uint8_t CMD_Inc_All_RDAC_6dB = 0xc8;
-    static const uint8_t CMD_Inc_RDAC_step = 0xd0;
-    static const uint8_t CMD_Inc_All_RDAC_step = 0xd8;
+    // Addresses relevant to these devices.
+    static const uint8_t base_I2C_addr = 0x2C;    /*!< Base address of these devices. Full address is 
+                                                `base_I2C_addr | (AD1 << 1) | AD0`            */
+    
+    /** @{ */
+    // Instruction registers: These are the top 3 bits of the instruction registers.
+    static const uint8_t RDAC_register = 0x00;      /*!< Read/write RDAC,
+                                                          bottom 2 bits are the 4 wipers */
+    static const uint8_t EEMEM_register = 0x20;     /*!< Read/write EEMEM,
+                                                          bottom 4 bits are the 16 regs. */
+    
+    static const uint8_t Tolerance_register = 0x38; /*!< Read factory tolerances 
+                                                          (Read-only) [RDAC is A2, A1] */
+    static const uint8_t Tol_int = 0x00;            /*!< Low bit of the tolerance register sets int
+                                                         or decimal. */
+    static const uint8_t Tol_dec = 0x01;            /*!< Low bit of the tolerance register sets int
+                                                         or decimal. */
+    /**@}*/
+
+    /** @{ */
+    // Command registers - C0-C4, plus CMD high. Three low bits are A0, A1, A2
+    static const uint8_t CMD_NOP = 0x80;                /*!< Return device to idle state */
+    static const uint8_t CMD_Restore_RDAC = 0x88;       /*!< Restore EEMEM (A1, A0) to RDAC register (A1, A0) */
+    static const uint8_t CMD_Store_RDAC = 0x90;         /*!< Store RDAC (A1, A0) to EEMEM register (A1, A0) */
+    static const uint8_t CMD_Dec_RDAC_6dB = 0x98;       /*!< Decrement RDAC (A1, A0) by 6dB */
+    static const uint8_t CMD_Dec_All_RDAC_6dB = 0xa0;   /*!< Decrement all RDAC by 6dB */
+    static const uint8_t CMD_Dec_RDAC_step = 0xa8;      /*!< Decrement RDAC (A1, A0) by 1 step */
+    static const uint8_t CMD_Dec_All_RDAC_step = 0xb0;  /*!< Decrement all RDAC by 1 step */
+    static const uint8_t CMD_Restore_All_RDAC = 0xb8;   /*!< Reset: Restore all RDACs from EEMEM */
+    static const uint8_t CMD_Inc_RDAC_6dB = 0xc0;       /*!< Increment RDAC (A1, A0) by 6dB */
+    static const uint8_t CMD_Inc_All_RDAC_6dB = 0xc8;   /*!< Increment all RDAC by 6dB */
+    static const uint8_t CMD_Inc_RDAC_step = 0xd0;      /*!< Increment RDAC (A1, A0) by one step */
+    static const uint8_t CMD_Inc_All_RDAC_step = 0xd8;  /*!< Increment all RDACs by one step */
+    /**@}*/
 };
 
 class AD5253 : public AD525x {
