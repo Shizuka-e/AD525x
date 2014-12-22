@@ -27,21 +27,6 @@ Header file for AD5253/AD5254 digital potentiometer Arduino library.
 #define Tol_dec 0x01
 /**@}*/
 
-/** @{ */
-// Command registers - C0-C4, plus CMD high. Three low bits are A0, A1, A2
-#define CMD_NOP 0x80                   /*!< Return device to idle state */
-#define CMD_Restore_RDAC 0x88          /*!< Restore EEMEM (A1, A0) to RDAC register (A1, A0) */
-#define CMD_Store_RDAC 0x90            /*!< Store RDAC (A1, A0) to EEMEM register (A1, A0) */
-#define CMD_Dec_RDAC_6dB 0x98          /*!< Decrement RDAC (A1, A0) by 6dB */
-#define CMD_Dec_All_RDAC_6dB 0xa0      /*!< Decrement all RDAC by 6dB */
-#define CMD_Dec_RDAC_step 0xa8         /*!< Decrement RDAC (A1, A0) by 1 step */
-#define CMD_Dec_All_RDAC_step 0xb0     /*!< Decrement all RDAC by 1 step */
-#define CMD_Restore_All_RDAC 0xb8      /*!< Reset: Restore all RDACs from EEMEM */
-#define CMD_Inc_RDAC_6dB 0xc0          /*!< Increment RDAC (A1, A0) by 6dB */
-#define CMD_Inc_All_RDAC_6dB 0xc8      /*!< Increment all RDAC by 6dB */
-#define CMD_Inc_RDAC_step 0xd0         /*!< Increment RDAC (A1, A0) by one step */
-#define CMD_Inc_All_RDAC_step 0xd8     /*!< Increment all RDACs by one step */
-/**@}*/
 
 /** 
  \defgroup ErrorCodes Error codes
@@ -130,6 +115,19 @@ private:
     uint8_t dev_addr;       /*!< The full 7-bit address of the specified device. */
     uint8_t err_code;       /*!< Used for error detection. Access via get_err_code() and 
                                  get_error_text() */
+
+    static const uint8_t CMD_NOP = 0x80;            /*!< Return device to idle state */
+    static const uint8_t CMD_Restore_RDAC = 0x88;
+    static const uint8_t CMD_Store_RDAC = 0x90;
+    static const uint8_t CMD_Dec_RDAC_6dB = 0x98;
+    static const uint8_t CMD_Dec_All_RDAC_6dB = 0xa0;            /*!< Return device to idle state */
+    static const uint8_t CMD_Dec_RDAC_step = 0xa8;
+    static const uint8_t CMD_Dec_All_RDAC_step = 0xb0;
+    static const uint8_t CMD_Restore_All_RDAC = 0xb8;
+    static const uint8_t CMD_Inc_RDAC_6dB = 0xc0;
+    static const uint8_t CMD_Inc_All_RDAC_6dB = 0xc8;
+    static const uint8_t CMD_Inc_RDAC_step = 0xd0;
+    static const uint8_t CMD_Inc_All_RDAC_step = 0xd8;
 };
 
 class AD5253 : public AD525x {

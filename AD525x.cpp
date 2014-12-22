@@ -232,7 +232,7 @@ uint8_t AD525x::reset_device() {
     @return Returns 0 on no error, otherwise returns the error code.
     */
 
-    return write_cmd(CMD_NOP);
+    return write_cmd(AD525x::CMD_NOP);
 }
 
 uint8_t AD525x::restore_RDAC(uint8_t RDAC) {
@@ -253,7 +253,7 @@ uint8_t AD525x::restore_RDAC(uint8_t RDAC) {
         return err_code;
     }
 
-    return write_cmd(CMD_Restore_RDAC | RDAC);
+    return write_cmd(AD525x::CMD_Restore_RDAC | RDAC);
 }
 
 uint8_t AD525x::restore_all_RDAC() {
@@ -263,7 +263,7 @@ uint8_t AD525x::restore_all_RDAC() {
             through a call to `write_cmd()`.
     */
 
-    return write_cmd(CMD_Restore_All_RDAC);
+    return write_cmd(AD525x::CMD_Restore_All_RDAC);
 }
 
 uint8_t AD525x::store_RDAC(uint8_t RDAC) {
@@ -283,7 +283,7 @@ uint8_t AD525x::store_RDAC(uint8_t RDAC) {
         return err_code;
     }
 
-    return write_cmd(CMD_Store_RDAC | RDAC);
+    return write_cmd(AD525x::CMD_Store_RDAC | RDAC);
 }
 
 uint8_t AD525x::decrement_RDAC(uint8_t RDAC) {
@@ -304,7 +304,7 @@ uint8_t AD525x::decrement_RDAC(uint8_t RDAC) {
         return err_code;
     }
 
-    return write_cmd(CMD_Dec_RDAC_step | RDAC);   
+    return write_cmd(AD525x::CMD_Dec_RDAC_step | RDAC);   
 }
 
 uint8_t AD525x::increment_RDAC(uint8_t RDAC) {
@@ -325,7 +325,7 @@ uint8_t AD525x::increment_RDAC(uint8_t RDAC) {
         return err_code;
     }
 
-    return write_cmd(CMD_Inc_RDAC_step | RDAC);   
+    return write_cmd(AD525x::CMD_Inc_RDAC_step | RDAC);   
 }
 
 uint8_t AD525x::decrement_RDAC_6dB(uint8_t RDAC) {
@@ -346,7 +346,7 @@ uint8_t AD525x::decrement_RDAC_6dB(uint8_t RDAC) {
         return err_code;
     }
 
-    return write_cmd(CMD_Dec_RDAC_6dB | RDAC);   
+    return write_cmd(AD525x::CMD_Dec_RDAC_6dB | RDAC);   
 }
 
 uint8_t AD525x::increment_RDAC_6dB(uint8_t RDAC) {
@@ -367,7 +367,7 @@ uint8_t AD525x::increment_RDAC_6dB(uint8_t RDAC) {
         return err_code;
     }
 
-    return write_cmd(CMD_Inc_RDAC_6dB | RDAC);   
+    return write_cmd(AD525x::CMD_Inc_RDAC_6dB | RDAC);   
 }
 
 uint8_t AD525x::decrement_all_RDAC() {
@@ -379,7 +379,7 @@ uint8_t AD525x::decrement_all_RDAC() {
             `write_cmd()`).
     */
 
-    return write_cmd(CMD_Dec_All_RDAC_step);   
+    return write_cmd(AD525x::CMD_Dec_All_RDAC_step);   
 }
 
 uint8_t AD525x::increment_all_RDAC() {
@@ -391,7 +391,7 @@ uint8_t AD525x::increment_all_RDAC() {
             `write_cmd()`).
     */
 
-    return write_cmd(CMD_Inc_All_RDAC_step);   
+    return write_cmd(AD525x::CMD_Inc_All_RDAC_step);   
 }
 
 uint8_t AD525x::decrement_all_RDAC_6dB() {
@@ -404,7 +404,7 @@ uint8_t AD525x::decrement_all_RDAC_6dB() {
             `write_cmd()`).
     */
 
-    return write_cmd(CMD_Dec_All_RDAC_6dB);   
+    return write_cmd(AD525x::CMD_Dec_All_RDAC_6dB);   
 }
 
 uint8_t AD525x::increment_all_RDAC_6dB() {
@@ -417,7 +417,7 @@ uint8_t AD525x::increment_all_RDAC_6dB() {
             `write_cmd()`).
     */
 
-    return write_cmd(CMD_Inc_All_RDAC_6dB);   
+    return write_cmd(AD525x::CMD_Inc_All_RDAC_6dB);   
 }
 
 //
