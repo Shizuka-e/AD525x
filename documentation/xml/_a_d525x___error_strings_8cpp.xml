@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
+  <compounddef id="_a_d525x___error_strings_8cpp" kind="file">
+    <compoundname>AD525x_ErrorStrings.cpp</compoundname>
+    <includes refid="_a_d525x___error_strings_8h" local="yes">AD525x_ErrorStrings.h</includes>
+    <includes refid="_a_d525x___errors_8h" local="yes">AD525x_Errors.h</includes>
+    <incdepgraph>
+      <node id="19">
+        <label>cstdint</label>
+      </node>
+      <node id="17">
+        <label>AD525x_ErrorStrings/AD525x_ErrorStrings.cpp</label>
+        <link refid="AD525x_ErrorStrings.cpp"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>AD525x_ErrorStrings.h</label>
+        <link refid="_a_d525x___error_strings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>AD525x_Errors.h</label>
+        <link refid="_a_d525x___errors_8h"/>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_a_d525x___error_strings_8cpp_1a60ff48998dac220c169d16f8d5cc841e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* AD525xGetErrorString</definition>
+        <argsstring>(uint8_t err_code)</argsstring>
+        <name>AD525xGetErrorString</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>err_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Retrieve the error string associated with the specified error code (<computeroutput>err_code</computeroutput>).</para><para>Retrieves the stored error code <computeroutput>err_code</computeroutput> and returns the human-readable error string associated with it. For a full list of error codes and error strings, see <computeroutput><ref refid="_a_d525x___errors_8h" kindref="compound">AD525x_Errors.h</ref></computeroutput>.</para><para><simplesect kind="return"><para>Returns the human-readable string describing the current error code.</para></simplesect>
+</para>        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x_ErrorStrings/AD525x_ErrorStrings.cpp" line="7" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x_ErrorStrings/AD525x_ErrorStrings.cpp" bodystart="7" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Source file for retrieving human readable strings from the error codes defined in <computeroutput><ref refid="_a_d525x___errors_8h" kindref="compound">AD525x_Errors.h</ref></computeroutput>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d525x___error_strings_8h" kindref="compound">AD525x_ErrorStrings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_a_d525x___errors_8h" kindref="compound">AD525x_Errors.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="_a_d525x___error_strings_8cpp_1a60ff48998dac220c169d16f8d5cc841e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="_a_d525x___error_strings_8cpp_1a60ff48998dac220c169d16f8d5cc841e" kindref="member">AD525xGetErrorString</ref>(uint8_t<sp/>err_code)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(get_err_code())<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1a3871489e6b99e263a53357f9831d84ee" kindref="member">EC_NO_ERR</ref>:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a840adc443fd7a6dfb2131e4195aed011" kindref="member">EC_NO_ERR_str</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1ad6d1474787e5ccdc24c914966731e419" kindref="member">EC_DATA_LONG</ref>:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a2665ef6018c63ea42e0857f3b70ca7fe" kindref="member">EC_DATA_LONG_str</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1a76b781411a72177d30211fca065a00f9" kindref="member">EC_NACK_ADDR</ref>:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a77cff2d5d08b242de05b10db10cd14f9" kindref="member">EC_NACK_ADDR_str</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1a59684a21e6ee5c91564ab526382be073" kindref="member">EC_NACK_DATA</ref>:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1abdc8533a8b49d5de01031c92c827b4e2" kindref="member">EC_NACK_DATA_str</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1ace7d28091813e9e36d53c8c735cd8d80" kindref="member">EC_I2C_OTHER</ref>:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1af86894408f873ce440ce9aced69b8c1d" kindref="member">EC_I2C_OTHER_str</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1a71d0a05d023eba9814afc77e7e5d0901" kindref="member">EC_BAD_REGISTER</ref>:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1ae0eb13a35015b6fde96acc827463758c" kindref="member">EC_BAD_REGISTER_str</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1ac88743669d903ef81eb0c3bcf1662182" kindref="member">EC_BAD_WIPER_SETTING</ref>:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a90b9a7f53bbc4a0563b17a8bca4556ac" kindref="member">EC_BAD_WIPER_SETTING_str</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1af4658a15cec75bbdf12be696bc6daf5b" kindref="member">EC_BAD_READ_SIZE</ref>:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a1b465cec37e683ec1c9a2b7daee86308" kindref="member">EC_BAD_READ_SIZE_str</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1a8b442f295e2674379ddda6935ebd0731" kindref="member">EC_BAD_DEVICE_ADDR</ref>:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1aa7d2c139bde0b5d4d2cd8c7f349cd8ce" kindref="member">EC_BAD_DEVICE_ADDR_str</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1a3065d2c1596f6ec26f0d55ab96efd5bc" kindref="member">EC_NOT_IMPLEMENTED</ref>:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a70e607f707432c6cd7d8a23e9632d487" kindref="member">EC_NOT_IMPLEMENTED_str</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___errors_8h_1ad1b0dea9d8116f78938c1513ff667b26" kindref="member">EC_NOT_INITIALIZED</ref>:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a12389c22913d694f0f49d799e169c5cf" kindref="member">EC_NOT_INITIALIZED_str</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_a_d525x___error_strings_8h_1a72bf6d01355325120ab20e71c3af2719" kindref="member">EC_UNKNOWN_ERR_str</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x_ErrorStrings/AD525x_ErrorStrings.cpp"/>
+  </compounddef>
+</doxygen>

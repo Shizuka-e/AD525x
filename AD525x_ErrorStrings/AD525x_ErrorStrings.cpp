@@ -8,7 +8,7 @@ const char *AD525xGetErrorString(uint8_t err_code) {
     /** Retrieve the error string associated with the specified error code (`err_code`).
 
     Retrieves the stored error code `err_code` and returns the human-readable error string
-    associated with it. For a full list of error codes and error strings, see \ref ErrorCodes.
+    associated with it. For a full list of error codes and error strings, see `AD525x_Errors.h`.
 
     @return Returns the human-readable string describing the current error code.
     */

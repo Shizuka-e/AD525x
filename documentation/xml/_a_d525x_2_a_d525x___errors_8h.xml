@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.8">
-  <compounddef id="group___error_codes" kind="group">
-    <compoundname>ErrorCodes</compoundname>
-    <title>Error codes</title>
+  <compounddef id="_a_d525x_2_a_d525x___errors_8h" kind="file">
+    <compoundname>AD525x_Errors.h</compoundname>
       <sectiondef kind="define">
       <memberdef kind="define" id="group___error_codes_1ga3871489e6b99e263a53357f9831d84ee" prot="public" static="no">
         <name>EC_NO_ERR</name>
@@ -127,8 +126,27 @@
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Error code header for <computeroutput><ref refid="_a_d525x_8h" kindref="compound">AD525x.h</ref></computeroutput> and <computeroutput><ref refid="_a_d525x___error_strings_8h" kindref="compound">AD525x_ErrorStrings.h</ref></computeroutput>. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="4"><highlight class="preprocessor">#ifndef<sp/>AD525X_ERRORS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AD525X_ERRORS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="group___error_codes_1ga3871489e6b99e263a53357f9831d84ee" refkind="member"><highlight class="preprocessor">#define<sp/>EC_NO_ERR<sp/>0<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="12" refid="group___error_codes_1gad6d1474787e5ccdc24c914966731e419" refkind="member"><highlight class="preprocessor">#define<sp/>EC_DATA_LONG<sp/>1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="13" refid="group___error_codes_1ga76b781411a72177d30211fca065a00f9" refkind="member"><highlight class="preprocessor">#define<sp/>EC_NACK_ADDR<sp/>2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="14" refid="group___error_codes_1ga59684a21e6ee5c91564ab526382be073" refkind="member"><highlight class="preprocessor">#define<sp/>EC_NACK_DATA<sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15" refid="group___error_codes_1gace7d28091813e9e36d53c8c735cd8d80" refkind="member"><highlight class="preprocessor">#define<sp/>EC_I2C_OTHER<sp/>4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="16" refid="group___error_codes_1ga71d0a05d023eba9814afc77e7e5d0901" refkind="member"><highlight class="preprocessor">#define<sp/>EC_BAD_REGISTER<sp/>5<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17" refid="group___error_codes_1gac88743669d903ef81eb0c3bcf1662182" refkind="member"><highlight class="preprocessor">#define<sp/>EC_BAD_WIPER_SETTING<sp/>6<sp/><sp/></highlight></codeline>
+<codeline lineno="18" refid="group___error_codes_1gaf4658a15cec75bbdf12be696bc6daf5b" refkind="member"><highlight class="preprocessor">#define<sp/>EC_BAD_READ_SIZE<sp/>7<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19" refid="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" refkind="member"><highlight class="preprocessor">#define<sp/>EC_BAD_DEVICE_ADDR<sp/>8<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20" refid="group___error_codes_1ga3065d2c1596f6ec26f0d55ab96efd5bc" refkind="member"><highlight class="preprocessor">#define<sp/>EC_NOT_IMPLEMENTED<sp/>9<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21" refid="group___error_codes_1gad1b0dea9d8116f78938c1513ff667b26" refkind="member"><highlight class="preprocessor">#define<sp/>EC_NOT_INITIALIZED<sp/>10<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x/AD525x_Errors.h"/>
   </compounddef>
 </doxygen>

@@ -4,10 +4,6 @@ Error code header for `AD525x.h` and `AD525x_ErrorStrings.h`.
 #ifndef AD525X_ERRORS_H
 #define AD525X_ERRORS_H
 
-/** 
- \defgroup ErrorCodes Error codes
- @{ 
- */
 #define EC_NO_ERR 0             /*!< No error. */
 #define EC_DATA_LONG 1          /*!< Data too long to fit in transmit buffer. */
 #define EC_NACK_ADDR 2          /*!< Received NACK on transmit of address. */
@@ -19,6 +15,5 @@ Error code header for `AD525x.h` and `AD525x_ErrorStrings.h`.
 #define EC_BAD_DEVICE_ADDR 8    /*!< Bad device address - device address must be in [0, 3]. */
 #define EC_NOT_IMPLEMENTED 9    /*!< Function not implemented on interface. */
 #define EC_NOT_INITIALIZED 10   /*!< Communication has not been initialized. */
-/**@}*/
 
 #endif

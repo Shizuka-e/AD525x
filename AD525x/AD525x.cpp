@@ -520,7 +520,7 @@ uint8_t AD525x::get_err_code() {
 
     Retrieves the error code stored in the private `err_code` variable. If non-zero, use 
     `AD525xGetErrorString()` from `AD525x_ErrorStrings.h` to retrieve the human-readable error
-    string, or see \ref ErrorCodes for details.
+    string, or see  `AD525x_Errors.h` for details.
 
     @return Returns the error code set in the current object. Non-zero value is an error.
     */

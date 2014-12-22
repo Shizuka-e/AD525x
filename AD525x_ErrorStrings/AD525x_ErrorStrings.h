@@ -5,7 +5,7 @@ Header file for retrieving human-readable strings corresponding to the error cod
 #ifndef AD525X_ERRSTRINGS_H
 #define AD525X_ERRSTRINGS_H
 
-#include <cstdint>
+#include <cstdint>                      // Required to use uint8_t
 
 #define EC_NO_ERR_str "No error."
 #define EC_DATA_LONG_str "Data too long to fit in transmit buffer."

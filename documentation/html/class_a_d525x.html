@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">AD525x
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Library for I2C communication with AD5253 and AD5254 digital potentiometers using an Arduino.</div>
   </td>
@@ -31,7 +31,6 @@
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="modules.html"><span>Modules</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -69,8 +68,10 @@ Inheritance diagram for AD525x:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a98991d8077f70969db06fa32c13ba859"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a98991d8077f70969db06fa32c13ba859">AD525x</a> (uint8_t AD_addr)</td></tr>
-<tr class="separator:a98991d8077f70969db06fa32c13ba859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321c95875ec3c7cefb0186fa8ca2b49b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a321c95875ec3c7cefb0186fa8ca2b49b">AD525x</a> ()</td></tr>
+<tr class="separator:a321c95875ec3c7cefb0186fa8ca2b49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada9b9e75909f10e56dc0e43aec95a23b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#ada9b9e75909f10e56dc0e43aec95a23b">initialize</a> (uint8_t AD_addr)</td></tr>
+<tr class="separator:ada9b9e75909f10e56dc0e43aec95a23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafb16999f293f9df2efc299637f7a554"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#aafb16999f293f9df2efc299637f7a554">write_RDAC</a> (uint8_t RDAC, uint8_t value)</td></tr>
 <tr class="separator:aafb16999f293f9df2efc299637f7a554"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0aab4ec8edd75b15b1db17034d5a31f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#ae0aab4ec8edd75b15b1db17034d5a31f">read_RDAC</a> (uint8_t RDAC)</td></tr>
@@ -109,8 +110,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a81f3e8b0535cfbf92fcad39a3e8171d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a5029af432b07e2b39aaf0e380a3973"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code</a> (void)</td></tr>
 <tr class="separator:a1a5029af432b07e2b39aaf0e380a3973"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab425c301f5d90a1fe958de21cdda831e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text</a> (void)</td></tr>
-<tr class="separator:ab425c301f5d90a1fe958de21cdda831e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacbf7ceae5ab0469ad1d18e38cabbde0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#aacbf7ceae5ab0469ad1d18e38cabbde0">get_error_text</a> (void)</td></tr>
+<tr class="separator:aacbf7ceae5ab0469ad1d18e38cabbde0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -119,32 +120,30 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00084">84</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00014">14</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a98991d8077f70969db06fa32c13ba859"></a>
+<a class="anchor" id="a321c95875ec3c7cefb0186fa8ca2b49b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AD525x::AD525x </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>AD_addr</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Constructor - pass <code>(AD1&lt;&lt;1 | AD0)</code> to AD_addr to select the chosen device address.</p>
-<p>This is the constructor for the base <a class="el" href="class_a_d525x.html">AD525x</a> class. It is called with the address of the specified device (specified via the <code>AD1</code> and <code>AD0</code> pins on the device itself - high = 1, low = 0). This two-bit input parameter is used to construct the full 7-bit I2C address.</p>
-<p>If an invalid address is specified, <code>err_code</code> is set to <code>EC_BAD_DEVICE_ADDR</code>. This can be queried via <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code> and/or <code><a class="el" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text()</a></code>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">AD_addr</td><td>The two bit user-specified address of the device with which you are communicating. Should be (AD1&lt;&lt;1 | AD0).</td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00008">8</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00017">17</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
 
 </div>
 </div>
@@ -164,9 +163,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Decrements the current wiper value for all RDAC potentiometers by 1.</p>
 <p>Takes the current wiper value for all RDAC potentiometers and decrements them by 1.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
+</ul>
+</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00373">373</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00412">412</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -185,9 +187,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Decrements the current wiper value for all RDAC potentiometers by 6dB</p>
 <p>Takes the current wiper value for all RDAC potentiometers and decrements them by 6dB (i.e. cuts them in half).</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
+</ul>
+</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00397">397</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00440">440</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -213,11 +218,12 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00289">289</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00332">332</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -243,11 +249,12 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00331">331</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00372">372</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -265,19 +272,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Retrieve the error code stored in a private variable.</p>
-<p>Retrieves the error code stored in the private <code>err_code</code> variable. If non-zero, use <code><a class="el" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text()</a></code> to retrieve the error string. See <a class="el" href="group___error_codes.html">Error codes</a> for details.</p>
+<p>Retrieves the error code stored in the private <code>err_code</code> variable. If non-zero, use <code><a class="el" href="_a_d525x___error_strings_8cpp.html#a60ff48998dac220c169d16f8d5cc841e">AD525xGetErrorString()</a></code> from <code><a class="el" href="_a_d525x___error_strings_8h.html" title="Header file for retrieving human-readable strings corresponding to the error codes defined in AD525x_...">AD525x_ErrorStrings.h</a></code> to retrieve the human-readable error string, or see <code><a class="el" href="_a_d525x___errors_8h.html" title="Error code header for AD525x.h and AD525x_ErrorStrings.h. ">AD525x_Errors.h</a></code> for details.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the error code set in the current object. Non-zero value is an error.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00471">471</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00518">518</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab425c301f5d90a1fe958de21cdda831e"></a>
+<a class="anchor" id="aacbf7ceae5ab0469ad1d18e38cabbde0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char * AD525x::get_error_text </td>
+          <td class="memname">char* AD525x::get_error_text </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -285,11 +292,6 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Retrieve the error string associated with the stored error code (<code>err_code</code>).</p>
-<p>Retrieves the stored error code <code>err_code</code> and returns the human-readable error string associated with it. For a full list of error codes and error strings, see <a class="el" href="group___error_codes.html">Error codes</a>.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the human-readable string describing the current error code.</dd></dl>
-
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00482">482</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +323,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_a_d5254.html#a7632febb85463a46e97c38b80cebe76c">AD5254</a>, and <a class="el" href="class_a_d5253.html#a595cd05ec77d2f84be69a07479a718ad">AD5253</a>.</p>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00427">427</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00474">474</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -340,9 +342,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Increments the current wiper value for all RDAC potentiometers by 1.</p>
 <p>Takes the current wiper value for all RDAC potentiometers and increments them by 1.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
+</ul>
+</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00385">385</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00426">426</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -361,9 +366,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Increments the current wiper value for all RDAC potentiometers by 6dB</p>
 <p>Takes the current wiper value for all RDAC potentiometers and increments them by 6dB (i.e. doubles them).</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
+</ul>
+</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00410">410</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00455">455</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -389,11 +397,12 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00310">310</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00352">352</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -419,11 +428,40 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00352">352</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00392">392</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ada9b9e75909f10e56dc0e43aec95a23b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t AD525x::initialize </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>AD_addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initialize the potentiometer - pass <code>(AD1&lt;&lt;1 | AD0)</code> to AD_addr to set the device address.</p>
+<p>Starts I2C communications with the specified device (specified via the <code>AD1</code> and <code>AD0</code> pins on the device itself - high = 1, low = 0). This two-bit input parameter is used to construct the full 7-bit I2C address.</p>
+<p>If an invalid address is specified, <code>err_code</code> is set to <code>EC_BAD_DEVICE_ADDR</code>. This can be queried via <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">AD_addr</td><td>The two bit user-specified address of the device with which you are communicating. Should be (AD1&lt;&lt;1 | AD0).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error or the error code on error.</dd></dl>
+
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00009">9</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,9 +487,13 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the value stored in the specified register.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the value stored in the specified register or 0 on error. Check <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code> if return value is 0 to determine if an error has occurred. This raises I2C errors via a call to <code>read_data_byte()</code>, and also raises the following errors directly:</dd></dl>
+<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised of the potentiometer object is not initialized.</li>
+<li><code><code>EC_BAD_REGISTER</code></code>: An invalid register address was provided.</li>
+</ul>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00137">137</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00155">155</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -476,9 +518,13 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the wiper value or 0 on error (0 is also a valid wiper value).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the wiper value or 0 on error (0 is also a valid wiper value). I2C errors are raised indirectly via a call to <code>read_data_byte()</code>. This function also raises the following error codes:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised of the potentiometer object is not initialized.</li>
+<li><code><code>EC_BAD_REGISTER</code></code>: Raised if the supplied RDAC register exceeds the maximum value (3).</li>
+</ul>
+</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00069">69</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00078">78</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -504,9 +550,13 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the RAB tolerance set at the factory and stored in read-only memory on the chip, represented as a signed float as a percentage of the total device resistance.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the RAB tolerance set at the factory and stored in read-only memory on the chip, represented as a signed float as a percentage of the total device resistance. On error, returns 0 and sets err_code to a non-zero value. Check err_code in the event of a non-zero return value. Raises I2C errors indirectly through a call to <code>read_data_byte()</code> and directly raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code> Raised if the object has not been initialized.</li>
+<li><code><code>EC_BAD_REGISTER</code></code> Raised if an invalid register is passed to the function.</li>
+</ul>
+</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00167">167</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00196">196</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -524,9 +574,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Return the device to idle state.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
+</ul>
+</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00229">229</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00269">269</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -544,9 +597,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Restores the wiper value for all RDAC registers from their corresponding EEMEM registers.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code, which is raised indirectly through a call to <code>write_cmd()</code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code, I2C errors are raised indirectly through a call to <code>write_cmd()</code>, and <code>EC_NOT_INITIALIZED</code> is raised if the object has not been initialized.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00259">259</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00301">301</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -572,11 +625,12 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00238">238</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00281">281</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -602,11 +656,12 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised if communication has not been initialized.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00269">269</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00313">313</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -643,12 +698,13 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error. Raises I2C errors indirectly via a call to <code>write_data</code>. Also raises:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised of the potentiometer object is not initialized.</li>
 <li><code><code>EC_BAD_WIPER_SETTING</code></code>: Register selected is an RDAC register and value exceeds maximum allowed RDAC value.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: An invalid register address was provided.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00098">98</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00117">117</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -685,12 +741,13 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns an error code and sets the <code>err_code</code> parameter (queried via <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code>). I2C errors are raised indirectly via a call to <code>write_data()</code>. This function also raises the following error codes:<ul>
+<li><code><code>EC_NOT_INITIALIZED</code></code>: Raised of the potentiometer object is not initialized.</li>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if the supplied RDAC register exceeds the maximum value (3).</li>
 <li><code><code>EC_BAD_WIPER_SETTING</code></code>: Raised if the wiper setting (<code>value</code>) eceeds the maximum value (63 for <a class="el" href="class_a_d5253.html">AD5253()</a>, 255 for <a class="el" href="class_a_d5254.html">AD5254()</a>)</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00032">32</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00040">40</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -713,18 +770,18 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00122">122</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00054">54</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_a_d525x_8h_source.html">AD525x.h</a></li>
-<li><a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a></li>
+<li>AD525x/<a class="el" href="_a_d525x_8h_source.html">AD525x.h</a></li>
+<li>AD525x/<a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 21 2014 18:20:25 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 21 2014 21:25:06 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

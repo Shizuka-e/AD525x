@@ -17,27 +17,10 @@
 <para>Maximum wiper value. 255 for <ref refid="class_a_d5254" kindref="compound">AD5254</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="151" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="151" bodyend="-1"/>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x/AD525x.h" line="121" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x/AD525x.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>AD5254::AD5254</definition>
-        <argsstring>(uint8_t AD_addr)</argsstring>
-        <name>AD5254</name>
-        <param>
-          <type>uint8_t</type>
-          <declname>AD_addr</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="147" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="147" bodyend="147"/>
-      </memberdef>
       <memberdef kind="function" id="class_a_d5254_1a7632febb85463a46e97c38b80cebe76c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>uint8_t</type>
         <definition>uint8_t AD5254::get_max_val</definition>
@@ -55,7 +38,7 @@
 <para>Retrieve the maximum value of the wiper.</para><para>The <ref refid="class_a_d5253" kindref="compound">AD5253</ref> and <ref refid="class_a_d5254" kindref="compound">AD5254</ref> differ only in their maximum wiper value, [0, 64) for <ref refid="class_a_d5253" kindref="compound">AD5253</ref> and [0, 256) for <ref refid="class_a_d5254" kindref="compound">AD5254</ref>. This function is an interface that should return the maximum wiper value when called from the child class objects. See <computeroutput><ref refid="class_a_d525x_1a81f3e8b0535cfbf92fcad39a3e8171d3" kindref="member">AD525x::get_max_val()</ref></computeroutput>.</para><para><simplesect kind="return"><para>Returns the value stored in <computeroutput>AD5254::max_val</computeroutput>. (255)</para></simplesect>
 Interface function to be implemented by child classes - retrieve the maximum wiper value.</para><para>The <ref refid="class_a_d5253" kindref="compound">AD5253</ref> and <ref refid="class_a_d5254" kindref="compound">AD5254</ref> differ only in their maximum wiper value, [0, 64) for <ref refid="class_a_d5253" kindref="compound">AD5253</ref> and [0, 256) for <ref refid="class_a_d5254" kindref="compound">AD5254</ref>. This function is an interface that should return the maximum wiper value when called from the child class objects. See <computeroutput><ref refid="class_a_d5253_1a595cd05ec77d2f84be69a07479a718ad" kindref="member">AD5253::get_max_val()</ref></computeroutput> and <computeroutput><ref refid="class_a_d5254_1a7632febb85463a46e97c38b80cebe76c" kindref="member">AD5254::get_max_val()</ref></computeroutput>;</para><para><simplesect kind="return"><para>Returns 0 on error. (Always returns an error on <ref refid="class_a_d525x" kindref="compound">AD525x</ref>). As this is not implemented, it sets the error code to <computeroutput>EC_NOT_IMPLEMENTED</computeroutput>.</para></simplesect>
 </para>        </inbodydescription>
-        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="149" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.cpp" bodystart="454" bodyend="465"/>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x/AD525x.h" line="119" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x/AD525x.cpp" bodystart="501" bodyend="512"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -86,21 +69,21 @@ Interface function to be implemented by child classes - retrieve the maximum wip
         <link refid="class_a_d525x"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="145" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="145" bodyend="152"/>
+    <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x/AD525x.h" line="117" column="1" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x/AD525x.h" bodystart="117" bodyend="122"/>
     <listofallmembers>
-      <member refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" prot="public" virt="non-virtual"><scope>AD5254</scope><name>AD5254</name></member>
-      <member refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" prot="public" virt="non-virtual"><scope>AD5254</scope><name>AD525x</name></member>
+      <member refid="class_a_d525x_1a321c95875ec3c7cefb0186fa8ca2b49b" prot="public" virt="non-virtual"><scope>AD5254</scope><name>AD525x</name></member>
       <member refid="class_a_d525x_1a53fa5b5ee51e009264f263a73f55a930" prot="public" virt="non-virtual"><scope>AD5254</scope><name>decrement_all_RDAC</name></member>
       <member refid="class_a_d525x_1aff4a3e30764e6b52808b1005910e117b" prot="public" virt="non-virtual"><scope>AD5254</scope><name>decrement_all_RDAC_6dB</name></member>
       <member refid="class_a_d525x_1a90ce8ade6c5fa2714b39be401cb002fd" prot="public" virt="non-virtual"><scope>AD5254</scope><name>decrement_RDAC</name></member>
       <member refid="class_a_d525x_1a444ba5ee3ddf24cd2f88da36a27d6c8a" prot="public" virt="non-virtual"><scope>AD5254</scope><name>decrement_RDAC_6dB</name></member>
       <member refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" prot="public" virt="non-virtual"><scope>AD5254</scope><name>get_err_code</name></member>
-      <member refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" prot="public" virt="non-virtual"><scope>AD5254</scope><name>get_error_text</name></member>
+      <member refid="class_a_d525x_1aacbf7ceae5ab0469ad1d18e38cabbde0" prot="public" virt="non-virtual"><scope>AD5254</scope><name>get_error_text</name></member>
       <member refid="class_a_d5254_1a7632febb85463a46e97c38b80cebe76c" prot="public" virt="virtual"><scope>AD5254</scope><name>get_max_val</name></member>
       <member refid="class_a_d525x_1a67f3c289d56a85e337a0f9f8dec0f150" prot="public" virt="non-virtual"><scope>AD5254</scope><name>increment_all_RDAC</name></member>
       <member refid="class_a_d525x_1a4c33c7d0de1a56739f2766127cf38605" prot="public" virt="non-virtual"><scope>AD5254</scope><name>increment_all_RDAC_6dB</name></member>
       <member refid="class_a_d525x_1afaaba92e35608ed68ddf5db52b3183b6" prot="public" virt="non-virtual"><scope>AD5254</scope><name>increment_RDAC</name></member>
       <member refid="class_a_d525x_1a91da29dd1f19ed0b40ce0e20e47fceec" prot="public" virt="non-virtual"><scope>AD5254</scope><name>increment_RDAC_6dB</name></member>
+      <member refid="class_a_d525x_1ada9b9e75909f10e56dc0e43aec95a23b" prot="public" virt="non-virtual"><scope>AD5254</scope><name>initialize</name></member>
       <member refid="class_a_d5254_1a09796203eaddce964ee42bc405f3e6f7" prot="private" virt="non-virtual"><scope>AD5254</scope><name>max_val</name></member>
       <member refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" prot="public" virt="non-virtual"><scope>AD5254</scope><name>read_EEMEM</name></member>
       <member refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" prot="public" virt="non-virtual"><scope>AD5254</scope><name>read_RDAC</name></member>
