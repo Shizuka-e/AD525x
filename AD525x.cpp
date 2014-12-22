@@ -56,7 +56,7 @@ uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
     uint8_t max_value = this->get_max_val();
     if(!max_value) {
         return err_code;
-    } else (value > max_value) {
+    } else if (value > max_value) {
         err_code = EC_BAD_WIPER_SETTING;
         return err_code;
     }
@@ -156,7 +156,7 @@ uint8_t AD525x::read_EEMEM(uint8_t reg) {
 
     uint8_t instr_addr = EEMEM_register | reg;
 
-    uint8_t rv = read_data_byte(instr_addr, 1);
+    uint8_t rv = read_data_byte(instr_addr);
     if(get_err_code() != 0) {
         return 0;       // Err code set in read_data already.
     }
@@ -263,7 +263,7 @@ uint8_t AD525x::restore_all_RDAC() {
             through a call to `write_cmd()`.
     */
 
-    return write_cmd(CMD_Restore_ALL_RDAC);
+    return write_cmd(CMD_Restore_All_RDAC);
 }
 
 uint8_t AD525x::store_RDAC(uint8_t RDAC) {
