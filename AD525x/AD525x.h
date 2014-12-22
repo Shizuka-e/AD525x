@@ -44,7 +44,7 @@ public:
     uint8_t increment_all_RDAC_6dB(void);
 
     // For class inheritance
-    virtual uint8_t get_max_val(void);
+    virtual uint8_t get_max_val(void) = 0;      // Make this an abstract class.
 
     // Error handling
     uint8_t get_err_code(void);

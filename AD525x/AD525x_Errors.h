@@ -13,7 +13,6 @@ Error code header for `AD525x.h` and `AD525x_ErrorStrings.h`.
 #define EC_BAD_WIPER_SETTING 6  /*!< Invalid wiper setting selected. */
 #define EC_BAD_READ_SIZE 7      /*!< Invalid number of bytes read from register. */
 #define EC_BAD_DEVICE_ADDR 8    /*!< Bad device address - device address must be in [0, 3]. */
-#define EC_NOT_IMPLEMENTED 9    /*!< Function not implemented on interface. */
-#define EC_NOT_INITIALIZED 10   /*!< Communication has not been initialized. */
+#define EC_NOT_INITIALIZED 9    /*!< Communication has not been initialized. */
 
 #endif

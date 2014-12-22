@@ -31,8 +31,6 @@ const char *AD525xGetErrorString(uint8_t err_code) {
             return EC_BAD_READ_SIZE_str;
         case EC_BAD_DEVICE_ADDR:
             return EC_BAD_DEVICE_ADDR_str;
-        case EC_NOT_IMPLEMENTED:
-            return EC_NOT_IMPLEMENTED_str;
         case EC_NOT_INITIALIZED:
             return EC_NOT_INITIALIZED_str;
         default:

@@ -16,7 +16,6 @@ Header file for retrieving human-readable strings corresponding to the error cod
 #define EC_BAD_WIPER_SETTING_str "Invalid wiper setting."
 #define EC_BAD_READ_SIZE_str "Invalid number of bytes read from register."
 #define EC_BAD_DEVICE_ADDR_str "Bad device address - device address must be in [0, 3]."
-#define EC_NOT_IMPLEMENTED_str "Function not implemented on interface."
 #define EC_NOT_INITIALIZED_str "Communication has not been initialized."
 
 #define EC_UNKNOWN_ERR_str "Unknown error."
