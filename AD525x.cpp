@@ -24,7 +24,6 @@ AD525x::AD525x(uint8_t AD_addr) {
         err_code = EC_BAD_DEVICE_ADDR;          // Set the error code.
     }
     dev_addr = base_I2C_addr | AD_addr;
-    max_val = 0;
     err_code = 0;
 
     Wire.begin();                              // Start I2C communications.
@@ -54,7 +53,10 @@ uint8_t AD525x::write_RDAC(uint8_t RDAC, uint8_t value) {
         return err_code;
     }
 
-    if(value > max_val) {
+    uint8_t max_value = this->get_max_val();
+    if(!max_value) {
+        return err_code;
+    } else (value > max_value) {
         err_code = EC_BAD_WIPER_SETTING;
         return err_code;
     }
@@ -112,7 +114,10 @@ uint8_t AD525x::write_EEMEM(uint8_t reg, uint8_t value) {
             - \c `EC_BAD_REGISTER`: An invalid register address was provided.
     */
 
-    if(reg < 4 && value < max_val) {
+    uint8_t max_value = this->get_max_val();
+    if (!max_value) {
+        return err_code;        // In this case there's an error already
+    } else if (reg < 4 && value < this->get_max_val()) {
         // Fairly sure the max value only applies to the RDAC registers, not the EEMEM.
         err_code = EC_BAD_WIPER_SETTING;
         return err_code;
@@ -416,6 +421,50 @@ uint8_t AD525x::increment_all_RDAC_6dB() {
 }
 
 //
+// Getter function for maximum value - not implemented for AD525x
+//
+
+uint8_t AD525x::get_max_val() {
+    /** Interface function to be implemented by child classes - retrieve the maximum wiper value.
+
+    The AD5253 and AD5254 differ only in their maximum wiper value, [0, 64) for AD5253 and [0, 256) 
+    for AD5254. This function is an interface that should return the maximum wiper value when called
+    from the child class objects. See `AD5253::get_max_val()` and `AD5254::get_max_val()`;
+
+    @return Returns 0 on error. (Always returns an error on AD525x). As this is not
+            implemented, it sets the error code to `EC_NOT_IMPLEMENTED`.
+    */
+    err_code = EC_NOT_IMPLEMENTED;
+    return 0;       // Raises error.
+}
+
+uint8_t AD5253::get_max_val() {
+    /** Retrieve the maximum value of the wiper.
+
+    The AD5253 and AD5254 differ only in their maximum wiper value, [0, 64) for AD5253 and [0, 256) 
+    for AD5254. This function is an interface that should return the maximum wiper value when called
+    from the child class objects. See `AD525x::get_max_val()`.
+
+    @return Returns the value stored in `AD5253::max_val`. (63)
+    */
+
+    return AD5253::max_val;
+}
+
+uint8_t AD5254::get_max_val() {
+    /** Retrieve the maximum value of the wiper.
+
+    The AD5253 and AD5254 differ only in their maximum wiper value, [0, 64) for AD5253 and [0, 256) 
+    for AD5254. This function is an interface that should return the maximum wiper value when called
+    from the child class objects. See `AD525x::get_max_val()`.
+
+    @return Returns the value stored in `AD5254::max_val`. (255)
+    */
+
+    return AD5254::max_val;
+}
+
+//
 // Error handling
 //
 
@@ -457,6 +506,8 @@ char * AD525x::get_error_text() {
             return EC_BAD_READ_SIZE_str;
         case EC_BAD_DEVICE_ADDR:
             return EC_BAD_DEVICE_ADDR_str;
+        case EC_NOT_IMPLEMENTED:
+            return EC_NOT_IMPLEMENTED_str;
         default:
             return EC_UNKNOWN_ERR_str;
     }

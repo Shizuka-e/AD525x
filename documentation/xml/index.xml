@@ -1,10 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.8">
   <compound refid="class_a_d5253" kind="class"><name>AD5253</name>
+    <member refid="class_a_d5253_1a45970874ff12013e48ef775c79e532d9" kind="variable"><name>max_val</name></member>
     <member refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" kind="function"><name>AD5253</name></member>
+    <member refid="class_a_d5253_1a595cd05ec77d2f84be69a07479a718ad" kind="function"><name>get_max_val</name></member>
   </compound>
   <compound refid="class_a_d5254" kind="class"><name>AD5254</name>
+    <member refid="class_a_d5254_1a09796203eaddce964ee42bc405f3e6f7" kind="variable"><name>max_val</name></member>
     <member refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" kind="function"><name>AD5254</name></member>
+    <member refid="class_a_d5254_1a7632febb85463a46e97c38b80cebe76c" kind="function"><name>get_max_val</name></member>
   </compound>
   <compound refid="class_a_d525x" kind="class"><name>AD525x</name>
     <member refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kind="variable"><name>max_val</name></member>
@@ -28,6 +32,7 @@
     <member refid="class_a_d525x_1a67f3c289d56a85e337a0f9f8dec0f150" kind="function"><name>increment_all_RDAC</name></member>
     <member refid="class_a_d525x_1aff4a3e30764e6b52808b1005910e117b" kind="function"><name>decrement_all_RDAC_6dB</name></member>
     <member refid="class_a_d525x_1a4c33c7d0de1a56739f2766127cf38605" kind="function"><name>increment_all_RDAC_6dB</name></member>
+    <member refid="class_a_d525x_1a81f3e8b0535cfbf92fcad39a3e8171d3" kind="function"><name>get_max_val</name></member>
     <member refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kind="function"><name>get_err_code</name></member>
     <member refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kind="function"><name>get_error_text</name></member>
     <member refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" kind="function"><name>write_cmd</name></member>
@@ -76,6 +81,8 @@
     <member refid="group___error_codes_1ga1b465cec37e683ec1c9a2b7daee86308" kind="define"><name>EC_BAD_READ_SIZE_str</name></member>
     <member refid="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" kind="define"><name>EC_BAD_DEVICE_ADDR</name></member>
     <member refid="group___error_codes_1gaa7d2c139bde0b5d4d2cd8c7f349cd8ce" kind="define"><name>EC_BAD_DEVICE_ADDR_str</name></member>
+    <member refid="group___error_codes_1ga3065d2c1596f6ec26f0d55ab96efd5bc" kind="define"><name>EC_NOT_IMPLEMENTED</name></member>
+    <member refid="group___error_codes_1ga70e607f707432c6cd7d8a23e9632d487" kind="define"><name>EC_NOT_IMPLEMENTED_str</name></member>
     <member refid="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" kind="define"><name>EC_UNKNOWN_ERR_str</name></member>
   </compound>
   <compound refid="readme_8md" kind="file"><name>readme.md</name>
@@ -99,6 +106,8 @@
     <member refid="group___error_codes_1ga1b465cec37e683ec1c9a2b7daee86308" kind="define"><name>EC_BAD_READ_SIZE_str</name></member>
     <member refid="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" kind="define"><name>EC_BAD_DEVICE_ADDR</name></member>
     <member refid="group___error_codes_1gaa7d2c139bde0b5d4d2cd8c7f349cd8ce" kind="define"><name>EC_BAD_DEVICE_ADDR_str</name></member>
+    <member refid="group___error_codes_1ga3065d2c1596f6ec26f0d55ab96efd5bc" kind="define"><name>EC_NOT_IMPLEMENTED</name></member>
+    <member refid="group___error_codes_1ga70e607f707432c6cd7d8a23e9632d487" kind="define"><name>EC_NOT_IMPLEMENTED_str</name></member>
     <member refid="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" kind="define"><name>EC_UNKNOWN_ERR_str</name></member>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>

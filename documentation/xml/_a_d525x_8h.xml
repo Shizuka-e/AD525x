@@ -461,6 +461,28 @@
         </inbodydescription>
         <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="75" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="76" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga3065d2c1596f6ec26f0d55ab96efd5bc" prot="public" static="no">
+        <name>EC_NOT_IMPLEMENTED</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="77" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___error_codes_1ga70e607f707432c6cd7d8a23e9632d487" prot="public" static="no">
+        <name>EC_NOT_IMPLEMENTED_str</name>
+        <initializer>&quot;Function not implemented on interface.&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="78" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="define" id="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" prot="public" static="no">
         <name>EC_UNKNOWN_ERR_str</name>
         <initializer>&quot;Unknown error.&quot;</initializer>
@@ -470,7 +492,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="77" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="78" bodyend="-1"/>
+        <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" line="80" column="9" bodyfile="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h" bodystart="81" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -536,70 +558,81 @@
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_DEVICE_ADDR<sp/>8</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75" refid="group___error_codes_1ga8b442f295e2674379ddda6935ebd0731" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_BAD_DEVICE_ADDR_str<sp/>&quot;Bad<sp/>device<sp/>address<sp/>-<sp/>device<sp/>address<sp/>must<sp/>be<sp/>in<sp/>[0,<sp/>3].&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="76" refid="group___error_codes_1gaa7d2c139bde0b5d4d2cd8c7f349cd8ce" refkind="member"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_UNKNOWN_ERR_str<sp/>&quot;Unknown<sp/>error.&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" refkind="member"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
-<codeline lineno="81" refid="class_a_d525x" refkind="compound"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>parent<sp/>class<sp/>-<sp/>use<sp/>AD5253<sp/>or<sp/>AD5254<sp/>as<sp/>necessary.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" kindref="member">AD525x</ref>(uint8_t<sp/>AD_addr);</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" kindref="member">write_RDAC</ref>(uint8_t<sp/>RDAC,<sp/>uint8_t<sp/>value);</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" kindref="member">read_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_NOT_IMPLEMENTED<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="group___error_codes_1ga3065d2c1596f6ec26f0d55ab96efd5bc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_NOT_IMPLEMENTED_str<sp/>&quot;Function<sp/>not<sp/>implemented<sp/>on<sp/>interface.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="group___error_codes_1ga70e607f707432c6cd7d8a23e9632d487" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EC_UNKNOWN_ERR_str<sp/>&quot;Unknown<sp/>error.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="group___error_codes_1ga72bf6d01355325120ab20e71c3af2719" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
+<codeline lineno="84" refid="class_a_d525x" refkind="compound"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>a<sp/>parent<sp/>class<sp/>-<sp/>use<sp/>AD5253<sp/>or<sp/>AD5254<sp/>as<sp/>necessary.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1a98991d8077f70969db06fa32c13ba859" kindref="member">AD525x</ref>(uint8_t<sp/>AD_addr);</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" kindref="member">write_EEMEM</ref>(uint8_t<sp/>reg,<sp/>uint8_t<sp/>value);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" kindref="member">read_EEMEM</ref>(uint8_t<sp/>reg);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1aafb16999f293f9df2efc299637f7a554" kindref="member">write_RDAC</ref>(uint8_t<sp/>RDAC,<sp/>uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ae0aab4ec8edd75b15b1db17034d5a31f" kindref="member">read_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
 <codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" kindref="member">read_tolerance</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Device<sp/>commands</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a04c169fb3ec72c0266d279f0d23dbbb8" kindref="member">reset_device</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a4ae38aeedc85aa5de5a07dee2ebd0cfc" kindref="member">write_EEMEM</ref>(uint8_t<sp/>reg,<sp/>uint8_t<sp/>value);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a0e9267fc2a0396cff5dea88a992702d6" kindref="member">read_EEMEM</ref>(uint8_t<sp/>reg);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x_1a062ad205aa6718db0c5c85d1a2e7c2fb" kindref="member">read_tolerance</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a85cdfa18db24258057d8ada5c453d14c" kindref="member">restore_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ad189285ec3dbbc44116e1fe91ef67292" kindref="member">restore_all_RDAC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a201bdd5c0b700ddda9456772c0dcd069" kindref="member">store_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a90ce8ade6c5fa2714b39be401cb002fd" kindref="member">decrement_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1afaaba92e35608ed68ddf5db52b3183b6" kindref="member">increment_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a444ba5ee3ddf24cd2f88da36a27d6c8a" kindref="member">decrement_RDAC_6dB</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a91da29dd1f19ed0b40ce0e20e47fceec" kindref="member">increment_RDAC_6dB</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a53fa5b5ee51e009264f263a73f55a930" kindref="member">decrement_all_RDAC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a67f3c289d56a85e337a0f9f8dec0f150" kindref="member">increment_all_RDAC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1aff4a3e30764e6b52808b1005910e117b" kindref="member">decrement_all_RDAC_6dB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a4c33c7d0de1a56739f2766127cf38605" kindref="member">increment_all_RDAC_6dB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kindref="member">get_error_text</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="115" refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" refkind="member"><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ad9037f843984a64d8bc8cfe6c37028df" kindref="member">write_cmd</ref>(uint8_t<sp/>cmd_register);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a32e05e0af6227e2f4c8b72d4ddd9c2b6" kindref="member">write_data</ref>(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>data);</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*<ref refid="class_a_d525x_1a0ea67f3d590a18bcbb5936827004606e" kindref="member">read_data</ref>(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>length);</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1aebf63d75b7c1e16ccbb23e56eaa74293" kindref="member">read_data_byte</ref>(uint8_t<sp/>register_addr);</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>dev_addr;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>err_code;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="126"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d5253" kindref="compound">AD5253</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
-<codeline lineno="129" refid="class_a_d5253" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" kindref="member">AD5253</ref>(uint8_t<sp/>AD_addr)<sp/>:<sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref>(AD_addr)<sp/>{</highlight></codeline>
-<codeline lineno="131" refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref><sp/>=<sp/><ref refid="_a_d525x_8h_1a6931616734fe67bafa17a13c36f669dc" kindref="member">AD5253_max</ref>;<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Device<sp/>commands</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a04c169fb3ec72c0266d279f0d23dbbb8" kindref="member">reset_device</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a85cdfa18db24258057d8ada5c453d14c" kindref="member">restore_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ad189285ec3dbbc44116e1fe91ef67292" kindref="member">restore_all_RDAC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a201bdd5c0b700ddda9456772c0dcd069" kindref="member">store_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a90ce8ade6c5fa2714b39be401cb002fd" kindref="member">decrement_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1afaaba92e35608ed68ddf5db52b3183b6" kindref="member">increment_RDAC</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a444ba5ee3ddf24cd2f88da36a27d6c8a" kindref="member">decrement_RDAC_6dB</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a91da29dd1f19ed0b40ce0e20e47fceec" kindref="member">increment_RDAC_6dB</ref>(uint8_t<sp/>RDAC);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a53fa5b5ee51e009264f263a73f55a930" kindref="member">decrement_all_RDAC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a67f3c289d56a85e337a0f9f8dec0f150" kindref="member">increment_all_RDAC</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1aff4a3e30764e6b52808b1005910e117b" kindref="member">decrement_all_RDAC_6dB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a4c33c7d0de1a56739f2766127cf38605" kindref="member">increment_all_RDAC_6dB</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>class<sp/>inheritance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a81f3e8b0535cfbf92fcad39a3e8171d3" kindref="member">get_max_val</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1a1a5029af432b07e2b39aaf0e380a3973" kindref="member">get_err_code</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="class_a_d525x_1ab425c301f5d90a1fe958de21cdda831e" kindref="member">get_error_text</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122" refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>write_cmd(uint8_t<sp/>cmd_register);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>write_data(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>data);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*read_data(uint8_t<sp/>register_addr,<sp/>uint8_t<sp/>length);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>read_data_byte(uint8_t<sp/>register_addr);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>dev_addr;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>err_code;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="133"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d5254" kindref="compound">AD5254</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
-<codeline lineno="136" refid="class_a_d5254" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" kindref="member">AD5254</ref>(uint8_t<sp/>AD_addr)<sp/>:<sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref>(AD_addr)<sp/>{</highlight></codeline>
-<codeline lineno="138" refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_a_d525x_1ad0fc5917fcac0192d99fe4baa49600fc" kindref="member">max_val</ref><sp/>=<sp/><ref refid="_a_d525x_8h_1a8a649fdf406bebe64ee4266a3e24af8e" kindref="member">AD5254_max</ref>;<sp/></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="140"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"></highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d5253" kindref="compound">AD5253</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
+<codeline lineno="136" refid="class_a_d5253" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" kindref="member">AD5253</ref>(uint8_t<sp/>AD_addr)<sp/>:<sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref>(AD_addr)<sp/>{};</highlight></codeline>
+<codeline lineno="138" refid="class_a_d5253_1a4f22c1a42137b454681bbc29ef25f096" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d5253_1a595cd05ec77d2f84be69a07479a718ad" kindref="member">get_max_val</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>max_val<sp/>=<sp/>63;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_a_d5254" kindref="compound">AD5254</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref><sp/>{</highlight></codeline>
+<codeline lineno="145" refid="class_a_d5254" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" kindref="member">AD5254</ref>(uint8_t<sp/>AD_addr)<sp/>:<sp/><ref refid="class_a_d525x" kindref="compound">AD525x</ref>(AD_addr)<sp/>{};</highlight></codeline>
+<codeline lineno="147" refid="class_a_d5254_1a608cb1612b3b0c7afbfc7cfc2bc9c167" refkind="member"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="class_a_d5254_1a7632febb85463a46e97c38b80cebe76c" kindref="member">get_max_val</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t<sp/>max_val<sp/>=<sp/>255;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="C:/Users/Paul/Documents/Programming/Arduino/AD525x/AD525x.h"/>
   </compounddef>

@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">AD525x
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">Library for I2C communication with AD5253 and AD5254 digital potentiometers using an Arduino.</div>
   </td>
@@ -48,8 +48,7 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_a_d525x-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AD525x Class Reference</div>  </div>
@@ -106,30 +105,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aff4a3e30764e6b52808b1005910e117b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c33c7d0de1a56739f2766127cf38605"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a4c33c7d0de1a56739f2766127cf38605">increment_all_RDAC_6dB</a> (void)</td></tr>
 <tr class="separator:a4c33c7d0de1a56739f2766127cf38605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f3e8b0535cfbf92fcad39a3e8171d3"><td class="memItemLeft" align="right" valign="top">virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a81f3e8b0535cfbf92fcad39a3e8171d3">get_max_val</a> (void)</td></tr>
+<tr class="separator:a81f3e8b0535cfbf92fcad39a3e8171d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a5029af432b07e2b39aaf0e380a3973"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code</a> (void)</td></tr>
 <tr class="separator:a1a5029af432b07e2b39aaf0e380a3973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab425c301f5d90a1fe958de21cdda831e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text</a> (void)</td></tr>
 <tr class="separator:ab425c301f5d90a1fe958de21cdda831e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
 <tr class="memitem:ad0fc5917fcac0192d99fe4baa49600fc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#ad0fc5917fcac0192d99fe4baa49600fc">max_val</a></td></tr>
 <tr class="separator:ad0fc5917fcac0192d99fe4baa49600fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:ad9037f843984a64d8bc8cfe6c37028df"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd</a> (uint8_t cmd_register)</td></tr>
-<tr class="separator:ad9037f843984a64d8bc8cfe6c37028df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32e05e0af6227e2f4c8b72d4ddd9c2b6"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">write_data</a> (uint8_t register_addr, uint8_t data)</td></tr>
-<tr class="separator:a32e05e0af6227e2f4c8b72d4ddd9c2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ea67f3d590a18bcbb5936827004606e"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data</a> (uint8_t register_addr, uint8_t length)</td></tr>
-<tr class="separator:a0ea67f3d590a18bcbb5936827004606e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebf63d75b7c1e16ccbb23e56eaa74293"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte</a> (uint8_t register_addr)</td></tr>
-<tr class="separator:aebf63d75b7c1e16ccbb23e56eaa74293"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00081">81</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00084">84</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a98991d8077f70969db06fa32c13ba859"></a>
 <div class="memitem">
@@ -174,9 +164,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Decrements the current wiper value for all RDAC potentiometers by 1.</p>
 <p>Takes the current wiper value for all RDAC potentiometers and decrements them by 1.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00368">368</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00373">373</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,9 +185,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Decrements the current wiper value for all RDAC potentiometers by 6dB</p>
 <p>Takes the current wiper value for all RDAC potentiometers and decrements them by 6dB (i.e. cuts them in half).</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00392">392</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00397">397</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -222,12 +212,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>, this also raises:<ul>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00284">284</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00289">289</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -252,12 +242,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>, this also raises:<ul>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00326">326</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00331">331</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -278,7 +268,7 @@ Protected Member Functions</h2></td></tr>
 <p>Retrieves the error code stored in the private <code>err_code</code> variable. If non-zero, use <code><a class="el" href="class_a_d525x.html#ab425c301f5d90a1fe958de21cdda831e">get_error_text()</a></code> to retrieve the error string. See <a class="el" href="group___error_codes.html">Error codes</a> for details.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the error code set in the current object. Non-zero value is an error.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00422">422</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00471">471</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -299,7 +289,39 @@ Protected Member Functions</h2></td></tr>
 <p>Retrieves the stored error code <code>err_code</code> and returns the human-readable error string associated with it. For a full list of error codes and error strings, see <a class="el" href="group___error_codes.html">Error codes</a>.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the human-readable string describing the current error code.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00433">433</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00482">482</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a81f3e8b0535cfbf92fcad39a3e8171d3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t AD525x::get_max_val </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Not implemented for top-level <a class="el" href="class_a_d525x.html">AD525x</a>. </p>
+<p>Interface function to be implemented by child classes - retrieve the maximum wiper value.</p>
+<p>The <a class="el" href="class_a_d5253.html">AD5253</a> and <a class="el" href="class_a_d5254.html">AD5254</a> differ only in their maximum wiper value, [0, 64) for <a class="el" href="class_a_d5253.html">AD5253</a> and [0, 256) for <a class="el" href="class_a_d5254.html">AD5254</a>. This function is an interface that should return the maximum wiper value when called from the child class objects. See <code><a class="el" href="class_a_d5253.html#a595cd05ec77d2f84be69a07479a718ad">AD5253::get_max_val()</a></code> and <code><a class="el" href="class_a_d5254.html#a7632febb85463a46e97c38b80cebe76c">AD5254::get_max_val()</a></code>;</p>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on error. (Always returns an error on <a class="el" href="class_a_d525x.html">AD525x</a>). As this is not implemented, it sets the error code to <code>EC_NOT_IMPLEMENTED</code>.</dd></dl>
+
+<p>Reimplemented in <a class="el" href="class_a_d5254.html#a7632febb85463a46e97c38b80cebe76c">AD5254</a>, and <a class="el" href="class_a_d5253.html#a595cd05ec77d2f84be69a07479a718ad">AD5253</a>.</p>
+
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00427">427</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -318,9 +340,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Increments the current wiper value for all RDAC potentiometers by 1.</p>
 <p>Takes the current wiper value for all RDAC potentiometers and increments them by 1.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00380">380</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00385">385</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -339,9 +361,9 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Increments the current wiper value for all RDAC potentiometers by 6dB</p>
 <p>Takes the current wiper value for all RDAC potentiometers and increments them by 6dB (i.e. doubles them).</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code (raised indirectly through <code>write_cmd()</code>).</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00405">405</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00410">410</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -366,12 +388,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>, this also raises:<ul>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00305">305</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00310">310</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -396,100 +418,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>, this also raises:<ul>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00347">347</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0ea67f3d590a18bcbb5936827004606e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t * AD525x::read_data </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>register_addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>length</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Reads data of length <code>length</code> from register <code>register_addr</code></p>
-<p>This is a private function, called by specific-use functions such as <code><a class="el" href="class_a_d525x.html#ae0aab4ec8edd75b15b1db17034d5a31f">read_RDAC()</a></code> and <code><a class="el" href="class_a_d525x.html#a0e9267fc2a0396cff5dea88a992702d6">read_EEMEM()</a></code> to read a data array of length <code>length</code> (in bytes) from the register specified by <code>register_addr</code>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">register_addr</td><td>The address of the register to read from. </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the data stored in the register.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>On success, returns a pointer to an array of <code>uint8_t</code> unsigned bytes retrieved from the register. The returned array has length <code>length</code>, which in most cases will be 1. On error, this function returns a <code>NULL</code> pointer and sets <code>err_code</code> (query <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code> to get the value of this variable) to one of the I2C errors:<ul>
-<li><code><code>EC_NO_ERR</code></code>: No error.</li>
-<li><code><code>EC_DATA_LONG</code></code>: Data too long to fit in transmit buffer</li>
-<li><code><code>EC_NACK_ADDR</code></code>: Received NACK on transmit of address.</li>
-<li><code><code>EC_NACK_DATA</code></code>: Received NACK on transmit of data.</li>
-<li><code><code>EC_I2C_OTHER</code></code>: Other I2C error.</li>
-</ul>
-</dd></dl>
-
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00515">515</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aebf63d75b7c1e16ccbb23e56eaa74293"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t AD525x::read_data_byte </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>register_addr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Reads a single byte from the specified register. Convenience wrapper for <code><a class="el" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data()</a></code>.</p>
-<p>This reads a single byte from the register specified at <code>register_addr</code> via a call to <code><a class="el" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data()</a></code>. In most cases, only a single byte is stored at the specified register address.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">register_addr</td><td>The register address from which to read a single byte.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the requested value. If there is an error, returns 0 and <code>err_code</code> (retrieved via <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code>) is set to a non-zero value. This is a simple wrapper for <code><a class="el" href="class_a_d525x.html#a0ea67f3d590a18bcbb5936827004606e">read_data()</a></code>, so it raises only the errors raised by that function.</dd></dl>
-
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00568">568</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00352">352</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -508,7 +442,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Read EEMEM value from register.</p>
 <p>Reads the value stored in the EEMEM value with the specified register address (<code>reg</code>). There are 16 EEMEM registers, and the first 4 are reserved for storing RDAC values, in the sense that certain commands (e.g. <code>CMD_RESTORE_RDAC</code>) push/pull the values to/from these registers.</p>
-<p>On error, this sets the error code and returns 0. Since 0 is a valid wiper value, check <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code> if this returns 0. This raises I2C errors indirectly from a call to <code><a class="el" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte()</a></code>, and raises <code>EC_BAD_REGISTER</code> if an invalid register is passed to <code>reg</code>.</p>
+<p>On error, this sets the error code and returns 0. Since 0 is a valid wiper value, check <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code> if this returns 0. This raises I2C errors indirectly from a call to <code>read_data_byte()</code>, and raises <code>EC_BAD_REGISTER</code> if an invalid register is passed to <code>reg</code>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>The EEMEM register whose value you want to query [0-15].</td></tr>
@@ -517,7 +451,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the value stored in the specified register.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00132">132</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00137">137</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -535,7 +469,7 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Read the wiper setting from the specified RDAC register.</p>
-<p>Reads the current wiper setting of the RDAC register specified by <code>RDAC</code>. On error, this sets error code and returns 0. Because 0 is a valid wiper setting, always check the error code via <code>get_error_code()</code> before trusting a 0 return value for this function. In addition to I2C errors raised by <code><a class="el" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte()</a></code>, this function also raises <code>EC_BAD_REGISTER</code> if the supplied RDAC register exceeds the maximum value (3).</p>
+<p>Reads the current wiper setting of the RDAC register specified by <code>RDAC</code>. On error, this sets error code and returns 0. Because 0 is a valid wiper setting, always check the error code via <code>get_error_code()</code> before trusting a 0 return value for this function. In addition to I2C errors raised by <code>read_data_byte()</code>, this function also raises <code>EC_BAD_REGISTER</code> if the supplied RDAC register exceeds the maximum value (3).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">RDAC</td><td>The address of one of the 4 RDAC registers (0-3), representing the 4 potentiometers in the IC.</td></tr>
@@ -544,7 +478,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the wiper value or 0 on error (0 is also a valid wiper value).</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00067">67</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00069">69</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -563,7 +497,7 @@ Protected Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>Reads the RAB tolerance, written at the factory, in percentage (signed float).</p>
 <p>Reads the RAB tolerance programmed into the device at the factory for the specified RDAC (<code>RDAC</code>), returning the percent tolerance as a signed float. These values will vary from device to device and register to register.</p>
-<p>This returns 0.0 on error, but since 0.0 is a valid output, in the event of a 0.0 return value, check <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code> to determine if an error has occurred. This raises I2C errors indirectly via calls to <code><a class="el" href="class_a_d525x.html#aebf63d75b7c1e16ccbb23e56eaa74293">read_data_byte()</a></code>, and raises <code>EC_BAD_REGISTER</code> if the provided <code>RDAC</code> value exceeds the maximum (3).</p>
+<p>This returns 0.0 on error, but since 0.0 is a valid output, in the event of a 0.0 return value, check <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code> to determine if an error has occurred. This raises I2C errors indirectly via calls to <code>read_data_byte()</code>, and raises <code>EC_BAD_REGISTER</code> if the provided <code>RDAC</code> value exceeds the maximum (3).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">RDAC</td><td>The RDAC register whose tolerance you would like to query.</td></tr>
@@ -572,7 +506,7 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the RAB tolerance set at the factory and stored in read-only memory on the chip, represented as a signed float as a percentage of the total device resistance.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00162">162</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00167">167</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -592,7 +526,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the device to idle state.</p>
 <dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00224">224</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00229">229</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -610,9 +544,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Restores the wiper value for all RDAC registers from their corresponding EEMEM registers.</p>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code, which is raised indirectly through a call to <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code, which is raised indirectly through a call to <code>write_cmd()</code>.</dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00254">254</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00259">259</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -637,12 +571,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>, this also raises:<ul>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00233">233</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00238">238</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -667,107 +601,12 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code><a class="el" href="class_a_d525x.html#ad9037f843984a64d8bc8cfe6c37028df">write_cmd()</a></code>, this also raises:<ul>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns the error code. In addition to errors raised indirectly through a call to <code>write_cmd()</code>, this also raises:<ul>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if <code>RDAC</code> exceeds 3.</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00264">264</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad9037f843984a64d8bc8cfe6c37028df"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t AD525x::write_cmd </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>cmd_register</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Trigger a command in the command register (no data)</p>
-<p>This triggers a command in the command register (e.g. an address which takes no data). This is a private function, called by exposed functions hard-coded with the command register addresses.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cmd_register</td><td>The address of the command register (e.g. <code>CMD_NOP</code>, <code>CMD_Store_RDAC</code>)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns I2C errors:<ul>
-<li><code><code>EC_NO_ERR</code></code>: No error.</li>
-<li><code><code>EC_DATA_LONG</code></code>: Data too long to fit in transmit buffer</li>
-<li><code><code>EC_NACK_ADDR</code></code>: Received NACK on transmit of address.</li>
-<li><code><code>EC_NACK_DATA</code></code>: Received NACK on transmit of data.</li>
-<li><code><code>EC_I2C_OTHER</code></code>: Other I2C error.</li>
-</ul>
-</dd></dl>
-
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00468">468</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a32e05e0af6227e2f4c8b72d4ddd9c2b6"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t AD525x::write_data </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>register_addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Writes data to the specified register address.</p>
-<p>This is a private function, called by specific-use functions such as <code><a class="el" href="class_a_d525x.html#aafb16999f293f9df2efc299637f7a554">write_RDAC()</a></code> and <code><a class="el" href="class_a_d525x.html#a4ae38aeedc85aa5de5a07dee2ebd0cfc">write_EEMEM()</a></code> to write data (specified by <code>data</code>) into the register specified by <code>register_addr</code> using the Wire.h library.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">register_addr</td><td>The register address to query. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to write to the specified address.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns I2C errors:<ul>
-<li><code><code>EC_NO_ERR</code></code>: No error.</li>
-<li><code><code>EC_DATA_LONG</code></code>: Data too long to fit in transmit buffer</li>
-<li><code><code>EC_NACK_ADDR</code></code>: Received NACK on transmit of address.</li>
-<li><code><code>EC_NACK_DATA</code></code>: Received NACK on transmit of data.</li>
-<li><code><code>EC_I2C_OTHER</code></code>: Other I2C error.</li>
-</ul>
-</dd></dl>
-
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00491">491</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00269">269</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -809,7 +648,7 @@ Protected Member Functions</h2></td></tr>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00096">96</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00098">98</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -845,13 +684,13 @@ Protected Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns an error code and sets the <code>err_code</code> parameter (queried via <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code>). I2C errors are raised indirectly via a call to <code><a class="el" href="class_a_d525x.html#a32e05e0af6227e2f4c8b72d4ddd9c2b6">write_data()</a></code>. This function also raises the following error codes:<ul>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on no error, otherwise returns an error code and sets the <code>err_code</code> parameter (queried via <code><a class="el" href="class_a_d525x.html#a1a5029af432b07e2b39aaf0e380a3973">get_err_code()</a></code>). I2C errors are raised indirectly via a call to <code>write_data()</code>. This function also raises the following error codes:<ul>
 <li><code><code>EC_BAD_REGISTER</code></code>: Raised if the supplied RDAC register exceeds the maximum value (3).</li>
 <li><code><code>EC_BAD_WIPER_SETTING</code></code>: Raised if the wiper setting (<code>value</code>) eceeds the maximum value (63 for <a class="el" href="class_a_d5253.html">AD5253()</a>, 255 for <a class="el" href="class_a_d5254.html">AD5254()</a>)</li>
 </ul>
 </dd></dl>
 
-<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00033">33</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8cpp_source.html#l00032">32</a> of file <a class="el" href="_a_d525x_8cpp_source.html">AD525x.cpp</a>.</p>
 
 </div>
 </div>
@@ -859,15 +698,22 @@ Protected Member Functions</h2></td></tr>
 <a class="anchor" id="ad0fc5917fcac0192d99fe4baa49600fc"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">uint8_t AD525x::max_val</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>Used only by child classes. </p>
 
-<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00115">115</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
+<p>Definition at line <a class="el" href="_a_d525x_8h_source.html#l00122">122</a> of file <a class="el" href="_a_d525x_8h_source.html">AD525x.h</a>.</p>
 
 </div>
 </div>
@@ -878,7 +724,7 @@ Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Dec 10 2014 22:14:11 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 21 2014 18:20:25 for AD525x by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

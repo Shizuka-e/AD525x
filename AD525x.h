@@ -74,6 +74,9 @@ Header file for AD5253/AD5254 digital potentiometer Arduino library.
 #define EC_BAD_DEVICE_ADDR 8
 #define EC_BAD_DEVICE_ADDR_str "Bad device address - device address must be in [0, 3]."
 
+#define EC_NOT_IMPLEMENTED 9
+#define EC_NOT_IMPLEMENTED_str "Function not implemented on interface."
+
 #define EC_UNKNOWN_ERR_str "Unknown error."
 /**@}*/
 
@@ -107,36 +110,44 @@ public:
     uint8_t decrement_all_RDAC_6dB(void);
     uint8_t increment_all_RDAC_6dB(void);
 
+    // For class inheritance
+    virtual uint8_t get_max_val(void);          /*!< Not implemented for top-level AD525x. */
+
     // Error handling
     uint8_t get_err_code(void);
     char *get_error_text(void);
 
-    uint8_t max_val;        /*!< Used only by child classes. */
 protected:
+    uint8_t max_val;        
+
+private:
     uint8_t write_cmd(uint8_t cmd_register);
 
     uint8_t write_data(uint8_t register_addr, uint8_t data);
     uint8_t *read_data(uint8_t register_addr, uint8_t length);
     uint8_t read_data_byte(uint8_t register_addr);
-private:
-    uint8_t dev_addr;       /*!< The full 7-bit address of the specified device. */
 
+    uint8_t dev_addr;       /*!< The full 7-bit address of the specified device. */
     uint8_t err_code;       /*!< Used for error detection. Access via get_err_code() and 
                                  get_error_text() */
 };
 
 class AD5253 : public AD525x {
 public:
-    AD5253(uint8_t AD_addr) : AD525x(AD_addr) {
-        max_val = AD5253_max;   /*!< Maximum wiper value. 63 for AD5253 */
-    }
+    AD5253(uint8_t AD_addr) : AD525x(AD_addr) {};
+
+    uint8_t get_max_val(void);
+private:
+    static const uint8_t max_val = 63;          /*!< Maximum wiper value. 63 for AD5253 */
 };
 
 class AD5254 : public AD525x {
 public:
-    AD5254(uint8_t AD_addr) : AD525x(AD_addr) {
-        max_val = AD5254_max; /*!< Maximum wiper value. 255 for AD5254 */
-    }
+    AD5254(uint8_t AD_addr) : AD525x(AD_addr) {};
+
+    uint8_t get_max_val(void);
+private:
+    static const uint8_t max_val = 255;         /*!< Maximum wiper value. 255 for AD5254 */
 };
 
 
