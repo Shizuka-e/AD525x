@@ -228,32 +228,23 @@ float AD525x::read_tolerance(uint8_t RDAC) {
     uint8_t instr_addr_dec = instr_addr | AD525x::Tol_dec;
 
     // 8-bit signed integer
-    uint8_t tol_int_data = read_data_byte(instr_addr_int);
+    int8_t tol_int_data = (int8_t)read_data_byte(instr_addr_int);
     if(err_code) {
         return 0;
     }
 
-    // Fractional portion - 8 bits
+    // Fractional portion - 8 bits - interpret as (value*2e-8)
     uint8_t tol_dec_data = read_data_byte(instr_addr_dec);
     if(err_code) {
         return 0;
     }
 
-    // Convert to signed double
+    // Convert to signed float - there may be a better way to do this, but this seems OK.
     float output;
-    output = float((~sign_mask) & tol_int_data);
-    if(sign_mask & tol_int_data) {
-        output *= -1.0;
-    }
-
-    // This is almost certainly the wrong way to do this.
-    for (int i = 0; i < 8; i++) {
-        if ((sign_mask >> i) & tol_dec_data) {
-            output += 1.0/((float)(2<<i));
-        }
-    }
-
-    return output;
+    output = float(tol_int_data);
+    
+    float frac_portion = float(tol_dec_data)/256.0 * ((output < 0)?-1:1);
+    return output + frac_portion;
 }
 
 //
