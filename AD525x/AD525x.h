@@ -66,7 +66,7 @@ private:
     
     bool initialized;
 
-    static const uint8_t max_RDAC_register = 3;     /*M< The maximum valid RDAC address. */
+    static const uint8_t max_RDAC_register = 3;     /*!< The maximum valid RDAC address. */
     static const uint8_t max_EEMEM_register = 15;   /*!< The maximum valid EEMEM address.*/
 
     static const uint8_t max_AD_addr = 3;           /*!< The maximum valid AD_addr address. */
