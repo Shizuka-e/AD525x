@@ -7,7 +7,7 @@ Header file for AD5253/AD5254 digital potentiometer Arduino library.
 
 #include <Arduino.h>
 #include <Wire.h>
-#include <cstdint>
+#include <stdint.h>
 
 
 
